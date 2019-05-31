@@ -258,9 +258,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Producto\Productos.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Productos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
