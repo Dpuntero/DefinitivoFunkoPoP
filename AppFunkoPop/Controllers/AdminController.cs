@@ -29,7 +29,7 @@ namespace ProyectoDawFunko.Controllers
 
         public ActionResult GestionProductos()
         {
-            ViewBag.Message = "Your contact page. Nueva!";
+            ViewBag.Message = "Your contact page.. Nueva!";
 
             return View();
         }
