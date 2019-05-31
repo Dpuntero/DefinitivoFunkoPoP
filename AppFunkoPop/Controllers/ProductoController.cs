@@ -9,7 +9,7 @@ namespace ProyectoDawFunko.Controllers
     public class ProductoController : Controller
     {
         // GET: Producto
-        public ActionResult Index()
+        public ActionResult Productos()
         {
             return View();
         }

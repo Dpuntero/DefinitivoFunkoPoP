@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppFunkoPop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,10 +13,10 @@ namespace ProyectoDawFunko.Controllers
 
 
         {
-            /*
-            USUARIO nuevo = new USUARIO()
+            
+           /* USUARIO nuevo = new USUARIO()
             {
-                DNI = "123",
+                
                 NOMBRE = "david",
                 APELLIDOS = "puntero",
                 EMAIL = "wma",
@@ -25,15 +26,15 @@ namespace ProyectoDawFunko.Controllers
                 CIUDAD="asd",
                 PAIS="asd",
                 CP=123,
-                ROL=1
+                ID_ROL = 1
             };
             
-            using (PoryectoDAWEntities db= new PoryectoDAWEntities())
+            using ( Database1Entities db= new Database1Entities())
             {
-                db.USUARIO.Add(nuevo);
+                db.USUARIOs.Add(nuevo);
                 db.SaveChanges();
-            }*/
-
+            }
+            */
             return View();
         }
 
