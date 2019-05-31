@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "GestionPedidos";
+}
+
+<h2>Listado de pedidos</h2>
+<p>Listado de pedidos pendientes de validar:</p>
+<form>
+    <button type="submit" class="btn btn-primary mb-2">Validar Acciones</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>IdPedido</th>
+                <th>IdUsuario</th>
+                <th>Usuario</th>
+                <th>Dirección</th>
+                <th>Nº de pedido</th>
+                <th>Artículos</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>213213213213</th>
+                <th>23</th>
+                <td>Casa</td>
+                <td>Pedro</td>
+                <td>687748</td>
+                <td>Funko Oso</td>
+                <td>
+                    <select name="pedidoId" class="custom-select">
+                        <option selected>Selecciona una opcion</option>
+                        <option value="EnPago">En pago</option>
+                        <option value="EnCamino">En camino</option>
+                        <option value="Entregado">Entregado</option>
+                        <option value="Entregado">Cancelado</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>213123213</th>
+                <th>213</th>
+                <td>Carlos</td>
+                <td>Casa</td>
+                <td>78779</td>
+                <td>Funko reina roja, funko batman...</td>
+                <td>
+                    <select name="pedidoId" class="custom-select">
+                        <option selected>Selecciona una opcion</option>
+                        <option value="EnPago">En pago</option>
+                        <option value="EnCamino">En camino</option>
+                        <option value="Entregado">Entregado</option>
+                        <option value="Entregado">Cancelado</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>34534534</th>
+                <th>23</th>
+                <td>Juan</td>
+                <td>Casa</td>
+                <td>8797979</td>
+                <td>Funko Maybe</td>
+                <td>
+                    <select name="pedidoId" class="custom-select">
+                        <option selected>Selecciona una opcion</option>
+                        <option value="EnPago">En pago</option>
+                        <option value="EnCamino">En camino</option>
+                        <option value="Entregado">Entregado</option>
+                        <option value="Entregado">Cancelado</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</form>
+</table>

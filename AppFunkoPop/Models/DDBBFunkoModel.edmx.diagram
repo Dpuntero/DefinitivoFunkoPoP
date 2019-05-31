@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb081abe98bc4ab98638725b36aef928" Name="Diagram1" ZoomLevel="47">
+        <EntityTypeShape EntityType="Database1Model.CARRITO" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.CARRITOPRODUCTO" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.ESTADO_ENVIO" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.PEDIDO" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.PEDIDOPRODUCTO" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.PRODUCTO" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.PROVEEDOR" Width="1.5" PointX="7.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.ROL" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.USUARIO" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="Database1Model.FK_CARRITO_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_CARRITOPRODUCTO_CARRITO" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_CARRITOPRODUCTO_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_PEDIDO_ESTADO_ENVIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_PEDIDO_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_PEDIDOPRODUCTO_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_PEDIDOPRODUCTO_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_USUARIO_ROL" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.PROVEEDORPRODUCTO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
