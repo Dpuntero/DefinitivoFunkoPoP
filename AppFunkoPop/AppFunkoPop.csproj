@@ -264,9 +264,7 @@
     <Content Include="Views\Admin\PanelDeControlAdmin.cshtml" />
     <Content Include="Views\Usuarios\GestionDatos.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Productos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
