@@ -25,6 +25,7 @@ namespace AppFunkoPop.Models
     
         public int USUARIO_ID { get; set; }
         [Required(ErrorMessage ="Es necesario introducir un nombre")]
+      
         public string NOMBRE { get; set; }
         [Required(ErrorMessage = "Es necesario introducir un Apellido")]
         public string APELLIDOS { get; set; }

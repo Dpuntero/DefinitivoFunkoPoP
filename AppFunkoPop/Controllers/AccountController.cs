@@ -85,19 +85,64 @@ namespace AppFunkoPop.Controllers
                 if (userDetails == null)
                 {
                     userModel.LoginErrorMessage = "Password o Email equivocado.";
-                    return View("Login",userModel);
+                    return View("Login", userModel);
 
                 }
                 else
                 {
                     Session["USUARIO_ID"] = userDetails.USUARIO_ID;
+                    Session["NOMBRE"] = userDetails.NOMBRE;
+                    Session["APELLIDOS"] = userDetails.APELLIDOS;
+                    Session["EMAIL"] = userDetails.EMAIL;
+                    Session["PASSWD"] = userDetails.PASSWD;
+                    Session["TLFN"] = userDetails.TLFN;
+                    Session["DIRECCION"] = userDetails.DIRECCION;
+                    Session["CIUDAD"] = userDetails.CIUDAD;
+                    Session["PAIS"] = userDetails.PAIS;
+                    Session["CP"] = userDetails.CP;
+                    Session["ID_ROL"] = userDetails.ID_ROL;
                     return RedirectToAction("Index", "Home");
 
 
                 }
             }
+           
 
-            return View();
         }
-    }
+
+        [HttpPost]
+        public ActionResult RegistrarUsuario(AppFunkoPop.Models.USUARIO userModel)
+        {
+            using (Database1Entities db = new Database1Entities())
+            {
+                userModel.ID_ROL = 1;
+                db.USUARIOs.Add(userModel);
+
+                db.SaveChanges();
+
+                var userDetails = db.USUARIOs.Where(x => x.EMAIL == userModel.EMAIL && x.PASSWD == userModel.PASSWD).FirstOrDefault();
+                Session["USUARIO_ID"] = userDetails.USUARIO_ID;
+                Session["NOMBRE"] = userDetails.NOMBRE;
+                Session["APELLIDOS"] = userDetails.APELLIDOS;
+                Session["EMAIL"] = userDetails.EMAIL;
+                Session["PASSWD"] = userDetails.PASSWD;
+                Session["TLFN"] = userDetails.TLFN;
+                Session["DIRECCION"] = userDetails.DIRECCION;
+                Session["CIUDAD"] = userDetails.CIUDAD;
+                Session["PAIS"] = userDetails.PAIS;
+                Session["CP"] = userDetails.CP;
+                Session["ID_ROL"] = userDetails.ID_ROL;
+                
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult CerrarSesion()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index","Home");
+
+        }
+
+    }       
 }
