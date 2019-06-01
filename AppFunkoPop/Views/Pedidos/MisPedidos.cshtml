@@ -17,6 +17,15 @@
             </tr>
         </thead>
         <tbody>
+            @foreach (var prod in Model)
+            {
+                <tr>
+                    <td>@prod.P_ID</td>
+                    <td>@prod.UNIDADES</td>
+                    <td>@prod.PRECIO</td>
+                    <td>@prod.DESCUENTO</td>
+                </tr>
+            }
             <tr>
                 <td>Casa</td>
                 <td>687748</td>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AppFunkoPop.Models;
 
 namespace ProyectoDawFunko.Controllers
 {
@@ -11,13 +12,15 @@ namespace ProyectoDawFunko.Controllers
         // GET: Catalogo
         public ActionResult Catalogo()
         {
-            return View();
+            Database1Entities db = new Database1Entities();
+
+            return View(db.PRODUCTOes.ToList());
         }
 
         public ActionResult MostrarProductos()
         {
 
-
+            
             return View();
         }
     }
