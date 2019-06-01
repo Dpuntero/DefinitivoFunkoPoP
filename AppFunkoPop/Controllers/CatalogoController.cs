@@ -12,9 +12,8 @@ namespace ProyectoDawFunko.Controllers
         // GET: Catalogo
         public ActionResult Catalogo()
         {
-            Database1Entities db = new Database1Entities();
+            return View();
 
-            return View(db.PRODUCTOes.ToList());
         }
 
         public ActionResult MostrarProductos()

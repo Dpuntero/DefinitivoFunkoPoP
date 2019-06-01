@@ -23,8 +23,8 @@ namespace AppFunkoPop.Models
             this.PROVEEDORs = new HashSet<PROVEEDOR>();
         }
 
-       /* [Required]
-        [Display(Name = "ID")]*/
+        /* [Required]
+         [Display(Name = "ID")]*/
         public int PRODUCTO_ID { get; set; }
 
         [Required]
@@ -58,7 +58,7 @@ namespace AppFunkoPop.Models
         [Required]
         [Display(Name = "link")]
         public string LINK { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CARRITOPRODUCTO> CARRITOPRODUCTOes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
