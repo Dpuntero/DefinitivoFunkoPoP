@@ -8,7 +8,7 @@ namespace ProyectoDawFunko.Controllers
 {
     public class AdminController : Controller
     {
-        public ActionResult PerfilAdmin()
+        public ActionResult PanelDeControlAdmin()
         {
             return View();
         }
