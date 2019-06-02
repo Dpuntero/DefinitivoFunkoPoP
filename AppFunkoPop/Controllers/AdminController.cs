@@ -8,7 +8,7 @@ namespace ProyectoDawFunko.Controllers
 {
     public class AdminController : Controller
     {
-        public ActionResult PerfilAdmin()
+        public ActionResult PanelDeControlAdmin()
         {
             return View();
         }
@@ -29,7 +29,7 @@ namespace ProyectoDawFunko.Controllers
 
         public ActionResult GestionProductos()
         {
-            ViewBag.Message = "Your contact page. Nueva!";
+            ViewBag.Message = "Your contact page.. Nueva!";
 
             return View();
         }

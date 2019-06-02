@@ -1,0 +1,66 @@
+﻿@model AppFunkoPop.Models.PRODUCTO
+
+@{
+    ViewBag.Title = "NuevoProducto.";
+}
+
+<h2>Nuevo</h2>
+
+@using (Html.BeginForm("NuevoProducto", "Producto", FormMethod.Post))
+{
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div>
+                @Html.LabelFor(model => model.NOMBREP)
+                @Html.EditorFor(model => model.NOMBREP, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NOMBREP, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.CATEGORIA)
+                @Html.EditorFor(model => model.CATEGORIA, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.PRECIO)
+                @Html.EditorFor(model => model.PRECIO, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PRECIO, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.UD_DISPO)
+                @Html.EditorFor(model => model.UD_DISPO, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.UD_DISPO, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.DESCRIP)
+                @Html.EditorFor(model => model.DESCRIP, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DESCRIP, null, new { @class = "red" })
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.V_ID)
+                @Html.EditorFor(model => model.V_ID, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.V_ID, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.IMAGEN)
+                @Html.EditorFor(model => model.IMAGEN, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IMAGEN, null, new { @class = "red" })
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.LINK)
+                @Html.EditorFor(model => model.LINK, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LINK, null, new { @class = "red" })
+            </div>
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Añadir" class="btn btn-primary" />
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

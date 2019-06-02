@@ -1,0 +1,29 @@
+﻿@{
+    if (Session["ID_ROL"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    else
+    {
+        if (Session["ID_ROL"].ToString() != "1")
+        {
+            Response.Redirect("~/Home/Index");
+        }
+    }
+
+
+    ViewBag.Title = "PanelDeControlUsuarios";
+}
+
+<h2>PanelDeControlUsuarios</h2>
+
+<p> ¿Que quieres hacer?:</p>
+
+<ul class="">
+    <li>@Html.ActionLink("Gestionar mis datos", "GestionDatos", "Usuarios")</li>
+    <li>@Html.ActionLink("Ver mis pedidos", "MisPedidos", "Pedidos")</li>
+
+    <li>@Html.ActionLink("Ver mi carrito", "InicioCarrito", "Carrito")</li>
+   
+
+</ul>

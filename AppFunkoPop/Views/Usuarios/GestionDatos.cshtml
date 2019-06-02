@@ -1,0 +1,19 @@
+﻿
+@{
+    if (Session["ID_ROL"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    else
+    {
+        if (Session["ID_ROL"].ToString() != "1")
+        {
+            Response.Redirect("~/Home/Index");
+        }
+    }
+
+    ViewBag.Title = "GestionDatos";
+}
+
+<h2>GestionDatos</h2>
+

@@ -1,4 +1,16 @@
 ﻿@{
+    if (Session["ID_ROL"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    else
+    {
+        if (Session["ID_ROL"].ToString() != "2")
+        {
+            Response.Redirect("~/Home/Index");
+        }
+    }
+
     ViewBag.Title = "GestionProductos";
 }
 

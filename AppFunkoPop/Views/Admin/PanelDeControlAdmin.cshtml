@@ -1,0 +1,29 @@
+﻿
+@{
+    if (Session["ID_ROL"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    else
+    {
+        if (Session["ID_ROL"].ToString() != "2")
+        {
+            Response.Redirect("~/Home/Index");
+        }
+    }
+
+    ViewBag.Title = "PanelDeControlAdmin";
+}
+
+<h2>Panel De Control Admin</h2>
+
+<p> ¿Que quieres hacer?:</p>
+
+<ul class="">
+    <li>@Html.ActionLink("Gestion de Pedidos", "GestionPedidos", "Admin")</li>
+    <li>@Html.ActionLink("Gestios de Productos", "GestionProductos", "Admin")</li>
+
+    <li>@Html.ActionLink("Gestion de Usuarios", "GestionUsuarios", "Admin")</li>
+    <li>@Html.ActionLink("Añadir nuevo producto", "NuevoProducto", "Producto")</li>
+
+</ul>
