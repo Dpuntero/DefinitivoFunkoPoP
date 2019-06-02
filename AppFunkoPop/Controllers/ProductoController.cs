@@ -10,7 +10,7 @@ namespace AppFunkoPop.Controllers
 {
     public class ProductoController : Controller
     {
-        // GET: Producto
+        // GET: Productos
         public ActionResult Productos(int id)
         {
             PRODUCTO prod = new PRODUCTO();
