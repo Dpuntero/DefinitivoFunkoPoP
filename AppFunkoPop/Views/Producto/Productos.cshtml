@@ -6,7 +6,8 @@
 }
 
 
-<h2>Nombre</h2>
+
+<h2>@Model.NOMBREP</h2>
 
 
 <div class="row">
@@ -14,23 +15,23 @@
     <hr />
     <div class="col-sm-12 col-md-12">
         <div class="col-sm-12 col-md-2">
-            <img src="~/Content/images/got/arya1.jpg" class="col-xs-2 col-sm-2 col-md-12" />
-            <img src="~/Content/images/got/arya2.png" class="col-xs-2 col-sm-2 col-md-12" />
+            <img src="~/Content/images/@Model.NOMBREP/@Model.NOMBREP'1.jpg'" class="col-xs-2 col-sm-2 col-md-12" />
+            <img src="~/Content/images/@Model.NOMBREP/@Model.NOMBREP 2.png" class="col-xs-2 col-sm-2 col-md-12" />
 
         </div>
         <div class="col-sm-12 col-md-6">
-            <img src="~/Content/images/got/arya1.jpg" class="col-xs-12 col-sm-12 col-md-12" />
+            <img src="~/Content/images/'+@Model.NOMBREP+'/'+@Model.NOMBREP'1.jpg" class="col-xs-12 col-sm-12 col-md-12" />
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4">
             <p>
                 Descripción del producto:
-                Aqui iria el texto de los txt de las descripciones
+                @Model.NOMBREP
             </p>
-            <h3>11,50€</h3>
+            <h3>@Model.NOMBREP €</h3>
             <form>
                 <div class="form-group">
 
-                    <label for="unidades">Unidades: </label>
+                    <label for="unidades">Unidades:@Model.NOMBREP </label>
                     <input type="number" class="form-control" id="unidades" width="20">
 
 
