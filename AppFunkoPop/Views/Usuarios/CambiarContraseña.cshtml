@@ -1,0 +1,44 @@
+﻿@model AppFunkoPop.Models.PasswordChangeModel
+@{
+    if (Session["ID_ROL"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    
+
+    ViewBag.Title = "CambiarContraseña";
+}
+
+<h2>CambiarContraseña</h2>
+
+@using (Html.BeginForm("CambiarContraseña", "Account", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(model => model.contrasenaAntigua)
+    </p>
+    <p>
+        @Html.EditorFor(model => model.contrasenaAntigua)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.contrasenaNueva)
+    </p>
+    <p>
+        @Html.EditorFor(model => model.contrasenaNueva)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.contrasenaRepetida)
+    </p>
+    <p>
+        @Html.EditorFor(model => model.contrasenaRepetida)
+    </p>
+
+    <p>
+        @Html.ValidationMessageFor(model => model.contrasenaAntigua)
+        @Html.ValidationMessageFor(model => model.contrasenaNueva)
+        @Html.ValidationMessageFor(model => model.contrasenaRepetida)
+    </p>
+    <label> @Html.DisplayFor(model => model.contrasenaErrorMessage)</label>
+    <input type="submit" name="entrar" value="Entrar" />
+    <input type="reset" name="borrar" value="borrar" />
+}
+

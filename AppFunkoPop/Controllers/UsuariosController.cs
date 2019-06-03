@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AppFunkoPop.Models;
 
 namespace AppFunkoPop.Controllers
 {
@@ -16,7 +17,34 @@ namespace AppFunkoPop.Controllers
 
         public ActionResult GestionDatos()
         {
-            return View();
+            USUARIO usuario = new USUARIO();
+            using (Database1Entities db = new Database1Entities())
+            {
+                int idUsu = Convert.ToInt32(Session["USUARIO_ID"]);
+                usuario = db.USUARIOs.Where(c => c.USUARIO_ID == idUsu).First();
+
+            }
+            return View(usuario);
         }
+
+        public ActionResult CambiarContraseña(AppFunkoPop.Models.PasswordChangeModel passModel= null )
+        {
+            if (passModel == null)
+            {
+                return View();
+            }
+            else
+            {
+                return View(passModel);
+            }
+
+            
+        }
+
+        
+
+
+
+
     }
 }

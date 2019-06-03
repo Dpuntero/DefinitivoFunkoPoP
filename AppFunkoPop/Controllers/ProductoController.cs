@@ -17,6 +17,7 @@ namespace AppFunkoPop.Controllers
             using (Database1Entities db = new Database1Entities())
             {
                  prod = db.PRODUCTOes.Find(id);
+                
             }
                 return View(prod);
         }
@@ -28,7 +29,8 @@ namespace AppFunkoPop.Controllers
         [HttpPost]
         public ActionResult NuevoProducto(AppFunkoPop.Models.PRODUCTO nuevoProd)
         {
-           
+            nuevoProd.IMAGEN = nuevoProd.NOMBREP + "1.jpg";
+            nuevoProd.LINK = nuevoProd.NOMBREP + "2.jpg";
             using (Database1Entities db = new Database1Entities())
             {
 
