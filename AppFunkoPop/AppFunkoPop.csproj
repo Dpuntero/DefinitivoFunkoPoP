@@ -146,6 +146,7 @@
       <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CatalogoModel.cs" />
+    <Compile Include="Models\PasswordChangeModel.cs" />
     <Compile Include="Models\DDBBFunkoModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -264,6 +265,7 @@
     <Content Include="Views\Admin\PanelDeControlAdmin.cshtml" />
     <Content Include="Views\Usuarios\GestionDatos.cshtml" />
     <Content Include="Views\Producto\NuevoProducto.cshtml" />
+    <Content Include="Views\Usuarios\CambiarContraseña.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
