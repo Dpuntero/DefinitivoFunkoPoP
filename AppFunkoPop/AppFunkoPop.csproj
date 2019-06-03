@@ -264,7 +264,7 @@
     <Content Include="Views\Admin\PanelDeControlAdmin.cshtml" />
     <Content Include="Views\Usuarios\GestionDatos.cshtml" />
     <Content Include="Views\Producto\NuevoProducto.cshtml" />
-    <Content Include="Views\Admin\EditadoProducto.cshtml" />
+    <Content Include="Views\Admin\EditandoProducto.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

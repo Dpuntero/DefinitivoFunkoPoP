@@ -43,22 +43,28 @@ namespace ProyectoDawFunko.Controllers
         public ActionResult EditarProducto(int? id)
         {
             Database1Entities db = new Database1Entities();
-            PRODUCTO pRODUCTO = db.PRODUCTOes.Find(id);
+            PRODUCTO productoAEditar = db.PRODUCTOes.Find(id);
 
-            return View("EditadoProducto", pRODUCTO);
+            return View("EditandoProducto", productoAEditar);
         }
        
 
         [HttpPost]
-
-        public ActionResult EditadoProducto(PRODUCTO modificado)
-        {
-            //ESTE METODO TODAVIA NO FUNCIONA BIEN. NO ACTUALIZAEL REGISTRO
-            Database1Entities db = new Database1Entities();
-            db.Entry(modificado).State = EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("GestionProductos");
-
+        public ActionResult EditandoProducto(PRODUCTO productoModificado)
+        {           
+            using (Database1Entities db = new Database1Entities())
+            {
+                PRODUCTO productoOriginal = db.PRODUCTOes.Where(c => c.PRODUCTO_ID == productoModificado.PRODUCTO_ID).First();
+                productoOriginal.NOMBREP = productoModificado.NOMBREP;
+                productoOriginal.CATEGORIA = productoModificado.CATEGORIA;
+                productoOriginal.DESCRIP = productoModificado.DESCRIP;
+                productoOriginal.UD_DISPO = productoModificado.UD_DISPO;
+                productoOriginal.PRECIO = productoModificado.PRECIO;
+                productoOriginal.V_ID = productoModificado.V_ID;
+                productoOriginal.IMAGEN = productoModificado.LINK;
+                db.SaveChanges();
+                return RedirectToAction("GestionProductos");
+            }
         }
 
         //FIN METODOS PRODUCTOS
