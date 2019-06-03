@@ -1,18 +1,22 @@
-﻿@{
+﻿@model AppFunkoPop.Models.PRODUCTO
+@{
     if (Session["ID_ROL"] == null)
     {
         Response.Redirect("~/Home/Index");
     }
     else
     {
-        if (Session["ID_ROL"].ToString() != "2")
+       if (Session["ID_ROL"].ToString() != "2")
         {
             Response.Redirect("~/Home/Index");
         }
     }
 
     ViewBag.Title = "GestionProductos";
+    List<AppFunkoPop.Models.PRODUCTO> listadoProductos = ViewBag.Productos;
 }
+
+
 
 <h2>Listado de Productos</h2>
 <p>Listado de sus Productos:</p>
@@ -20,75 +24,91 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>IdProducto</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Fabricante</th>
-                <th>Unidades</th>
-                <th>Descripción</th>
-                <th>Borrar</th>
+                <th>
+                    ID
+
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Precio
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Categoria
+                </th>
+                <th>
+                    Unidades
+                </th>
+                <th>
+                    Proveedor
+                </th>
+                <th>
+                    Imagen
+                </th>
+                <th>
+                    Link
+                </th>
+                <th>
+                    Borrar
+
+                </th>
+                <th>
+                    Editar
+                </th>
+
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th>213213213213</th>
-                <th>Funko</th>
-                <td>123</td>
-                <td>Pedro</td>
-                <td>687748</td>
-                <td>Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es v</td>
-                <td>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+            @foreach (var unProducto in listadoProductos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.PRODUCTO_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.NOMBREP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.PRECIO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.DESCRIP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.CATEGORIA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.UD_DISPO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.V_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.IMAGEN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.LINK)
+                    </td>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
 
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th>213213213213</th>
-                <th>Funko</th>
-                <td>123</td>
-                <td>Pedro</td>
-                <td>687748</td>
-                <td>Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es v</td>
-                <td>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                        </div>
 
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th>213213213213</th>
-                <th>Funko</th>
-                <td>123</td>
-                <td>Pedro</td>
-                <td>687748</td>
-                <td>Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es v</td>
-                <td>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "EditarProducto", new { id = unProducto.PRODUCTO_ID })
+                    </td>
+                </tr>
 
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th>213213213213</th>
-                <th>Funko</th>
-                <td>123</td>
-                <td>Pedro</td>
-                <td>687748</td>
-                <td>Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es Funko Oso volador increiblemente increible y fantasticamente fantastico, pero que chulo es v</td>
-                <td>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
-
-                    </div>
-                </td>
-            </tr>
+            }
         </tbody>
     </table>
-        <button type="submit" class="btn btn-primary mb-2">Validar Acciones</button>
+    <button type="submit" class="btn btn-primary mb-2">Validar Acciones</button>
     <br />
-        <p >O quizas quieras: @Html.ActionLink("Añadir un producto", "NuevoProducto", "Admin")</p> 
+    <p>O quizas quieras: @Html.ActionLink("Añadir un producto", "NuevoProducto", "Admin")</p>
 </form>
