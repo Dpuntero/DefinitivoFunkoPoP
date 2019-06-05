@@ -15,23 +15,23 @@
     <hr />
     <div class="col-sm-12 col-md-12">
         <div class="col-sm-12 col-md-2">
-            <img src="~/Content/images/@Model.NOMBREP/@Model.NOMBREP'1.jpg'" class="col-xs-2 col-sm-2 col-md-12" />
-            <img src="~/Content/images/@Model.NOMBREP/@Model.NOMBREP 2.png" class="col-xs-2 col-sm-2 col-md-12" />
+            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN" class="col-xs-2 col-sm-2 col-md-12" />
+            <img src="~/Content/images/@Model.CATEGORIA/@Model.LINK" class="col-xs-2 col-sm-2 col-md-12" />
 
         </div>
         <div class="col-sm-12 col-md-6">
-            <img src="~/Content/images/'+@Model.NOMBREP+'/'+@Model.NOMBREP'1.jpg" class="col-xs-12 col-sm-12 col-md-12" />
+            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN" class="col-xs-12 col-sm-12 col-md-12" />
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4">
             <p>
                 Descripción del producto:
-                @Model.NOMBREP
+                @Model.DESCRIP
             </p>
-            <h3>@Model.NOMBREP €</h3>
+            <h3>@Model.PRECIO €</h3>
             <form>
                 <div class="form-group">
 
-                    <label for="unidades">Unidades:@Model.NOMBREP </label>
+                    <label for="unidades">Unidades Disponibles:@Model.UD_DISPO </label>
                     <input type="number" class="form-control" id="unidades" width="20">
 
 

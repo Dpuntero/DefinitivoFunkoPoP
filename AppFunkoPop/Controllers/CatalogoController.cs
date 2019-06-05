@@ -12,7 +12,15 @@ namespace ProyectoDawFunko.Controllers
         // GET: Catalogo
         public ActionResult Catalogo()
         {
-            return View();
+            List<PRODUCTO> prod = new List<PRODUCTO>();
+            using (Database1Entities db = new Database1Entities())
+            {
+                prod = db.PRODUCTOes.ToList();
+
+            }
+
+
+            return View(prod);
 
         }
 

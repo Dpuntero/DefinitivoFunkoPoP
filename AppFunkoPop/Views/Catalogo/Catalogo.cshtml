@@ -1,201 +1,59 @@
-﻿@{
-    ViewBag.Title = "Catalogo";
-}
+﻿@model IEnumerable<AppFunkoPop.Models.PRODUCTO>
 
 <h2>Catalogo</h2>
 
 
-    <div class="row">
-        <form>
-         
-          
+<div class="row">
+    <form>
 
-            <div class=" col-sm-6 ">
-                <p>Seleccona la categoría:</p>
-                <select name="cars" class="custom-select custom-select-lg mb-3">
-                    <option selected>Large Custom Select Menu</option>
-                    <option value="JuegoDeTronos">Juego De Tronos</option>
-                    <option value="Marvel">Marvel</option>
-                    <option value="StarWars">Star Wars</option>
-                </select>
-            </div>
-            <div class=" col-sm-6 ">
-                <p>Seleccona la sub-categoría:</p>
-                <select name="cars" class="custom-select custom-select-lg mb-3">
-                    <option selected>Large Custom Select Menu</option>
-                    <option value="JuegoDeTronos">Juego De Tronos</option>
-                    <option value="Marvel">Marvel</option>
-                    <option value="StarWars">Star Wars</option>
-                </select>
 
-            </div>
-        </form>
-    </div>
-    <div class="row">
 
-        <hr />
+        <div class=" col-sm-6 ">
+            <p>Seleccona la categoría:</p>
+            <select name="cars" class="custom-select custom-select-lg mb-3">
+                <option selected>Large Custom Select Menu</option>
+                <option value="JuegoDeTronos">Juego De Tronos</option>
+                <option value="Marvel">Marvel</option>
+                <option value="StarWars">Star Wars</option>
+            </select>
+        </div>
+        <div class=" col-sm-6 ">
+            <p>Seleccona la sub-categoría:</p>
+            <select name="cars" class="custom-select custom-select-lg mb-3">
+                <option selected>Large Custom Select Menu</option>
+                <option value="JuegoDeTronos">Juego De Tronos</option>
+                <option value="Marvel">Marvel</option>
+                <option value="StarWars">Star Wars</option>
+            </select>
 
-       
+        </div>
+    </form>
+</div>
 
+
+<hr />
+@foreach (var prod in Model)
+{
+
+   
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
+                <img src="~/Content/images/@prod.CATEGORIA/@prod.IMAGEN"  />
                 <div class="caption">
-                    <h3>Título de la imagen</h3>
+                    <h3>@prod.NOMBREP</h3>
                     <p>...</p>
                     <p>
-                        <a href="#" class="btn btn-primary" role="button">Botón</a>
+                        <a href="~/Producto/Productos/@prod.PRODUCTO_ID" class="btn btn-primary" role="button">Botón</a>
                         <a href="#" class="btn btn-default" role="button">Botón</a>
                     </p>
                 </div>
             </div>
         </div>
+   
 
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
-                <div class="caption">
-                    <h3>Título de la imagen</h3>
-                    <p>...</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Botón</a>
-                        <a href="#" class="btn btn-default" role="button">Botón</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
-                <div class="caption">
-                    <h3>Título de la imagen</h3>
-                    <p>...</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Botón</a>
-                        <a href="#" class="btn btn-default" role="button">Botón</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
+}
 
     <div class="row">
-        <hr />
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
-                <div class="caption">
-                    <h3>Título de la imagen</h3>
-                    <p>...</p>
-                    <p>
-                        <a href="" class="btn btn-primary" role="button">Botón</a>
-                        <a href="#" class="btn btn-default" role="button">Botón</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
-                <div class="caption">
-                    <h3>Título de la imagen</h3>
-                    <p>...</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Botón</a>
-                        <a href="#" class="btn btn-default" role="button">Botón</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
-                <div class="caption">
-                    <h3>Título de la imagen</h3>
-                    <p>...</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Botón</a>
-                        <a href="#" class="btn btn-default" role="button">Botón</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
-                <div class="caption">
-                    <h3>Título de la imagen</h3>
-                    <p>...</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Botón</a>
-                        <a href="#" class="btn btn-default" role="button">Botón</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="row">
-        <hr />
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
-                <div class="caption">
-                    <h3>Título de la imagen</h3>
-                    <p>...</p>
-                    <p>
-                        <a href="" class="btn btn-primary" role="button">Botón</a>
-                        <a href="#" class="btn btn-default" role="button">Botón</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
-                <div class="caption">
-                    <h3>Título de la imagen</h3>
-                    <p>...</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Botón</a>
-                        <a href="#" class="btn btn-default" role="button">Botón</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
-                <div class="caption">
-                    <h3>Título de la imagen</h3>
-                    <p>...</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Botón</a>
-                        <a href="#" class="btn btn-default" role="button">Botón</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="https://placehold.it/150x80?text=IMAGE" alt="...">
-                <div class="caption">
-                    <h3>Título de la imagen</h3>
-                    <p>...</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Botón</a>
-                        <a href="#" class="btn btn-default" role="button">Botón</a>
-                    </p>
-                </div>
-            </div>
-        </div>
         <ul class="pagination justify-content-end">
             <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
@@ -203,4 +61,5 @@
             <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
         </ul>
     </div>
+
 

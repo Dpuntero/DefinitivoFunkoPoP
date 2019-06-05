@@ -12,7 +12,7 @@
     }
 
 
-    ViewBag.Title = "PanelDeControlUsuarios";
+    ViewBag.Title = "Panel De Control Usuarios";
 }
 
 <h2>PanelDeControlUsuarios</h2>
@@ -21,9 +21,10 @@
 
 <ul class="">
     <li>@Html.ActionLink("Gestionar mis datos", "GestionDatos", "Usuarios")</li>
-    <li>@Html.ActionLink("Ver mis pedidos", "MisPedidos", "Pedidos", Session["ID_ROL"])</li>
+    <li>@Html.ActionLink("Cambiar Contraseña", "CambiarContraseña", "Usuarios")</li>
+    <li>@Html.ActionLink("Ver mis pedidos", "MisPedidos", "Pedidos")</li>
 
     <li>@Html.ActionLink("Ver mi carrito", "InicioCarrito", "Carrito")</li>
-   
+
 
 </ul>
