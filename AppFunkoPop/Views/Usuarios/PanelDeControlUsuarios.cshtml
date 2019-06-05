@@ -21,7 +21,7 @@
 
 <ul class="">
     <li>@Html.ActionLink("Gestionar mis datos", "GestionDatos", "Usuarios")</li>
-    <li>@Html.ActionLink("Ver mis pedidos", "MisPedidos", "Pedidos")</li>
+    <li>@Html.ActionLink("Ver mis pedidos", "MisPedidos", "Pedidos", Session["ID_ROL"])</li>
 
     <li>@Html.ActionLink("Ver mi carrito", "InicioCarrito", "Carrito")</li>
    
