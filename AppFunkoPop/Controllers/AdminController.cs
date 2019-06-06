@@ -69,11 +69,33 @@ namespace ProyectoDawFunko.Controllers
 
         //FIN METODOS PRODUCTOS
 
+        //METODOS PARA GESTION DE PEDIDOS
         public ActionResult GestionPedidos()
         {
-            return View();
+            using (Database1Entities db = new Database1Entities())
+            {
+                List<PEDIDO> pedidos = new List<PEDIDO>();
+                pedidos = db.PEDIDOes.ToList();
+
+                ViewBag.listaEstados = new List<ESTADO_ENVIO>(db.ESTADO_ENVIO.ToList());
+                return View(pedidos);
+
+            }
         }
 
-       
+        [HttpPost]
+        //public ActionResult CambiarEstado(PEDIDO pedidoModificado)
+        public ActionResult CambiarEstado(int pedidoId, int estadoId)
+        {
+            using (Database1Entities db = new Database1Entities())
+            {
+                PEDIDO pedidoOriginal = db.PEDIDOes.Where(c => c.PEDIDO_ID == pedidoId).First();
+
+                pedidoOriginal.ESTADO_ENVIO = estadoId;
+
+                db.SaveChanges();
+                return RedirectToAction("GestionPedidos");
+            }
+        }
     }
 }

@@ -1,90 +1,82 @@
-﻿
-@{
+﻿@model IEnumerable<AppFunkoPop.Models.PEDIDO>
+    @{
     if (Session["ID_ROL"] == null)
     {
-        Response.Redirect("~/Home/Index");
+    Response.Redirect("~/Home/Index");
     }
     else
     {
-        if (Session["ID_ROL"].ToString() != "2")
-        {
-            Response.Redirect("~/Home/Index");
-        }
+    if (Session["ID_ROL"].ToString() != "2")
+    {
+    Response.Redirect("~/Home/Index");
+    }
     }
 
     ViewBag.Title = "GestionPedidos";
-}
+    List<AppFunkoPop.Models.ESTADO_ENVIO>
+        estados = ViewBag.listaEstados;
+        }
 
-<h2>Listado de pedidos</h2>
-<p>Listado de pedidos pendientes de validar:</p>
-<form>
-    <button type="submit" class="btn btn-primary mb-2">Validar Acciones</button>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>IdPedido</th>
-                <th>IdUsuario</th>
-                <th>Usuario</th>
-                <th>Dirección</th>
-                <th>Nº de pedido</th>
-                <th>Artículos</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>213213213213</th>
-                <th>23</th>
-                <td>Casa</td>
-                <td>Pedro</td>
-                <td>687748</td>
-                <td>Funko Oso</td>
-                <td>
-                    <select name="pedidoId" class="custom-select">
-                        <option selected>Selecciona una opcion</option>
-                        <option value="EnPago">En pago</option>
-                        <option value="EnCamino">En camino</option>
-                        <option value="Entregado">Entregado</option>
-                        <option value="Entregado">Cancelado</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>213123213</th>
-                <th>213</th>
-                <td>Carlos</td>
-                <td>Casa</td>
-                <td>78779</td>
-                <td>Funko reina roja, funko batman...</td>
-                <td>
-                    <select name="pedidoId" class="custom-select">
-                        <option selected>Selecciona una opcion</option>
-                        <option value="EnPago">En pago</option>
-                        <option value="EnCamino">En camino</option>
-                        <option value="Entregado">Entregado</option>
-                        <option value="Entregado">Cancelado</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>34534534</th>
-                <th>23</th>
-                <td>Juan</td>
-                <td>Casa</td>
-                <td>8797979</td>
-                <td>Funko Maybe</td>
-                <td>
-                    <select name="pedidoId" class="custom-select">
-                        <option selected>Selecciona una opcion</option>
-                        <option value="EnPago">En pago</option>
-                        <option value="EnCamino">En camino</option>
-                        <option value="Entregado">Entregado</option>
-                        <option value="Entregado">Cancelado</option>
-                    </select>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+        <h2>Listado de pedidos</h2>
+        <p>Listado de pedidos pendientes de validar:</p>
+        @using (Html.BeginForm("CambiarEstado", "Admin", FormMethod.Post))
+        {
 
-</form>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>IdPedido</th>
+                    <th>IdUsuario</th>
+                    <th>Precio</th>
+                    <th>Informacion de pago</th>
+                    <th>Estado</th>
 
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var unPedido in Model)
+                {
+                using (Html.BeginForm("CambiarEstado", "Admin", FormMethod.Post))
+                {
+
+                @Html.Hidden("pedidoID", unPedido.PEDIDO_ID)
+                <tr>
+                    <td>@unPedido.PEDIDO_ID</td>
+                    <td>@unPedido.USUARIO_ID</td>
+                    <td>@unPedido.PRECIO_TOTAL</td>
+                    <td>@unPedido.INFO_PAGO</td>
+                    <td>
+
+
+                        @*@Html.DropDownList("estadoId", (SelectList)ViewBag.listaEstados, new { onchange = "this.form.submit();" })*@
+
+
+                        <select id="estadoId" name="estadoId" onchange="this.form.submit()">
+
+                            @foreach (var estado in estados)
+                            {
+                            if (estado.ID_ESTADO == unPedido.ESTADO_ENVIO)
+                            {
+                            <option value=@estado.ID_ESTADO selected>@estado.TEXTO_ESTADO</option>
+                            }
+                            else
+                            {
+                            <option value=@estado.ID_ESTADO>@estado.TEXTO_ESTADO</option>
+                            }
+                            }
+
+                        </select>
+                    </td>
+
+                </tr>
+                }
+                }
+
+
+            </tbody>
+        </table>
+
+
+
+        }
