@@ -25,7 +25,7 @@
                 @foreach (var prod2 in prod.PEDIDOPRODUCTOes)
                 {
                 <a href="~/Producto/Productos/@prod2.PRODUCTO.PRODUCTO_ID">
-                    <img src="~/Content/images/@prod2.PRODUCTO.IMAGEN" width="100 px" />
+                    <img src="~/Content/images/@prod2.PRODUCTO.CATEGORIA/@prod2.PRODUCTO.IMAGEN" width="100 px" />
                     @prod2.PRODUCTO.NOMBREP
                 </a>
 
