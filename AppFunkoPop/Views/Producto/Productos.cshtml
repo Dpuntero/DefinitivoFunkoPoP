@@ -24,11 +24,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4">
             <p>
-                Descripción del producto:
+               @AppFunkoPop.Resources.ProductosTexts.DescriptionProducts:
                 @Model.DESCRIP
             </p>
             <h3>@Model.PRECIO €</h3>
-            <form>
+            @using (Html.BeginForm("AñadirProductoACarrito", "Carrito", FormMethod.Post))
+            {
                 <div class="form-group">
 
                     <label for="unidades">Unidades Disponibles:@Model.UD_DISPO </label>
@@ -37,8 +38,8 @@
 
                 </div>
                 <button type="submit" class="btn btn-default">Añadir al  carrito</button>
-            </form>
-        </div>
+            }
+            </div>
 
 
     </div>
