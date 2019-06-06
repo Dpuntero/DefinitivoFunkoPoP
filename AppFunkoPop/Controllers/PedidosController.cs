@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AppFunkoPop.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace ProyectoDawFunko.Controllers
 {
