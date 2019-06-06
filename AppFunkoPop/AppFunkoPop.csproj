@@ -146,6 +146,7 @@
       <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CatalogoModel.cs" />
+    <Compile Include="Models\ListarPedidosModel.cs" />
     <Compile Include="Models\PasswordChangeModel.cs" />
     <Compile Include="Models\DDBBFunkoModel.Context.cs">
       <AutoGen>True</AutoGen>

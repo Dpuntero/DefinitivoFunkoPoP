@@ -41,7 +41,19 @@ namespace AppFunkoPop.Controllers
             
         }
 
-        
+        public ActionResult VerPedido()
+        {
+            USUARIO usuario = new USUARIO();
+            using (Database1Entities db = new Database1Entities())
+            {
+                int idUsu = Convert.ToInt32(Session["USUARIO_ID"]);
+                usuario = db.USUARIOs.Where(c => c.USUARIO_ID == idUsu).First();
+
+            }
+            return View(usuario);
+        }
+
+
 
 
 
