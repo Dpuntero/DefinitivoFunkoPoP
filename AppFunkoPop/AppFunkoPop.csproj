@@ -176,6 +176,8 @@
     <Compile Include="Models\PRODUCTO.cs">
       <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductoCookie.cs" />
+    <Compile Include="Models\ProductoUnidades.cs" />
     <Compile Include="Models\PROVEEDOR.cs">
       <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
     </Compile>
