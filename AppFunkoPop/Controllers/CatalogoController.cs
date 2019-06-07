@@ -13,22 +13,49 @@ namespace ProyectoDawFunko.Controllers
         public ActionResult Catalogo()
         {
             List<PRODUCTO> prod = new List<PRODUCTO>();
-            using (Database1Entities db = new Database1Entities())
+            string Categoria = Request.Form["categoria"];
+            if (Categoria == null||Categoria=="todos")
             {
-                prod = db.PRODUCTOes.ToList();
+               
+                using (Database1Entities db = new Database1Entities())
+                {
+                    prod = db.PRODUCTOes.ToList();
 
+                }
             }
+            else
+            {
+               
+              
+                using (Database1Entities db = new Database1Entities())
+                {
+                    prod = db.PRODUCTOes.Where(c => c.CATEGORIA == Categoria).ToList();
 
+                }
+            }
 
             return View(prod);
 
         }
-
+        /*
         public ActionResult MostrarProductos()
         {
 
             
             return View();
         }
+        [HttpPost]
+        public ActionResult FiltrarCategorias()
+        {
+            string Categoria = Request.Form["categoria"];
+            List<PRODUCTO> prod = new List<PRODUCTO>();
+            using (Database1Entities db = new Database1Entities())
+            {
+                prod = db.PRODUCTOes.Where(c=> c.CATEGORIA==Categoria).ToList();
+
+            }
+
+            return View(prod);
+        }*/
     }
 }

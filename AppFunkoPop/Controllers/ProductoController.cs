@@ -13,13 +13,33 @@ namespace AppFunkoPop.Controllers
         // GET: Productos
         public ActionResult Productos(int id)
         {
-            PRODUCTO prod = new PRODUCTO();
-            using (Database1Entities db = new Database1Entities())
+
+               
+            
+                PRODUCTO prod = new PRODUCTO();
+                using (Database1Entities db = new Database1Entities())
+                {
+
+                    prod = db.PRODUCTOes.Find(id);
+
+
+
+                }
+            if (prod!= null)
             {
-                 prod = db.PRODUCTOes.Find(id);
-                
-            }
                 return View(prod);
+
+            }
+            else
+            {
+                return RedirectToAction("Catalogo", "Catalogo");
+            }
+            
+
+
+
+
+
         }
 
         public ActionResult NuevoProducto()

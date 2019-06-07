@@ -190,41 +190,53 @@ namespace AppFunkoPop.Controllers
         [HttpPost]
         public ActionResult CambiarContraseña(AppFunkoPop.Models.PasswordChangeModel passModel)
         {
-            if (passModel.contrasenaNueva == passModel.contrasenaRepetida)
+            if (passModel.contrasenaAntigua == Convert.ToString(Session["PASSWD"]))
             {
-                if (passModel.contrasenaNueva == passModel.contrasenaAntigua)
-                {
-                    passModel.contrasenaErrorMessage = "La nueva contraseña no puede ser igual a la anterior.";
 
-                    return RedirectToAction("CambiarContraseña", "Usuarios", passModel);
+
+                if (passModel.contrasenaNueva == passModel.contrasenaRepetida)
+                {
+                    if (passModel.contrasenaNueva == passModel.contrasenaAntigua)
+                    {
+                        passModel.contrasenaErrorMessage = "La nueva contraseña no puede ser igual a la anterior.";
+
+                        return RedirectToAction("CambiarContraseña", "Usuarios", passModel);
+                    }
+                    else
+                    {
+                        using (Database1Entities db = new Database1Entities())
+                        {
+                            int idUsu = Convert.ToInt32(Session["USUARIO_ID"]);
+
+                            USUARIO usuario = db.USUARIOs.Where(c => c.USUARIO_ID == idUsu).First();
+                            usuario.PASSWD = passModel.contrasenaNueva;
+                            db.SaveChanges();
+
+                            var userDetails = db.USUARIOs.Where(x => x.USUARIO_ID == usuario.USUARIO_ID).FirstOrDefault();
+                            Session["PASSWD"] = userDetails.PASSWD;
+
+
+                        }
+
+                        return RedirectToAction("Index", "Home");
+                    }
+
+
                 }
                 else
                 {
-                    using (Database1Entities db = new Database1Entities())
-                    {
-                        int idUsu = Convert.ToInt32(Session["USUARIO_ID"]);
+                    passModel.contrasenaErrorMessage = "Las nueva contraseña no coincide.";
 
-                        USUARIO usuario = db.USUARIOs.Where(c => c.USUARIO_ID == idUsu).First();
-                        usuario.PASSWD = passModel.contrasenaNueva;
-                        db.SaveChanges();
+                    return RedirectToAction("CambiarContraseña", "Usuarios", passModel);
 
-                        var userDetails = db.USUARIOs.Where(x => x.USUARIO_ID == usuario.USUARIO_ID).FirstOrDefault();                 
-                        Session["PASSWD"] = userDetails.PASSWD;
-                        
 
-                    }
-
-                    return RedirectToAction("Index", "Home");
                 }
-
-             
             }
             else
             {
-                passModel.contrasenaErrorMessage = "Las nueva contraseña no coincide.";
+                passModel.contrasenaErrorMessage = "La contraseña antigua no es correcta.";
 
-                return RedirectToAction("CambiarContraseña","Usuarios",passModel);
-
+                return RedirectToAction("CambiarContraseña", "Usuarios", passModel);
 
             }
 
