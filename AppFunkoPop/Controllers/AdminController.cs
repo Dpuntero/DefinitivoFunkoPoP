@@ -47,11 +47,11 @@ namespace ProyectoDawFunko.Controllers
 
             return View("EditandoProducto", productoAEditar);
         }
-       
+
 
         [HttpPost]
         public ActionResult EditandoProducto(PRODUCTO productoModificado)
-        {           
+        {
             using (Database1Entities db = new Database1Entities())
             {
                 PRODUCTO productoOriginal = db.PRODUCTOes.Where(c => c.PRODUCTO_ID == productoModificado.PRODUCTO_ID).First();
@@ -97,5 +97,29 @@ namespace ProyectoDawFunko.Controllers
                 return RedirectToAction("GestionPedidos");
             }
         }
+
+
+        [HttpPost]
+        //Metodo para eliminar productos por su id
+        public ActionResult EliminarProductos(int[] borrados)
+        {
+
+            using (Database1Entities db = new Database1Entities())
+            {
+                foreach (var id in borrados)
+                {
+                    if (id != 0)
+                    {
+                        System.Diagnostics.Debug.WriteLine(id);
+                        PRODUCTO aEliminar = db.PRODUCTOes.Find(id);
+                        db.PRODUCTOes.Remove(aEliminar);
+                        
+                    }
+                }
+                db.SaveChanges();
+                return RedirectToAction("GestionProductos");
+            }
+        }
+
     }
 }
