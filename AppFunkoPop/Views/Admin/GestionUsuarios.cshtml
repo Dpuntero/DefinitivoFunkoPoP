@@ -18,7 +18,8 @@
 
 <h2>Listado de Usuarios</h2>
 <p>Listado de sus Usuarios:</p>
-<form>
+@using (Html.BeginForm("EliminarUsuarios", "Admin", FormMethod.Post))
+{
     <table class="table table-striped">
         <thead>
             <tr>
@@ -90,7 +91,7 @@
                     </td>
                     <td>
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="borrados" value="@unUsuario.USUARIO_ID">
                         </div>
 
                     </td>
@@ -102,8 +103,10 @@
             }
         </tbody>
     </table>
-    <button type="submit" class="btn btn-primary mb-2">Validar Acciones</button>
+    <button type="submit" class="btn btn-primary mb-2" style="color: white;" name="borrados">
+        Confirmar borrado
+    </button>
     <br />
-</form>
+}
 
 

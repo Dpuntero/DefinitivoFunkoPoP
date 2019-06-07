@@ -121,13 +121,35 @@ namespace ProyectoDawFunko.Controllers
                 usuarioOriginal.NOMBRE = usuarioModificado.NOMBRE;
                 usuarioOriginal.APELLIDOS = usuarioModificado.APELLIDOS;
                 usuarioOriginal.EMAIL = usuarioModificado.EMAIL;
-                usuarioOriginal.PASSWD = usuarioModificado.PASSWD;
+                usuarioOriginal.PASSWD = usuarioOriginal.PASSWD; //Para no tener que tocar la pass
                 usuarioOriginal.TLFN = usuarioModificado.TLFN;
                 usuarioOriginal.DIRECCION = usuarioModificado.DIRECCION;
                 usuarioOriginal.CIUDAD = usuarioModificado.CIUDAD;
                 usuarioOriginal.PAIS = usuarioModificado.PAIS;
                 usuarioOriginal.CP = usuarioModificado.CP;
                 usuarioOriginal.ROL.N_ROL = usuarioModificado.ROL.N_ROL;
+                db.SaveChanges();
+                return RedirectToAction("GestionUsuarios");
+            }
+        }
+
+        [HttpPost]
+        //Metodo para eliminar productos por su id
+        public ActionResult EliminarUsuarios(int[] borrados)
+        {
+
+            using (Database1Entities db = new Database1Entities())
+            {
+                foreach (var id in borrados)
+                {
+                    if (id != 0)
+                    {
+                        System.Diagnostics.Debug.WriteLine(id);
+                        USUARIO aEliminar = db.USUARIOs.Find(id);
+                        db.USUARIOs.Remove(aEliminar);
+
+                    }
+                }
                 db.SaveChanges();
                 return RedirectToAction("GestionUsuarios");
             }
