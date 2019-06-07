@@ -52,7 +52,11 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -138,6 +142,11 @@
     <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Database1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,6 +157,7 @@
       <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CatalogoModel.cs" />
+    <Compile Include="Models\ListarPedidosModel.cs" />
     <Compile Include="Models\PasswordChangeModel.cs" />
     <Compile Include="Models\DDBBFunkoModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -247,6 +257,17 @@
     <Content Include="Models\DDBBFunkoModel.edmx.diagram">
       <DependentUpon>DDBBFunkoModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Database1DataSet.xsc">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Database1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Database1DataSet.xss">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -291,6 +312,7 @@
     <Content Include="Views\Producto\NuevoProducto.cshtml" />
     <Content Include="Views\Usuarios\CambiarContraseña.cshtml" />
     <Content Include="Views\Error\_ErrorPage.cshtml" />
+    <Content Include="Views\Admin\EditandoUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Languaje\" />

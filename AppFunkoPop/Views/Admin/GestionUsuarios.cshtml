@@ -1,4 +1,5 @@
-﻿@{
+﻿@model AppFunkoPop.Models.USUARIO
+@{
     if (Session["ID_ROL"] == null)
     {
         Response.Redirect("~/Home/Index");
@@ -12,5 +13,97 @@
     }
 
     ViewBag.Title = "GestionUsuarios";
+    List<AppFunkoPop.Models.USUARIO> listadoUsuarios = ViewBag.Usuarios;
 }
+
+<h2>Listado de Usuarios</h2>
+<p>Listado de sus Usuarios:</p>
+<form>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellidos
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Contraseña
+                </th>
+                <th>
+                    Teléfono
+                </th>
+                <th>
+                    Direccion
+                </th>
+                <th>
+                    Ciudad
+                </th>
+                <th>
+                    Pais
+                </th>
+                <th>
+                    Rol
+                </th>
+                <th>
+                    Borrar
+                </th>
+                <th>
+                    Editar
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var unUsuario in listadoUsuarios)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => unUsuario.NOMBRE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unUsuario.APELLIDOS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unUsuario.EMAIL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unUsuario.PASSWD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unUsuario.TLFN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unUsuario.DIRECCION)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unUsuario.CIUDAD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unUsuario.PAIS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unUsuario.ROL.N_ROL)
+                    </td>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                        </div>
+
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "EditarUsuario", new { id = unUsuario.USUARIO_ID })
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary mb-2">Validar Acciones</button>
+    <br />
+</form>
+
 
