@@ -22,12 +22,6 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
 
-        public ActionResult GestionUsuarios()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
 
         //METODOS PARA GESTION DE PRODUCTOS
         // GET: PRODUCTOes
@@ -95,6 +89,47 @@ namespace ProyectoDawFunko.Controllers
 
                 db.SaveChanges();
                 return RedirectToAction("GestionPedidos");
+            }
+        }
+
+        //METODOS GESTION DE USUARIOS
+
+        public ActionResult GestionUsuarios()
+        {
+            Database1Entities db = new Database1Entities();
+            ViewBag.Usuarios = db.USUARIOs.ToList();
+            return View();
+        }
+
+        // GET: USUARIOs/EditarUsuario/
+
+        public ActionResult EditarUsuario(int? id)
+        {
+            Database1Entities db = new Database1Entities();
+            USUARIO usuarioAEditar = db.USUARIOs.Find(id);
+
+            return View("EditandoUsuario", usuarioAEditar);
+        }
+
+
+        [HttpPost]
+        public ActionResult EditandoUsuario(USUARIO usuarioModificado)
+        {
+            using (Database1Entities db = new Database1Entities())
+            {
+                USUARIO usuarioOriginal = db.USUARIOs.Where(c => c.USUARIO_ID == usuarioModificado.USUARIO_ID).First();
+                usuarioOriginal.NOMBRE = usuarioModificado.NOMBRE;
+                usuarioOriginal.APELLIDOS = usuarioModificado.APELLIDOS;
+                usuarioOriginal.EMAIL = usuarioModificado.EMAIL;
+                usuarioOriginal.PASSWD = usuarioModificado.PASSWD;
+                usuarioOriginal.TLFN = usuarioModificado.TLFN;
+                usuarioOriginal.DIRECCION = usuarioModificado.DIRECCION;
+                usuarioOriginal.CIUDAD = usuarioModificado.CIUDAD;
+                usuarioOriginal.PAIS = usuarioModificado.PAIS;
+                usuarioOriginal.CP = usuarioModificado.CP;
+                usuarioOriginal.ROL.N_ROL = usuarioModificado.ROL.N_ROL;
+                db.SaveChanges();
+                return RedirectToAction("GestionUsuarios");
             }
         }
     }
