@@ -3,7 +3,7 @@
     ViewBag.Title = "Registrarse";
 }
 
-<h2 style="padding-left:100px;">@ViewBag.Title.</h2>
+<h2 style="padding-left:100px;"> @AppFunkoPop.Resources.Account.registrarse</h2>
 
 
 
@@ -14,7 +14,7 @@
     <div class="row" style="padding-bottom: 15px; padding-left:100px;">
         <div class="col-sm-9">
 
-            <h4>Cree una cuenta nueva.</h4>
+            <h4> @AppFunkoPop.Resources.Account.crearNuevaCuenta</h4>
             <hr />
             @using (Html.BeginForm("RegistrarUsuario", "Account", FormMethod.Post))
             {

@@ -196,7 +196,7 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Register.
+        ///   Busca una cadena traducida similar a Sign in.
         /// </summary>
         public static string registrarse {
             get {

@@ -19,7 +19,8 @@
             }
 
         #footer {
-            background-color: #00A2E8
+            background-color: #00A2E8;
+            
         }
 
         #tituloFooter {
@@ -37,15 +38,23 @@
         footer {
             color: white;
         }
+        header{
+            margin-top: 0px;
+        }
+
+        body{
+            padding:0px;
+        }
+
     </style>
 
 </head>
 <body>
     <li>
-        <a class="navbar-brand-flags" href="@Url.Action(" Change", "Language" , new { LanguageAbbreviation="en" }, null)">
+        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="en" }, null)">
             <img src="~/Content/images/Flags/555417.svg" alt="ROMO Logo" /> <span>EN</span>
         </a>
-        <a class="navbar-brand-flags" href="@Url.Action(" Change", "Language" , new { LanguageAbbreviation="es" }, null)">
+        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="es" }, null)">
             <img src="~/Content/images/Flags/555635.svg" alt="ROMO Logo" /> <span>ES</span>
         </a>
     </li>

@@ -160,7 +160,7 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Enter.
+        ///   Busca una cadena traducida similar a Log in.
         /// </summary>
         public static string entrar {
             get {
