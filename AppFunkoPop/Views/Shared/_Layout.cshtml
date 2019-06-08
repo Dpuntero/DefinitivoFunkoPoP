@@ -33,7 +33,8 @@
             text-align: center;
             padding-bottom: 30px;
         }
-        footer{
+
+        footer {
             color: white;
         }
     </style>
@@ -41,10 +42,10 @@
 </head>
 <body>
     <li>
-        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language", new { LanguageAbbreviation = "en" }, null)">
+        <a class="navbar-brand-flags" href="@Url.Action(" Change", "Language" , new { LanguageAbbreviation="en" }, null)">
             <img src="~/Content/images/Flags/555417.svg" alt="ROMO Logo" /> <span>EN</span>
         </a>
-        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language", new { LanguageAbbreviation = "es" }, null)">
+        <a class="navbar-brand-flags" href="@Url.Action(" Change", "Language" , new { LanguageAbbreviation="es" }, null)">
             <img src="~/Content/images/Flags/555635.svg" alt="ROMO Logo" /> <span>ES</span>
         </a>
     </li>
@@ -63,7 +64,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink(AppFunkoPop.Resources. "Index", "Home")</li>
+                    <li>@Html.ActionLink(AppFunkoPop.Resources.HomeTexts.Home, "Index", "Home")</li>
                     <li>@Html.ActionLink("Catalogo", "Catalogo", "Catalogo")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
