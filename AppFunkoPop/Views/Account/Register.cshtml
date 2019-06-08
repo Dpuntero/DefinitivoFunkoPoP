@@ -16,7 +16,7 @@
 
             <h4>Cree una cuenta nueva.</h4>
             <hr />
-            @using (Html.BeginForm("RegistrarUsuario", "Account", FormMethod.Post))
+            @using (Html.BeginForm())
             {
                 <p>
                     @Html.LabelFor(model => model.NOMBRE)
@@ -86,26 +86,12 @@
                     @Html.ValidationMessageFor(model => model.CP)
 
                 </p>
-                <label> @Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                @*<label> @Html.DisplayFor(model => model.LoginErrorMessage)</label>*@
                 <input type="submit" name="entrar" value="Entrar" />
                 <input type="reset" name="borrar" value="borrar" />
             }
 
-            <!--
-    <form action="CrearUsuario" method="post">
-        <label>Nombre: <input type="text" name="nombre" value="" /></label></br>
-        <label>Apellidos: <input type="text" name="apellidos" value="" /></label></br>
-        <label>Email: <input type="text" name="email" value="" /></label></br>
-        <label>Password: <input type="text" name="passwd" value="" /></label></br>
-        <label>Teléfono: <input type="text" name="telefono" value="" /></label></br>
-        <label>Dirección: <input type="text" name="direccion" value="" /></label></br>
-        <label>Ciudad: <input type="text" name="ciudad" value="" /></label></br>
-        <label>País: <input type="text" name="pais" value="" /></label></br>
-        <label>Codigo Postal: <input type="text" name="cp" value="" /></label></br>
-
-        <input type="submit" name="enviar" value="enviar" />
-
-    </form>-->
+          
             @Html.ValidationSummary()
 
         </div>
