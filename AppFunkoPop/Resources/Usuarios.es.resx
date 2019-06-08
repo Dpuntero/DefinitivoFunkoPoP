@@ -117,7 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Home" xml:space="preserve">
-    <value>inicio</value>
+  <data name="apellidos" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="borrar" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="cambiarContras" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="cambiarContrasena" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="ciudad" xml:space="preserve">
+    <value>Cuidad</value>
+  </data>
+  <data name="codigoPostal" xml:space="preserve">
+    <value>Código postal</value>
+  </data>
+  <data name="confContNueva" xml:space="preserve">
+    <value>Confirme la nueva contraseña</value>
+  </data>
+  <data name="contAntigua" xml:space="preserve">
+    <value>Contraseña antigua</value>
+  </data>
+  <data name="contNueva" xml:space="preserve">
+    <value>Contraseña nueva</value>
+  </data>
+  <data name="direccion" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="entrar" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
+  <data name="gestionarMisDatos" xml:space="preserve">
+    <value>Gestionar mis datos</value>
+  </data>
+  <data name="miCarrito" xml:space="preserve">
+    <value>Ver mi carrito</value>
+  </data>
+  <data name="misPedidos" xml:space="preserve">
+    <value>Ver mis pedidos</value>
+  </data>
+  <data name="nombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="pais" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="panelControlUsuarios" xml:space="preserve">
+    <value>Panel de control de usuarios</value>
+  </data>
+  <data name="queQuieresHacer" xml:space="preserve">
+    <value>¿Qué quieres hacer?</value>
+  </data>
+  <data name="telefono" xml:space="preserve">
+    <value>Teléfono</value>
   </data>
 </root>

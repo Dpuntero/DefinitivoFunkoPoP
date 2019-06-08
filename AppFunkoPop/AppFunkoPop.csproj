@@ -198,25 +198,85 @@
       <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Account.es.Designer.cs">
+      <DependentUpon>Account.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Admin.Designer.cs">
+      <DependentUpon>Admin.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Catalogo.Designer.cs">
+      <DependentUpon>Catalogo.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\HomeTexts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeTexts.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\ProductosTexts.Designer.cs">
-      <DependentUpon>ProductosTexts.resx</DependentUpon>
+    <Compile Include="Resources\Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources\ProductosTexts.es.Designer.cs">
-      <DependentUpon>ProductosTexts.es.resx</DependentUpon>
+    <Compile Include="Resources\Productos.Designer.cs">
+      <DependentUpon>Productos.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources\HomeTexts.es.Designer.cs">
+    <Compile Include="Resources\Productos.es.Designer.cs">
+      <DependentUpon>Productos.es.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HomeTexts.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Home.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Admin.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Admin.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Account.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Catalogo.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Catalogo.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Pedidos.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pedidos.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Shared.es.Designer.cs">
+      <DependentUpon>Shared.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Usuarios.es.Designer.cs">
+      <DependentUpon>Usuarios.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Shared.Designer.cs">
+      <DependentUpon>Shared.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -334,21 +394,69 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\ProductosTexts.resx">
+    <EmbeddedResource Include="Resources\Account.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ProductosTexts.Designer.cs</LastGenOutput>
+      <LastGenOutput>Account.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ProductosTexts.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ProductosTexts.es.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="Resources\Admin.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Admin.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\HomeTexts.es.resx">
+    <EmbeddedResource Include="Resources\Catalogo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Catalogo.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Pedidos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Pedidos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Productos.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>HomeTexts.es.Designer.cs</LastGenOutput>
+      <LastGenOutput>Productos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Productos.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Productos.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Home.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\HomeTexts.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Admin.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Admin.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Account.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Account.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Catalogo.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Catalogo.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Pedidos.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Pedidos.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Shared.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Usuarios.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Usuarios.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Usuarios.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Usuarios.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Shared.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

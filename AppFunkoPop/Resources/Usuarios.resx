@@ -117,7 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Home" xml:space="preserve">
-    <value>inicio</value>
+  <data name="apellidos" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="borrar" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="cambiarContras" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="cambiarContrasena" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="ciudad" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="codigoPostal" xml:space="preserve">
+    <value>Postal code</value>
+  </data>
+  <data name="confContNueva" xml:space="preserve">
+    <value>Confirm new password</value>
+  </data>
+  <data name="contAntigua" xml:space="preserve">
+    <value>Old password</value>
+  </data>
+  <data name="contNueva" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="direccion" xml:space="preserve">
+    <value>Adress</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="entrar" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="gestionarMisDatos" xml:space="preserve">
+    <value>Manage my account</value>
+  </data>
+  <data name="miCarrito" xml:space="preserve">
+    <value>View my cart</value>
+  </data>
+  <data name="misPedidos" xml:space="preserve">
+    <value>View my orders</value>
+  </data>
+  <data name="nombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="pais" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="panelControlUsuarios" xml:space="preserve">
+    <value>User control panel</value>
+  </data>
+  <data name="queQuieresHacer" xml:space="preserve">
+    <value>¿What do you want to do?</value>
+  </data>
+  <data name="telefono" xml:space="preserve">
+    <value>Phone number</value>
   </data>
 </root>

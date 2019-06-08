@@ -117,7 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DescriptionProducts" xml:space="preserve">
-    <value>Description products</value>
+  <data name="añadirProducto" xml:space="preserve">
+    <value>Add new product</value>
+  </data>
+  <data name="cambiarContrasena" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="categoria" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="decripcion" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="editar" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="estado" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="gestionarMisDatos" xml:space="preserve">
+    <value>Manage my info</value>
+  </data>
+  <data name="gestionesAdmin" xml:space="preserve">
+    <value>Administrator's management</value>
+  </data>
+  <data name="gestionesPropioUsuario" xml:space="preserve">
+    <value>Manage my account</value>
+  </data>
+  <data name="gestionPedidos" xml:space="preserve">
+    <value>Orders management</value>
+  </data>
+  <data name="gestionProductos" xml:space="preserve">
+    <value>Products management</value>
+  </data>
+  <data name="gestionUsuarios" xml:space="preserve">
+    <value>Users management</value>
+  </data>
+  <data name="guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="idProducto" xml:space="preserve">
+    <value>Product Id</value>
+  </data>
+  <data name="idVendedor" xml:space="preserve">
+    <value>Provider Id</value>
+  </data>
+  <data name="imagen" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="infoPago" xml:space="preserve">
+    <value>Payment information</value>
+  </data>
+  <data name="link" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="listadoPedidos" xml:space="preserve">
+    <value>Oder list</value>
+  </data>
+  <data name="nombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="precio" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="producto" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="unidadesDisp" xml:space="preserve">
+    <value>Units available</value>
+  </data>
+  <data name="validarAcciones" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="vendedor" xml:space="preserve">
+    <value>Provider</value>
+  </data>
+  <data name="volver" xml:space="preserve">
+    <value>Go back</value>
   </data>
 </root>

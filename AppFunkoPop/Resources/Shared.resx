@@ -117,7 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Home" xml:space="preserve">
-    <value>inicio</value>
+  <data name="avisoLegal" xml:space="preserve">
+    <value>Legal advice</value>
+  </data>
+  <data name="bienvenidoAdmin" xml:space="preserve">
+    <value>Wellcome admin</value>
+  </data>
+  <data name="bloqueado" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="carrito" xml:space="preserve">
+    <value>Cart</value>
+  </data>
+  <data name="catalogo" xml:space="preserve">
+    <value>Catalogue</value>
+  </data>
+  <data name="cerrarSesion" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="contactanos" xml:space="preserve">
+    <value>Contact us</value>
+  </data>
+  <data name="cuentaBloqueada" xml:space="preserve">
+    <value>This account id blocked, try it again later.</value>
+  </data>
+  <data name="dondeEstamos" xml:space="preserve">
+    <value>Where we are</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="errorSolicitud" xml:space="preserve">
+    <value>Error procesing the reguest</value>
+  </data>
+  <data name="hola" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="iniciarSesion" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="inicio" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="politicaPrivacidad" xml:space="preserve">
+    <value>Privacy policy</value>
+  </data>
+  <data name="registrarse" xml:space="preserve">
+    <value>Register</value>
   </data>
 </root>
