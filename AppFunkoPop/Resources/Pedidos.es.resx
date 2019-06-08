@@ -129,6 +129,9 @@
   <data name="listaPedidosEstado" xml:space="preserve">
     <value>Listado de pedidos y su estado</value>
   </data>
+  <data name="misPedidos" xml:space="preserve">
+    <value>Mis pedidos</value>
+  </data>
   <data name="numPedido" xml:space="preserve">
     <value>Nº de pedido</value>
   </data>

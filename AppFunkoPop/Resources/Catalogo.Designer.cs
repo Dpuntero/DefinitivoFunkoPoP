@@ -79,6 +79,15 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Add filter.
+        /// </summary>
+        public static string filtrar {
+            get {
+                return ResourceManager.GetString("filtrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Select category.
         /// </summary>
         public static string seleccionaCategoria {

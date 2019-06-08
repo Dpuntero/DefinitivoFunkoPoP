@@ -178,6 +178,15 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a User management.
+        /// </summary>
+        public static string gestionUsuarios {
+            get {
+                return ResourceManager.GetString("gestionUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a View my cart.
         /// </summary>
         public static string miCarrito {
@@ -201,6 +210,15 @@ namespace AppFunkoPop.Resources {
         public static string nombre {
             get {
                 return ResourceManager.GetString("nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Create new account.
+        /// </summary>
+        public static string nuevaCuenta {
+            get {
+                return ResourceManager.GetString("nuevaCuenta", resourceCulture);
             }
         }
         

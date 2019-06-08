@@ -156,6 +156,9 @@
   <data name="gestionarMisDatos" xml:space="preserve">
     <value>Manage my account</value>
   </data>
+  <data name="gestionUsuarios" xml:space="preserve">
+    <value>User management</value>
+  </data>
   <data name="miCarrito" xml:space="preserve">
     <value>View my cart</value>
   </data>
@@ -176,5 +179,8 @@
   </data>
   <data name="telefono" xml:space="preserve">
     <value>Phone number</value>
+  </data>
+  <data name="nuevaCuenta" xml:space="preserve">
+    <value>Create new account</value>
   </data>
 </root>

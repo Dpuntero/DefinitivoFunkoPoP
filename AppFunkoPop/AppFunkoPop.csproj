@@ -373,6 +373,7 @@
     <Content Include="Views\Usuarios\CambiarContraseña.cshtml" />
     <Content Include="Views\Error\_ErrorPage.cshtml" />
     <Content Include="Views\Admin\EditandoUsuario.cshtml" />
+    <Content Include="Views\Admin\EditandoProducto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Languaje\" />

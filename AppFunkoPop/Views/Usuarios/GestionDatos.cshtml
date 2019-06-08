@@ -10,7 +10,7 @@
 
 
 
-<h2 style="padding-left:100px;">@ViewBag.Title.</h2>
+<h2 style="padding-left:100px;">@AppFunkoPop.Resources.Usuarios.gestionarMisDatos</h2>
 
 
 
@@ -21,55 +21,63 @@
     <div class="row" style="padding-bottom: 15px; padding-left:100px;">
         <div class="col-sm-9">
 
-            <h4>Cree una cuenta nueva.</h4>
+            <h4>@AppFunkoPop.Resources.Usuarios.nuevaCuenta</h4>
             <hr />
             @using (Html.BeginForm("ActualizarUsuario", "Account", FormMethod.Post))
             {
-                <p>
-                    @Html.LabelFor(model => model.NOMBRE)
-                </p>
+            <p>
+                @*@Html.LabelFor(model => model.NOMBRE)*@
+                @AppFunkoPop.Resources.Usuarios.nombre
+            </p>
                 <p>
                     @Html.TextBoxFor(model => model.NOMBRE)
                     
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.APELLIDOS)
+                    @*@Html.LabelFor(model => model.APELLIDOS)*@
+                    @AppFunkoPop.Resources.Usuarios.apellidos
                 </p>
                 <p>
                     @Html.EditorFor(model => model.APELLIDOS)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.EMAIL)
+                    @*@Html.LabelFor(model => model.EMAIL)*@
+                    @AppFunkoPop.Resources.Usuarios.email
                 </p>
                 <p>
                     @Html.EditorFor(model => model.EMAIL)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.DIRECCION)
+                    @*@Html.LabelFor(model => model.DIRECCION)*@
+                    @AppFunkoPop.Resources.Usuarios.direccion
                 </p>
                 <p>
                     @Html.EditorFor(model => model.DIRECCION)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.TLFN)
+                    @*@Html.LabelFor(model => model.TLFN)*@
+                    @AppFunkoPop.Resources.Usuarios.telefono
                 </p>
                 <p>
                     @Html.EditorFor(model => model.TLFN)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.CIUDAD)
+                    @*@Html.LabelFor(model => model.CIUDAD)*@
+                    @AppFunkoPop.Resources.Usuarios.ciudad
                 </p>
                 <p>
                     @Html.EditorFor(model => model.CIUDAD)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.PAIS)
+                    @*@Html.LabelFor(model => model.PAIS)*@
+                    @AppFunkoPop.Resources.Usuarios.pais
                 </p>
                 <p>
                     @Html.EditorFor(model => model.PAIS)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.CP)
+                    @*@Html.LabelFor(model => model.CP)*@
+                    @AppFunkoPop.Resources.Usuarios.codigoPostal
                 </p>
                 <p>
                     @Html.EditorFor(model => model.CP)
@@ -89,8 +97,8 @@
 
                 </p>
                 <label> @Html.DisplayFor(model => model.LoginErrorMessage)</label>
-                <input type="submit" name="entrar" value="Entrar" />
-                <input type="reset" name="borrar" value="borrar" />
+                <input type="submit" name="entrar" value="@AppFunkoPop.Resources.Usuarios.entrar" />
+                <input type="reset" name="borrar" value="@AppFunkoPop.Resources.Usuarios.borrar" />
             }
 
             <!--
@@ -112,3 +120,4 @@
 
         </div>
     </div>
+</div>

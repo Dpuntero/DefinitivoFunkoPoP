@@ -97,6 +97,15 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a My orders.
+        /// </summary>
+        public static string misPedidos {
+            get {
+                return ResourceManager.GetString("misPedidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Order number.
         /// </summary>
         public static string numPedido {
