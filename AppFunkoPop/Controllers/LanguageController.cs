@@ -22,7 +22,7 @@ namespace AppFunkoPop.Controllers
             HttpCookie cookie = new HttpCookie("Language");
             cookie.Value = LanguageAbbreviation;
             Response.Cookies.Add(cookie);
-            
+
             return Redirect(Request.UrlReferrer.PathAndQuery);
         }
     }
