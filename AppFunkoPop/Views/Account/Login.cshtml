@@ -4,32 +4,32 @@
 }
 
 @*<h2>Iniciar sesión</h2>
-@Html.ValidationSummary(true,"",new { @class = "text-danger" })
-@using (Html.BeginForm("IniciarSesion", "Account", FormMethod.Post))
-{
-    <div>
-        @Html.TextBoxFor(dl => dl.EMAIL, new { @class = "form-control", @placeholder = "Email" })
-        @Html.ValidationMessageFor(dl => dl.EMAIL, "", new { @class = "text-danger" })
-    </div>
+    @Html.ValidationSummary(true,"",new { @class = "text-danger" })
+    @using (Html.BeginForm("IniciarSesion", "Account", FormMethod.Post))
+    {
+        <div>
+            @Html.TextBoxFor(dl => dl.EMAIL, new { @class = "form-control", @placeholder = "Email" })
+            @Html.ValidationMessageFor(dl => dl.EMAIL, "", new { @class = "text-danger" })
+        </div>
 
-    <div>
-        @Html.TextBoxFor(dl => dl.PASSWD, new { @class = "form-control", @placeholder = "Password" })
-        @Html.ValidationMessageFor(dl => dl.PASSWD, "", new { @class = "text-danger" })
-    </div><br />
-    <input type="submit" value="Entrar" class="btn btn-signin" />
-}*@
-    
+        <div>
+            @Html.TextBoxFor(dl => dl.PASSWD, new { @class = "form-control", @placeholder = "Password" })
+            @Html.ValidationMessageFor(dl => dl.PASSWD, "", new { @class = "text-danger" })
+        </div><br />
+        <input type="submit" value="Entrar" class="btn btn-signin" />
+    }*@
+
 <div id="login-div">
     @using (Html.BeginForm("Autorizar", "Account", FormMethod.Post))
     {
-    <p>
-            @AppFunkoPop.Resources.Account.email
-    </p>
+        <p>
+            @Html.LabelFor(model => model.EMAIL)
+        </p>
         <p>
             @Html.EditorFor(model => model.EMAIL)
         </p>
         <p>
-            @AppFunkoPop.Resources.Account.passwd
+            @Html.LabelFor(model => model.PASSWD)
         </p>
         <p>
             @Html.EditorFor(model => model.PASSWD)
@@ -39,8 +39,8 @@
             @Html.ValidationMessageFor(model => model.EMAIL)
             @Html.ValidationMessageFor(model => model.PASSWD)
         </p>
-        <label> @Html.DisplayFor(model=>model.LoginErrorMessage)</label>
-        <input type="submit" name="@AppFunkoPop.Resources.Account.entrar" value="Entrar" />
-        <input type="reset" name="@AppFunkoPop.Resources.Account.borrar" value="borrar" />
+        <label> @Html.DisplayFor(model => model.LoginErrorMessage)</label>
+        <input type="submit" name="entrar" value="Entrar" />
+        <input type="reset" name="borrar" value="borrar" />
     }
 </div>
