@@ -18,46 +18,46 @@
 
 
 
-<h2>Listado de Productos</h2>
-<p>Listado de sus Productos:</p>
+<h2>@AppFunkoPop.Resources.Admin.listaProductos</h2>
+
 <form>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>
-                    ID
+                    @AppFunkoPop.Resources.Admin.idProducto
 
                 </th>
                 <th>
-                    Nombre
+                    @AppFunkoPop.Resources.Admin.nombre
                 </th>
                 <th>
-                    Precio
+                    @AppFunkoPop.Resources.Admin.precio
                 </th>
                 <th>
-                    Descripción
+                    @AppFunkoPop.Resources.Admin.decripcion
                 </th>
                 <th>
-                    Categoria
+                    @AppFunkoPop.Resources.Admin.categoria
                 </th>
                 <th>
-                    Unidades
+                    @AppFunkoPop.Resources.Admin.unidadesDisp
                 </th>
                 <th>
-                    Proveedor
+                    @AppFunkoPop.Resources.Admin.idVendedor
                 </th>
                 <th>
-                    Imagen
+                    @AppFunkoPop.Resources.Admin.imagen
                 </th>
                 <th>
-                    Link
+                    @AppFunkoPop.Resources.Admin.link
                 </th>
                 <th>
-                    Borrar
+                    @AppFunkoPop.Resources.Admin.borrar
 
                 </th>
                 <th>
-                    Editar
+                    @AppFunkoPop.Resources.Admin.editar
                 </th>
 
             </tr>
@@ -101,14 +101,14 @@
 
                     </td>
                     <td>
-                        @Html.ActionLink("Editar", "EditarProducto", new { id = unProducto.PRODUCTO_ID })
+                        @Html.ActionLink(@AppFunkoPop.Resources.Admin.editar, "EditarProducto", new { id = unProducto.PRODUCTO_ID })
                     </td>
                 </tr>
 
             }
         </tbody>
     </table>
-    <button type="submit" class="btn btn-primary mb-2">Validar Acciones</button>
+    <button type="submit" class="btn btn-primary mb-2">@AppFunkoPop.Resources.Admin.validarAcciones</button>
     <br />
-    <p>O quizas quieras: @Html.ActionLink("Añadir un producto", "NuevoProducto", "Admin")</p>
+    <p>O quizas quieras: @Html.ActionLink(@AppFunkoPop.Resources.Admin.añadirProducto, "NuevoProducto", "Admin")</p>
 </form>

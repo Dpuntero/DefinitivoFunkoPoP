@@ -22,7 +22,7 @@ namespace AppFunkoPop.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Shared {
+    public class Shared {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace AppFunkoPop.Resources {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppFunkoPop.Resources.Shared", typeof(Shared).Assembly);
@@ -51,7 +51,7 @@ namespace AppFunkoPop.Resources {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Legal advice.
         /// </summary>
-        internal static string avisoLegal {
+        public static string avisoLegal {
             get {
                 return ResourceManager.GetString("avisoLegal", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Wellcome admin.
         /// </summary>
-        internal static string bienvenidoAdmin {
+        public static string bienvenidoAdmin {
             get {
                 return ResourceManager.GetString("bienvenidoAdmin", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Block.
         /// </summary>
-        internal static string bloqueado {
+        public static string bloqueado {
             get {
                 return ResourceManager.GetString("bloqueado", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Cart.
         /// </summary>
-        internal static string carrito {
+        public static string carrito {
             get {
                 return ResourceManager.GetString("carrito", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Catalogue.
         /// </summary>
-        internal static string catalogo {
+        public static string catalogo {
             get {
                 return ResourceManager.GetString("catalogo", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Log out.
         /// </summary>
-        internal static string cerrarSesion {
+        public static string cerrarSesion {
             get {
                 return ResourceManager.GetString("cerrarSesion", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Contact us.
         /// </summary>
-        internal static string contactanos {
+        public static string contactanos {
             get {
                 return ResourceManager.GetString("contactanos", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a This account id blocked, try it again later..
         /// </summary>
-        internal static string cuentaBloqueada {
+        public static string cuentaBloqueada {
             get {
                 return ResourceManager.GetString("cuentaBloqueada", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Where we are.
         /// </summary>
-        internal static string dondeEstamos {
+        public static string dondeEstamos {
             get {
                 return ResourceManager.GetString("dondeEstamos", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Error.
         /// </summary>
-        internal static string error {
+        public static string error {
             get {
                 return ResourceManager.GetString("error", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Error procesing the reguest.
         /// </summary>
-        internal static string errorSolicitud {
+        public static string errorSolicitud {
             get {
                 return ResourceManager.GetString("errorSolicitud", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Hello.
         /// </summary>
-        internal static string hola {
+        public static string hola {
             get {
                 return ResourceManager.GetString("hola", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Log in.
         /// </summary>
-        internal static string iniciarSesion {
+        public static string iniciarSesion {
             get {
                 return ResourceManager.GetString("iniciarSesion", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Home.
         /// </summary>
-        internal static string inicio {
+        public static string inicio {
             get {
                 return ResourceManager.GetString("inicio", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Privacy policy.
         /// </summary>
-        internal static string politicaPrivacidad {
+        public static string politicaPrivacidad {
             get {
                 return ResourceManager.GetString("politicaPrivacidad", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Register.
         /// </summary>
-        internal static string registrarse {
+        public static string registrarse {
             get {
                 return ResourceManager.GetString("registrarse", resourceCulture);
             }

@@ -18,56 +18,64 @@
             <hr />
             @using (Html.BeginForm("RegistrarUsuario", "Account", FormMethod.Post))
             {
-                <p>
-                    @Html.LabelFor(model => model.NOMBRE)
-                </p>
+            <p>
+                @AppFunkoPop.Resources.Account.nombre
+            </p>
                 <p>
                     @Html.EditorFor(model => model.NOMBRE)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.APELLIDOS)
+                    @*@Html.LabelFor(model => model.APELLIDOS)*@
+                    @AppFunkoPop.Resources.Account.apellidos
                 </p>
                 <p>
                     @Html.EditorFor(model => model.APELLIDOS)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.EMAIL)
+                    @*@Html.LabelFor(model => model.EMAIL)*@
+                    @AppFunkoPop.Resources.Account.email
                 </p>
                 <p>
                     @Html.EditorFor(model => model.EMAIL)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.PASSWD)
+                    @*@Html.LabelFor(model => model.PASSWD)*@
+                    @AppFunkoPop.Resources.Account.passwd
                 </p>
                 <p>
                     @Html.EditorFor(model => model.PASSWD)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.DIRECCION)
+                    @*@Html.LabelFor(model => model.DIRECCION)*@
+                    @AppFunkoPop.Resources.Account.direccion
                 </p>
                 <p>
                     @Html.EditorFor(model => model.DIRECCION)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.TLFN)
+                    @*@Html.LabelFor(model => model.TLFN)*@
+                    @AppFunkoPop.Resources.Account.tlfn
                 </p>
                 <p>
                     @Html.EditorFor(model => model.TLFN)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.CIUDAD)
+                    @*@Html.LabelFor(model => model.CIUDAD)*@
+                    @AppFunkoPop.Resources.Account.ciudad
                 </p>
                 <p>
                     @Html.EditorFor(model => model.CIUDAD)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.PAIS)
+                    @*@Html.LabelFor(model => model.PAIS)*@
+                    @AppFunkoPop.Resources.Account.pais
                 </p>
                 <p>
                     @Html.EditorFor(model => model.PAIS)
                 </p>
                 <p>
-                    @Html.LabelFor(model => model.CP)
+                    @*@Html.LabelFor(model => model.CP)*@
+                    @AppFunkoPop.Resources.Account.codigoPostal
                 </p>
                 <p>
                     @Html.EditorFor(model => model.CP)
@@ -87,8 +95,8 @@
 
                 </p>
                 <label> @Html.DisplayFor(model => model.LoginErrorMessage)</label>
-                <input type="submit" name="entrar" value="Entrar" />
-                <input type="reset" name="borrar" value="borrar" />
+                <input type="submit" name="entrar" value=" @AppFunkoPop.Resources.Account.entrar" />
+                <input type="reset" name="borrar" value=" @AppFunkoPop.Resources.Account.borrar" />
             }
 
             <!--

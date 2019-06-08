@@ -17,19 +17,19 @@
         estados = ViewBag.listaEstados;
         }
 
-        <h2>Listado de pedidos</h2>
-        <p>Listado de pedidos pendientes de validar:</p>
-        @using (Html.BeginForm("CambiarEstado", "Admin", FormMethod.Post))
+    <h2>@AppFunkoPop.Resources.Admin.gestionPedidos</h2>
+    <p>@AppFunkoPop.Resources.Admin.listadoPedidos</p>
+            @using (Html.BeginForm("CambiarEstado", "Admin", FormMethod.Post))
         {
 
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>IdPedido</th>
-                    <th>IdUsuario</th>
-                    <th>Precio</th>
-                    <th>Informacion de pago</th>
-                    <th>Estado</th>
+                    <th>@AppFunkoPop.Resources.Admin.idPedido</th>
+                    <th>@AppFunkoPop.Resources.Admin.idUsuario</th>
+                    <th>@AppFunkoPop.Resources.Admin.precio</th>
+                    <th>@AppFunkoPop.Resources.Admin.infoPago</th>
+                    <th>@AppFunkoPop.Resources.Admin.estado</th>
 
                 </tr>
             </thead>

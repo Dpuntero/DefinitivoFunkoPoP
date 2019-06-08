@@ -16,44 +16,44 @@
     List<AppFunkoPop.Models.USUARIO> listadoUsuarios = ViewBag.Usuarios;
 }
 
-<h2>Listado de Usuarios</h2>
-<p>Listado de sus Usuarios:</p>
+<h2>@AppFunkoPop.Resources.Admin.listaUsuarios</h2>
+
 <form>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>
-                    Nombre
+                    @AppFunkoPop.Resources.Admin.nombre
                 </th>
                 <th>
-                    Apellidos
+                    @AppFunkoPop.Resources.Admin.apellido
                 </th>
                 <th>
-                    Email
+                    @AppFunkoPop.Resources.Admin.email
                 </th>
                 <th>
-                    Contraseña
+                    @AppFunkoPop.Resources.Admin.contrasena 
                 </th>
                 <th>
-                    Teléfono
+                    @AppFunkoPop.Resources.Admin.telefono
                 </th>
                 <th>
-                    Direccion
+                    @AppFunkoPop.Resources.Admin.direccion
                 </th>
                 <th>
-                    Ciudad
+                    @AppFunkoPop.Resources.Admin.ciudad
                 </th>
                 <th>
-                    Pais
+                    @AppFunkoPop.Resources.Admin.pais
                 </th>
                 <th>
-                    Rol
+                    @AppFunkoPop.Resources.Admin.rol
                 </th>
                 <th>
-                    Borrar
+                    @AppFunkoPop.Resources.Admin.borrar
                 </th>
                 <th>
-                    Editar
+                    @AppFunkoPop.Resources.Admin.editar
                 </th>
             </tr>
         </thead>
@@ -95,14 +95,14 @@
 
                     </td>
                     <td>
-                        @Html.ActionLink("Editar", "EditarUsuario", new { id = unUsuario.USUARIO_ID })
+                        @Html.ActionLink(@AppFunkoPop.Resources.Admin.editar, "EditarUsuario", new { id = unUsuario.USUARIO_ID })
                     </td>
                 </tr>
 
             }
         </tbody>
     </table>
-    <button type="submit" class="btn btn-primary mb-2">Validar Acciones</button>
+    <button type="submit" class="btn btn-primary mb-2">@AppFunkoPop.Resources.Admin.validarAcciones</button>
     <br />
 </form>
 

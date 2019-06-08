@@ -22,7 +22,7 @@ namespace AppFunkoPop.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Pedidos {
+    public class Pedidos {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace AppFunkoPop.Resources {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppFunkoPop.Resources.Pedidos", typeof(Pedidos).Assembly);
@@ -51,7 +51,7 @@ namespace AppFunkoPop.Resources {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Articles.
         /// </summary>
-        internal static string articulos {
+        public static string articulos {
             get {
                 return ResourceManager.GetString("articulos", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Status.
         /// </summary>
-        internal static string estado {
+        public static string estado {
             get {
                 return ResourceManager.GetString("estado", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Orders list.
         /// </summary>
-        internal static string listaPedidos {
+        public static string listaPedidos {
             get {
                 return ResourceManager.GetString("listaPedidos", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a My orders list.
         /// </summary>
-        internal static string listaPedidosEstado {
+        public static string listaPedidosEstado {
             get {
                 return ResourceManager.GetString("listaPedidosEstado", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Order number.
         /// </summary>
-        internal static string numPedido {
+        public static string numPedido {
             get {
                 return ResourceManager.GetString("numPedido", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace AppFunkoPop.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Total price.
         /// </summary>
-        internal static string precioTotal {
+        public static string precioTotal {
             get {
                 return ResourceManager.GetString("precioTotal", resourceCulture);
             }
