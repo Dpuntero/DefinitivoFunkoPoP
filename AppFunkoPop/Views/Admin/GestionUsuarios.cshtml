@@ -16,44 +16,45 @@
     List<AppFunkoPop.Models.USUARIO> listadoUsuarios = ViewBag.Usuarios;
 }
 
-<h2>@AppFunkoPop.Resources.Admin.listaUsuarios</h2>
-
-<form>
+<h2>Listado de Usuarios</h2>
+<p>Listado de sus Usuarios:</p>
+@using (Html.BeginForm("EliminarUsuarios", "Admin", FormMethod.Post))
+{
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>
-                    @AppFunkoPop.Resources.Admin.nombre
+                    Nombre
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.apellido
+                    Apellidos
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.email
+                    Email
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.contrasena 
+                    Contraseña
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.telefono
+                    Teléfono
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.direccion
+                    Direccion
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.ciudad
+                    Ciudad
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.pais
+                    Pais
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.rol
+                    Rol
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.borrar
+                    Borrar
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.editar
+                    Editar
                 </th>
             </tr>
         </thead>
@@ -90,20 +91,22 @@
                     </td>
                     <td>
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="borrados" value="@unUsuario.USUARIO_ID">
                         </div>
 
                     </td>
                     <td>
-                        @Html.ActionLink(@AppFunkoPop.Resources.Admin.editar, "EditarUsuario", new { id = unUsuario.USUARIO_ID })
+                        @Html.ActionLink("Editar", "EditarUsuario", new { id = unUsuario.USUARIO_ID })
                     </td>
                 </tr>
 
             }
         </tbody>
     </table>
-    <button type="submit" class="btn btn-primary mb-2">@AppFunkoPop.Resources.Admin.validarAcciones</button>
+    <button type="submit" class="btn btn-primary mb-2" style="color: white;" name="borrados">
+        Confirmar borrado
+    </button>
     <br />
-</form>
+}
 
 

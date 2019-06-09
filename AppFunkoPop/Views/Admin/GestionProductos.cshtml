@@ -6,7 +6,7 @@
     }
     else
     {
-       if (Session["ID_ROL"].ToString() != "2")
+        if (Session["ID_ROL"].ToString() != "2")
         {
             Response.Redirect("~/Home/Index");
         }
@@ -18,46 +18,47 @@
 
 
 
-<h2>@AppFunkoPop.Resources.Admin.listaProductos</h2>
-
-<form>
+<h2>Listado de Productos</h2>
+<p>Listado de sus Productos:</p>
+@using (Html.BeginForm("EliminarProductos", "Admin", FormMethod.Post))
+{
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>
-                    @AppFunkoPop.Resources.Admin.idProducto
+                    ID
 
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.nombre
+                    Nombre
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.precio
+                    Precio
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.decripcion
+                    Descripción
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.categoria
+                    Categoria
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.unidadesDisp
+                    Unidades
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.idVendedor
+                    Proveedor
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.imagen
+                    Imagen
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.link
+                    Link
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.borrar
+                    Borrar
 
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.editar
+                    Editar
                 </th>
 
             </tr>
@@ -83,7 +84,7 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => unProducto.UD_DISPO)
-                    </td>
+                    <td>
                     <td>
                         @Html.DisplayFor(modelItem => unProducto.V_ID)
                     </td>
@@ -95,20 +96,22 @@
                     </td>
                     <td>
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="borrados" value="@unProducto.PRODUCTO_ID">
 
                         </div>
 
                     </td>
                     <td>
-                        @Html.ActionLink(@AppFunkoPop.Resources.Admin.editar, "EditarProducto", new { id = unProducto.PRODUCTO_ID })
+                        @Html.ActionLink("Editar", "EditarProducto", new { id = unProducto.PRODUCTO_ID })
                     </td>
                 </tr>
 
             }
         </tbody>
     </table>
-    <button type="submit" class="btn btn-primary mb-2">@AppFunkoPop.Resources.Admin.validarAcciones</button>
+    <button type="submit" class="btn btn-primary mb-2" style="color: white;" name="borrados">
+        Confirmar borrado
+    </button>
     <br />
-    <p>O quizas quieras: @Html.ActionLink(@AppFunkoPop.Resources.Admin.añadirProducto, "NuevoProducto", "Admin")</p>
-</form>
+    <p>O quizas quieras: @Html.ActionLink("Añadir un producto", "NuevoProducto", "Admin")</p>
+}
