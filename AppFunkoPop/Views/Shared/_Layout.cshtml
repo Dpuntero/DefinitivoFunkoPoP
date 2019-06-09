@@ -7,6 +7,27 @@
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript">
+        var opt1 = new Array("Todos", "Vengadores", "X-men");
+        var opt2 = new Array("Todos", "Lanister", "Targaryen", "El norte");
+        var opt3 = new Array("Todos", "Episodio 3", "El ultimo Jedi");
+
+        function cambiar() {
+            var categoria;
+            categoria = document.frm.categoria[document.frm.categoria.selectedIndex].value;
+            if (categoria != 0) {
+                misOpts = eval("opt" + categoria);
+                numOpts = misOpts.length;
+                document.frm.subcategoria.length = numOpts;
+
+                for (i = 0; i < numOpts; i++) {
+                    document.frm.subcategoria.options[i].value = misOpts[i];
+                    document.frm.subcategoria.options[i].text = misOpts[i];
+                }
+            }
+            document.frm.subcategoria.options[0].selected = true;
+        }
+    </script>
     <style>
         .affix {
             top: 0;
@@ -20,7 +41,6 @@
 
         #footer {
             background-color: #00A2E8;
-            
         }
 
         #tituloFooter {
@@ -38,14 +58,14 @@
         footer {
             color: white;
         }
-        header{
+
+        header {
             margin-top: 0px;
         }
 
-        body{
-            padding:0px;
+        body {
+            padding: 0px;
         }
-
     </style>
 
 </head>
