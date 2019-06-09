@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<AppFunkoPop.Models.PRODUCTO>
 
-<h2>Catalogo</h2>
+<h2>@AppFunkoPop.Resources.Catalogo.catalogo</h2>
 
 
 <div class="row">
     <form action="Catalogo" method="post">
 
         <div class=" col-sm-6 ">
-            <p>Seleccona la categoría:</p>
+            <p>@AppFunkoPop.Resources.Catalogo.seleccionaCategoria</p>
             <select name="categoria" class="custom-select custom-select-lg mb-3">
                 <option selected value="todos">Todos</option>
                 <option value="got">Juego De Tronos</option>
@@ -16,7 +16,7 @@
             </select>
         </div>
         <div class=" col-sm-6 ">
-            <p>Seleccona la sub-categoría:</p>
+            <p>@AppFunkoPop.Resources.Catalogo.seleccionaSubCategoria:</p>
             <select name="subcategoria" class="custom-select custom-select-lg mb-3">
                 <option selected>Ninguna</option>
                 <option value="JuegoDeTronos">Juego De Tronos</option>
@@ -24,7 +24,7 @@
                 <option value="StarWars">Star Wars</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-default">Filtrar</button>
+        <button type="submit" class="btn btn-default">@AppFunkoPop.Resources.Catalogo.filtrar</button>
     </form>
 </div>
 
@@ -57,10 +57,10 @@
 
 <div class="row">
     <ul class="pagination justify-content-end">
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">@AppFunkoPop.Resources.Catalogo.anterior</a></li>
         <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
         <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">@AppFunkoPop.Resources.Catalogo.siguiente</a></li>
     </ul>
 </div>
 

@@ -123,6 +123,9 @@
   <data name="catalogo" xml:space="preserve">
     <value>Catálogo</value>
   </data>
+  <data name="filtrar" xml:space="preserve">
+    <value>Filtrar</value>
+  </data>
   <data name="seleccionaCategoria" xml:space="preserve">
     <value>Selecciona la categoría</value>
   </data>

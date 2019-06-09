@@ -15,20 +15,20 @@
     ViewBag.Title = "PanelDeControlAdmin";
 }
 
-<h2>Panel De Control Admin</h2>
+<h2>@AppFunkoPop.Resources.Admin.panelControlAdmin</h2>
 
-<p> ¿Que quieres hacer?:</p>
+<p> @AppFunkoPop.Resources.Admin.queQuieresHacer</p>
 
 <ul class="">
-    <p>Gestiones de admin</p>
-    <li>@Html.ActionLink("Gestion de Pedidos", "GestionPedidos", "Admin")</li>
-    <li>@Html.ActionLink("Gestion de Productos", "GestionProductos", "Admin")</li>
+    <p>@AppFunkoPop.Resources.Admin.gestionesAdmin</p>
+    <li>@Html.ActionLink(@AppFunkoPop.Resources.Admin.gestionPedidos, "GestionPedidos", "Admin")</li>
+    <li>@Html.ActionLink(@AppFunkoPop.Resources.Admin.gestionProductos, "GestionProductos", "Admin")</li>
 
-    <li>@Html.ActionLink("Gestion de Usuarios", "GestionUsuarios", "Admin")</li>
-    <li>@Html.ActionLink("Añadir nuevo producto", "NuevoProducto", "Producto")</li>
+    <li>@Html.ActionLink(@AppFunkoPop.Resources.Admin.gestionUsuarios, "GestionUsuarios", "Admin")</li>
+    <li>@Html.ActionLink(@AppFunkoPop.Resources.Admin.añadirProducto, "NuevoProducto", "Producto")</li>
     <br />
-    <p> Gestiones sobre el propio usuario:</p>
-    <li>@Html.ActionLink("Gestionar mis datos", "GestionDatos", "Usuarios")</li>
-    <li>@Html.ActionLink("Cambiar Contraseña", "CambiarContraseña", "Usuarios")</li>
+    <p> @AppFunkoPop.Resources.Admin.gestionarMisDatos</p>
+    <li>@Html.ActionLink(@AppFunkoPop.Resources.Admin.gestionarMisDatos, "GestionDatos", "Usuarios")</li>
+    <li>@Html.ActionLink(@AppFunkoPop.Resources.Admin.cambiarContrasena, "CambiarContraseña", "Usuarios")</li>
 
 </ul>

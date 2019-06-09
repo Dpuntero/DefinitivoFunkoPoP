@@ -19,7 +19,8 @@
             }
 
         #footer {
-            background-color: #00A2E8
+            background-color: #00A2E8;
+            
         }
 
         #tituloFooter {
@@ -37,15 +38,23 @@
         footer {
             color: white;
         }
+        header{
+            margin-top: 0px;
+        }
+
+        body{
+            padding:0px;
+        }
+
     </style>
 
 </head>
 <body>
     <li>
-        <a class="navbar-brand-flags" href="@Url.Action(" Change", "Language" , new { LanguageAbbreviation="en" }, null)">
+        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="en" }, null)">
             <img src="~/Content/images/Flags/555417.svg" alt="ROMO Logo" /> <span>EN</span>
         </a>
-        <a class="navbar-brand-flags" href="@Url.Action(" Change", "Language" , new { LanguageAbbreviation="es" }, null)">
+        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="es" }, null)">
             <img src="~/Content/images/Flags/555635.svg" alt="ROMO Logo" /> <span>ES</span>
         </a>
     </li>
@@ -64,8 +73,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink(AppFunkoPop.Resources.HomeTexts.Home, "Index", "Home")</li>
-                    <li>@Html.ActionLink("Catalogo", "Catalogo", "Catalogo")</li>
+                    <li>@Html.ActionLink(AppFunkoPop.Resources.Shared.inicio, "Index", "Home")</li>
+                    <li>@Html.ActionLink(AppFunkoPop.Resources.Shared.catalogo, "Catalogo", "Catalogo")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -89,12 +98,12 @@
         <div id="footer" class="container-fluid text-center text-md-left">
             <div class="row">
                 <div class="col-md-3 mt-md-0 mt-3">
-                    <h5 class="text-uppercase">Aviso legal</h5>
-                    <p id="tituloFooter">Política de privacidad</p>
+                    <h5 class="text-uppercase">@AppFunkoPop.Resources.Shared.avisoLegal</h5>
+                    <p id="tituloFooter">@AppFunkoPop.Resources.Shared.politicaPrivacidad</p>
                 </div>
                 <div class="col-md-3 mb-md-0 mb-3">
 
-                    <h5 class="text-uppercase">Contáctanos</h5>
+                    <h5 class="text-uppercase">@AppFunkoPop.Resources.Shared.contactanos</h5>
                     <p>funko.pop.shop@gmail.com</p>
                     <p>916530986</p>
                 </div>
@@ -105,7 +114,7 @@
                 </div>
                 <div class="col-md-3 mb-md-0 mb-3">
                     <div class="col-lg-3">
-                        <p id="tituloFooter">Dónde estamos</p>
+                        <p id="tituloFooter">@AppFunkoPop.Resources.Shared.dondeEstamos</p>
                         <div>
                             <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%"
                                  alt="Image">

@@ -23,13 +23,13 @@
     @using (Html.BeginForm("Autorizar", "Account", FormMethod.Post))
     {
         <p>
-            @Html.LabelFor(model => model.EMAIL)
+            @AppFunkoPop.Resources.Account.email
         </p>
         <p>
             @Html.EditorFor(model => model.EMAIL)
         </p>
         <p>
-            @Html.LabelFor(model => model.PASSWD)
+            @AppFunkoPop.Resources.Account.passwd
         </p>
         <p>
             @Html.EditorFor(model => model.PASSWD)
@@ -40,7 +40,7 @@
             @Html.ValidationMessageFor(model => model.PASSWD)
         </p>
         <label> @Html.DisplayFor(model => model.LoginErrorMessage)</label>
-        <input type="submit" name="entrar" value="Entrar" />
-        <input type="reset" name="borrar" value="borrar" />
+        <input type="submit" name="entrar" value=" @AppFunkoPop.Resources.Account.entrar" />
+        <input type="reset" name="borrar" value=" @AppFunkoPop.Resources.Account.borrar" />
     }
 </div>

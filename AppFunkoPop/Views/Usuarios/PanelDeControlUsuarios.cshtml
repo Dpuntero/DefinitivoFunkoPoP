@@ -15,16 +15,16 @@
     ViewBag.Title = "Panel De Control Usuarios";
 }
 
-<h2>PanelDeControlUsuarios</h2>
+<h2> @AppFunkoPop.Resources.Usuarios.panelControlUsuarios</h2>
 
-<p> ¿Que quieres hacer?:</p>
+<p> @AppFunkoPop.Resources.Usuarios.queQuieresHacer:</p>
 
 <ul class="">
-    <li>@Html.ActionLink("Gestionar mis datos", "GestionDatos", "Usuarios")</li>
-    <li>@Html.ActionLink("Cambiar Contraseña", "CambiarContraseña", "Usuarios")</li>
-    <li>@Html.ActionLink("Ver mis pedidos", "MisPedidos", "Pedidos")</li>
+    <li>@Html.ActionLink(@AppFunkoPop.Resources.Usuarios.gestionarMisDatos, "GestionDatos", "Usuarios")</li>
+    <li>@Html.ActionLink(@AppFunkoPop.Resources.Usuarios.cambiarContrasena, "CambiarContraseña", "Usuarios")</li>
+    <li>@Html.ActionLink(@AppFunkoPop.Resources.Usuarios.misPedidos, "MisPedidos", "Pedidos")</li>
 
-    <li>@Html.ActionLink("Ver mi carrito", "InicioCarrito", "Carrito")</li>
+    <li>@Html.ActionLink(@AppFunkoPop.Resources.Usuarios.miCarrito, "InicioCarrito", "Carrito")</li>
 
 
 </ul>
