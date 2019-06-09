@@ -21,7 +21,7 @@ namespace AppFunkoPop.Models
         }
     
         public int ID_ROL { get; set; }
-        public string N_ROL { get; set; }
+        public string NOMBRE_ROL { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<USUARIO> USUARIOs { get; set; }

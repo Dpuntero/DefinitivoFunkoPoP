@@ -152,51 +152,51 @@
     </Compile>
     <Compile Include="Models\autorizar.cs" />
     <Compile Include="Models\CARRITO.cs">
-      <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CARRITOPRODUCTO.cs">
-      <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CatalogoModel.cs" />
-    <Compile Include="Models\ListarPedidosModel.cs" />
-    <Compile Include="Models\PasswordChangeModel.cs" />
-    <Compile Include="Models\DDBBFunkoModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DDBBFunkoModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DDBBFunkoModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DDBBFunkoModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DDBBFunkoModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\ESTADO_ENVIO.cs">
-      <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListarPedidosModel.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PasswordChangeModel.cs" />
     <Compile Include="Models\PEDIDO.cs">
-      <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PEDIDOPRODUCTO.cs">
-      <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PRODUCTO.cs">
-      <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductoCookie.cs" />
     <Compile Include="Models\ProductoUnidades.cs" />
     <Compile Include="Models\PROVEEDOR.cs">
-      <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ROL.cs">
-      <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\USUARIO.cs">
-      <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UsuarioSobreVal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -300,25 +300,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\DDBBFunkoModel.Context.tt">
+    <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DDBBFunkoModel.edmx</DependentUpon>
-      <LastGenOutput>DDBBFunkoModel.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DDBBFunkoModel.tt">
+    <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DDBBFunkoModel.edmx</DependentUpon>
-      <LastGenOutput>DDBBFunkoModel.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\DDBBFunkoModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DDBBFunkoModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DDBBFunkoModel.edmx.diagram">
-      <DependentUpon>DDBBFunkoModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Content>
@@ -329,6 +322,13 @@
     </None>
     <Content Include="Database1DataSet.xss">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

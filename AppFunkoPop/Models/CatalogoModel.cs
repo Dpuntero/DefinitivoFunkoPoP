@@ -20,7 +20,7 @@ namespace ProyectoDawFunko.Models
             var productos = new List<PRODUCTO>();
             try
             {
-                using(Database1Entities db = new Database1Entities())
+                using(Database1Entities1 db = new Database1Entities1())
                 {
                     productos = db.PRODUCTOes.ToList();
 

@@ -9,18 +9,18 @@
           <Key>
             <PropertyRef Name="CARRITO_ID" />
           </Key>
-          <Property Name="CARRITO_ID" Type="int" Nullable="false" />
+          <Property Name="CARRITO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="USUARIO_ID" Type="int" Nullable="false" />
           <Property Name="FECHA_CR" Type="date" Nullable="false" />
-          <Property Name="PRECIO_T" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="PRECIO_T" Type="numeric" Precision="5" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="CARRITOPRODUCTO">
           <Key>
             <PropertyRef Name="CARRITO_ID" />
-            <PropertyRef Name="P_ID" />
+            <PropertyRef Name="PRODUCTO_ID" />
           </Key>
           <Property Name="CARRITO_ID" Type="int" Nullable="false" />
-          <Property Name="P_ID" Type="int" Nullable="false" />
+          <Property Name="PRODUCTO_ID" Type="int" Nullable="false" />
           <Property Name="UNIDADES" Type="int" Nullable="false" />
           <Property Name="PRECIO" Type="numeric" Precision="5" Scale="2" Nullable="false" />
           <Property Name="DESCUENTO" Type="int" Nullable="false" />
@@ -29,17 +29,18 @@
           <Key>
             <PropertyRef Name="ID_ESTADO" />
           </Key>
-          <Property Name="ID_ESTADO" Type="int" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TEXTO_ESTADO" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="TEXTO_ESTADO_INGLES" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="PEDIDO">
           <Key>
             <PropertyRef Name="PEDIDO_ID" />
           </Key>
-          <Property Name="PEDIDO_ID" Type="int" Nullable="false" />
+          <Property Name="PEDIDO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="USUARIO_ID" Type="int" Nullable="false" />
           <Property Name="PRECIO_TOTAL" Type="numeric" Precision="5" Scale="2" Nullable="false" />
-          <Property Name="INFO_PAGO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="INFO_PAGO" Type="varchar" MaxLength="50" />
           <Property Name="ESTADO_ENVIO" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="PEDIDOPRODUCTO">
@@ -49,9 +50,8 @@
           </Key>
           <Property Name="PEDIDO_ID" Type="int" Nullable="false" />
           <Property Name="P_ID" Type="int" Nullable="false" />
-          <Property Name="UNIDADES" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="PRECIO" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="DESCUENTO" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="UNIDADES" Type="int" Nullable="false" />
+          <Property Name="PRECIO" Type="numeric" Precision="5" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="PRODUCTO">
           <Key>
@@ -61,21 +61,27 @@
           <Property Name="NOMBREP" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PRECIO" Type="numeric" Precision="5" Scale="2" Nullable="false" />
           <Property Name="DESCRIP" Type="varchar" MaxLength="100" />
+          <Property Name="DESCRIP_INGLES" Type="varchar" MaxLength="100" />
           <Property Name="CATEGORIA" Type="varchar" MaxLength="50" />
-          <Property Name="UD_DISPO" Type="int" />
-          <Property Name="V_ID" Type="int" />
+          <Property Name="SUBCATEGORIA" Type="varchar" MaxLength="50" />
+          <Property Name="CATEGORIA_INGLES" Type="varchar" MaxLength="50" />
+          <Property Name="SUBCATEGORIA_INGLES" Type="varchar" MaxLength="50" />
+          <Property Name="PROVEEDOR_ID" Type="int" Nullable="false" />
           <Property Name="IMAGEN" Type="varchar" MaxLength="50" />
-          <Property Name="LINK" Type="varchar" MaxLength="100" />
+          <Property Name="IMAGEN2" Type="varchar" MaxLength="50" />
+          <Property Name="DESTACADO" Type="bit" />
+          <Property Name="FECHA_CREACION" Type="date" />
+          <Property Name="UD_DISPO" Type="int" />
         </EntityType>
         <EntityType Name="PROVEEDOR">
           <Key>
             <PropertyRef Name="PROVEEDOR_ID" />
           </Key>
           <Property Name="PROVEEDOR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NOMBREV" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TLFNV" Type="int" Nullable="false" />
-          <Property Name="EMAILV" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DESCV" Type="varchar" MaxLength="100" />
+          <Property Name="NOMBRE_PROV" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TLFN_PROV" Type="int" Nullable="false" />
+          <Property Name="EMAIL_PROV" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DESCRIPCION_PROV" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="PROVEEDORPRODUCTO">
           <Key>
@@ -89,8 +95,8 @@
           <Key>
             <PropertyRef Name="ID_ROL" />
           </Key>
-          <Property Name="ID_ROL" Type="int" Nullable="false" />
-          <Property Name="N_ROL" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_ROL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_ROL" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="USUARIO">
           <Key>
@@ -107,6 +113,7 @@
           <Property Name="PAIS" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CP" Type="int" Nullable="false" />
           <Property Name="ID_ROL" Type="int" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="date" />
         </EntityType>
         <Association Name="FK_CARRITO_USUARIO">
           <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
@@ -140,7 +147,7 @@
               <PropertyRef Name="PRODUCTO_ID" />
             </Principal>
             <Dependent Role="CARRITOPRODUCTO">
-              <PropertyRef Name="P_ID" />
+              <PropertyRef Name="PRODUCTO_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -289,20 +296,20 @@
           <Key>
             <PropertyRef Name="CARRITO_ID" />
           </Key>
-          <Property Name="CARRITO_ID" Type="Int32" Nullable="false" />
+          <Property Name="CARRITO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="USUARIO_ID" Type="Int32" Nullable="false" />
           <Property Name="FECHA_CR" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="PRECIO_T" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PRECIO_T" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
           <NavigationProperty Name="USUARIO" Relationship="Self.FK_CARRITO_USUARIO" FromRole="CARRITO" ToRole="USUARIO" />
           <NavigationProperty Name="CARRITOPRODUCTOes" Relationship="Self.FK_CARRITOPRODUCTO_CARRITO" FromRole="CARRITO" ToRole="CARRITOPRODUCTO" />
         </EntityType>
         <EntityType Name="CARRITOPRODUCTO">
           <Key>
             <PropertyRef Name="CARRITO_ID" />
-            <PropertyRef Name="P_ID" />
+            <PropertyRef Name="PRODUCTO_ID" />
           </Key>
           <Property Name="CARRITO_ID" Type="Int32" Nullable="false" />
-          <Property Name="P_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRODUCTO_ID" Type="Int32" Nullable="false" />
           <Property Name="UNIDADES" Type="Int32" Nullable="false" />
           <Property Name="PRECIO" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="DESCUENTO" Type="Int32" Nullable="false" />
@@ -313,18 +320,19 @@
           <Key>
             <PropertyRef Name="ID_ESTADO" />
           </Key>
-          <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TEXTO_ESTADO" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TEXTO_ESTADO_INGLES" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="PEDIDOes" Relationship="Self.FK_PEDIDO_ESTADO_ENVIO" FromRole="ESTADO_ENVIO" ToRole="PEDIDO" />
         </EntityType>
         <EntityType Name="PEDIDO">
           <Key>
             <PropertyRef Name="PEDIDO_ID" />
           </Key>
-          <Property Name="PEDIDO_ID" Type="Int32" Nullable="false" />
+          <Property Name="PEDIDO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="USUARIO_ID" Type="Int32" Nullable="false" />
           <Property Name="PRECIO_TOTAL" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
-          <Property Name="INFO_PAGO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="INFO_PAGO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ESTADO_ENVIO" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ESTADO_ENVIO1" Relationship="Self.FK_PEDIDO_ESTADO_ENVIO" FromRole="PEDIDO" ToRole="ESTADO_ENVIO" />
           <NavigationProperty Name="USUARIO" Relationship="Self.FK_PEDIDO_USUARIO" FromRole="PEDIDO" ToRole="USUARIO" />
@@ -337,9 +345,8 @@
           </Key>
           <Property Name="PEDIDO_ID" Type="Int32" Nullable="false" />
           <Property Name="P_ID" Type="Int32" Nullable="false" />
-          <Property Name="UNIDADES" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="PRECIO" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="DESCUENTO" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UNIDADES" Type="Int32" Nullable="false" />
+          <Property Name="PRECIO" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
           <NavigationProperty Name="PEDIDO" Relationship="Self.FK_PEDIDOPRODUCTO_PEDIDO" FromRole="PEDIDOPRODUCTO" ToRole="PEDIDO" />
           <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_PEDIDOPRODUCTO_PRODUCTO" FromRole="PEDIDOPRODUCTO" ToRole="PRODUCTO" />
         </EntityType>
@@ -351,11 +358,17 @@
           <Property Name="NOMBREP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PRECIO" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="DESCRIP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIP_INGLES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="CATEGORIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UD_DISPO" Type="Int32" />
-          <Property Name="V_ID" Type="Int32" />
+          <Property Name="SUBCATEGORIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CATEGORIA_INGLES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUBCATEGORIA_INGLES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PROVEEDOR_ID" Type="Int32" Nullable="false" />
           <Property Name="IMAGEN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LINK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMAGEN2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESTACADO" Type="Boolean" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Precision="0" />
+          <Property Name="UD_DISPO" Type="Int32" />
           <NavigationProperty Name="CARRITOPRODUCTOes" Relationship="Self.FK_CARRITOPRODUCTO_PRODUCTO" FromRole="PRODUCTO" ToRole="CARRITOPRODUCTO" />
           <NavigationProperty Name="PEDIDOPRODUCTOes" Relationship="Self.FK_PEDIDOPRODUCTO_PRODUCTO" FromRole="PRODUCTO" ToRole="PEDIDOPRODUCTO" />
           <NavigationProperty Name="PROVEEDORs" Relationship="Self.PROVEEDORPRODUCTO" FromRole="PRODUCTO" ToRole="PROVEEDOR" />
@@ -365,18 +378,18 @@
             <PropertyRef Name="PROVEEDOR_ID" />
           </Key>
           <Property Name="PROVEEDOR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NOMBREV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TLFNV" Type="Int32" Nullable="false" />
-          <Property Name="EMAILV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DESCV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE_PROV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TLFN_PROV" Type="Int32" Nullable="false" />
+          <Property Name="EMAIL_PROV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION_PROV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="PRODUCTOes" Relationship="Self.PROVEEDORPRODUCTO" FromRole="PROVEEDOR" ToRole="PRODUCTO" />
         </EntityType>
         <EntityType Name="ROL">
           <Key>
             <PropertyRef Name="ID_ROL" />
           </Key>
-          <Property Name="ID_ROL" Type="Int32" Nullable="false" />
-          <Property Name="N_ROL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_ROL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_ROL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="USUARIOs" Relationship="Self.FK_USUARIO_ROL" FromRole="ROL" ToRole="USUARIO" />
         </EntityType>
         <EntityType Name="USUARIO">
@@ -394,6 +407,7 @@
           <Property Name="PAIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CP" Type="Int32" Nullable="false" />
           <Property Name="ID_ROL" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Precision="0" />
           <NavigationProperty Name="CARRITOes" Relationship="Self.FK_CARRITO_USUARIO" FromRole="USUARIO" ToRole="CARRITO" />
           <NavigationProperty Name="PEDIDOes" Relationship="Self.FK_PEDIDO_USUARIO" FromRole="USUARIO" ToRole="PEDIDO" />
           <NavigationProperty Name="ROL" Relationship="Self.FK_USUARIO_ROL" FromRole="USUARIO" ToRole="ROL" />
@@ -430,7 +444,7 @@
               <PropertyRef Name="PRODUCTO_ID" />
             </Principal>
             <Dependent Role="CARRITOPRODUCTO">
-              <PropertyRef Name="P_ID" />
+              <PropertyRef Name="PRODUCTO_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -498,7 +512,7 @@
           <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
           <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Database1Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CARRITOes" EntityType="Self.CARRITO" />
           <EntitySet Name="CARRITOPRODUCTOes" EntityType="Self.CARRITOPRODUCTO" />
           <EntitySet Name="ESTADO_ENVIO" EntityType="Self.ESTADO_ENVIO" />
@@ -550,7 +564,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
           <EntitySetMapping Name="CARRITOes">
             <EntityTypeMapping TypeName="Database1Model.CARRITO">
               <MappingFragment StoreEntitySet="CARRITO">
@@ -565,7 +579,7 @@
             <EntityTypeMapping TypeName="Database1Model.CARRITOPRODUCTO">
               <MappingFragment StoreEntitySet="CARRITOPRODUCTO">
                 <ScalarProperty Name="CARRITO_ID" ColumnName="CARRITO_ID" />
-                <ScalarProperty Name="P_ID" ColumnName="P_ID" />
+                <ScalarProperty Name="PRODUCTO_ID" ColumnName="PRODUCTO_ID" />
                 <ScalarProperty Name="UNIDADES" ColumnName="UNIDADES" />
                 <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
                 <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
@@ -577,6 +591,7 @@
               <MappingFragment StoreEntitySet="ESTADO_ENVIO">
                 <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
                 <ScalarProperty Name="TEXTO_ESTADO" ColumnName="TEXTO_ESTADO" />
+                <ScalarProperty Name="TEXTO_ESTADO_INGLES" ColumnName="TEXTO_ESTADO_INGLES" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -598,7 +613,6 @@
                 <ScalarProperty Name="P_ID" ColumnName="P_ID" />
                 <ScalarProperty Name="UNIDADES" ColumnName="UNIDADES" />
                 <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
-                <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -609,11 +623,17 @@
                 <ScalarProperty Name="NOMBREP" ColumnName="NOMBREP" />
                 <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
                 <ScalarProperty Name="DESCRIP" ColumnName="DESCRIP" />
+                <ScalarProperty Name="DESCRIP_INGLES" ColumnName="DESCRIP_INGLES" />
                 <ScalarProperty Name="CATEGORIA" ColumnName="CATEGORIA" />
-                <ScalarProperty Name="UD_DISPO" ColumnName="UD_DISPO" />
-                <ScalarProperty Name="V_ID" ColumnName="V_ID" />
+                <ScalarProperty Name="SUBCATEGORIA" ColumnName="SUBCATEGORIA" />
+                <ScalarProperty Name="CATEGORIA_INGLES" ColumnName="CATEGORIA_INGLES" />
+                <ScalarProperty Name="SUBCATEGORIA_INGLES" ColumnName="SUBCATEGORIA_INGLES" />
+                <ScalarProperty Name="PROVEEDOR_ID" ColumnName="PROVEEDOR_ID" />
                 <ScalarProperty Name="IMAGEN" ColumnName="IMAGEN" />
-                <ScalarProperty Name="LINK" ColumnName="LINK" />
+                <ScalarProperty Name="IMAGEN2" ColumnName="IMAGEN2" />
+                <ScalarProperty Name="DESTACADO" ColumnName="DESTACADO" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="UD_DISPO" ColumnName="UD_DISPO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -621,10 +641,10 @@
             <EntityTypeMapping TypeName="Database1Model.PROVEEDOR">
               <MappingFragment StoreEntitySet="PROVEEDOR">
                 <ScalarProperty Name="PROVEEDOR_ID" ColumnName="PROVEEDOR_ID" />
-                <ScalarProperty Name="NOMBREV" ColumnName="NOMBREV" />
-                <ScalarProperty Name="TLFNV" ColumnName="TLFNV" />
-                <ScalarProperty Name="EMAILV" ColumnName="EMAILV" />
-                <ScalarProperty Name="DESCV" ColumnName="DESCV" />
+                <ScalarProperty Name="NOMBRE_PROV" ColumnName="NOMBRE_PROV" />
+                <ScalarProperty Name="TLFN_PROV" ColumnName="TLFN_PROV" />
+                <ScalarProperty Name="EMAIL_PROV" ColumnName="EMAIL_PROV" />
+                <ScalarProperty Name="DESCRIPCION_PROV" ColumnName="DESCRIPCION_PROV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -632,7 +652,7 @@
             <EntityTypeMapping TypeName="Database1Model.ROL">
               <MappingFragment StoreEntitySet="ROL">
                 <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
-                <ScalarProperty Name="N_ROL" ColumnName="N_ROL" />
+                <ScalarProperty Name="NOMBRE_ROL" ColumnName="NOMBRE_ROL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -650,6 +670,7 @@
                 <ScalarProperty Name="PAIS" ColumnName="PAIS" />
                 <ScalarProperty Name="CP" ColumnName="CP" />
                 <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

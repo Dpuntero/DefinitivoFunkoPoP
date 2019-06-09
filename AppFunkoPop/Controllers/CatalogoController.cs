@@ -17,7 +17,7 @@ namespace ProyectoDawFunko.Controllers
             if (Categoria == null||Categoria=="todos")
             {
                
-                using (Database1Entities db = new Database1Entities())
+                using (Database1Entities1 db = new Database1Entities1())
                 {
                     prod = db.PRODUCTOes.ToList();
 
@@ -27,7 +27,7 @@ namespace ProyectoDawFunko.Controllers
             {
                
               
-                using (Database1Entities db = new Database1Entities())
+                using (Database1Entities1 db = new Database1Entities1())
                 {
                     prod = db.PRODUCTOes.Where(c => c.CATEGORIA == Categoria).ToList();
 

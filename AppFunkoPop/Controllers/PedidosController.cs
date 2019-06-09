@@ -14,7 +14,7 @@ namespace ProyectoDawFunko.Controllers
         // GET: Pedidos
         public ActionResult MisPedidos()
         {
-            Database1Entities db = new Database1Entities();
+            Database1Entities1 db = new Database1Entities1();
 
             int idUsu = Convert.ToInt32(Session["USUARIO_ID"]);
             List<PEDIDO> aux = db.PEDIDOes.ToList();
@@ -33,7 +33,7 @@ namespace ProyectoDawFunko.Controllers
         public ActionResult RealizarPedido(IEnumerable<AppFunkoPop.Models.ProductoUnidades> listcarrito)
         {
             Debug.WriteLine("My debug string here");
-            Database1Entities db = new Database1Entities();
+            Database1Entities1 db = new Database1Entities1();
             
                 PEDIDO nuevoPedido = new PEDIDO();
            
@@ -51,9 +51,8 @@ namespace ProyectoDawFunko.Controllers
                 PEDIDOPRODUCTO nuevoProductoPedido = new PEDIDOPRODUCTO();
                 nuevoProductoPedido.PEDIDO_ID = nuevoPedido.PEDIDO_ID;
                 nuevoProductoPedido.P_ID = i.PRODUCTO_ID;
-                nuevoProductoPedido.UNIDADES = i.Unidades;
-                nuevoProductoPedido.PRECIO = Convert.ToString(i.PRECIO);
-                nuevoProductoPedido.DESCUENTO = "0";
+                nuevoProductoPedido.UNIDADES = i.UD_DISPO.Value;
+                nuevoProductoPedido.PRECIO = i.PRECIO;
                 db.PEDIDOPRODUCTOes.Add(nuevoProductoPedido);
                 db.SaveChanges();
                 

@@ -16,9 +16,8 @@ namespace AppFunkoPop.Models
     {
         public int PEDIDO_ID { get; set; }
         public int P_ID { get; set; }
-        public string UNIDADES { get; set; }
-        public string PRECIO { get; set; }
-        public string DESCUENTO { get; set; }
+        public int UNIDADES { get; set; }
+        public decimal PRECIO { get; set; }
     
         public virtual PEDIDO PEDIDO { get; set; }
         public virtual PRODUCTO PRODUCTO { get; set; }
