@@ -150,6 +150,9 @@
   <data name="productos" xml:space="preserve">
     <value>Productos</value>
   </data>
+  <data name="subcategoria" xml:space="preserve">
+    <value>Subcategoría</value>
+  </data>
   <data name="udDisp" xml:space="preserve">
     <value>Unidades disponibles</value>
   </data>

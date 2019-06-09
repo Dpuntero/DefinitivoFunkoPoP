@@ -160,6 +160,15 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Subcategory.
+        /// </summary>
+        public static string subcategoria {
+            get {
+                return ResourceManager.GetString("subcategoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Units avaiable.
         /// </summary>
         public static string udDisp {
