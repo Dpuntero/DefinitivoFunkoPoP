@@ -7,11 +7,12 @@
 
 <h2>@AppFunkoPop.Resources.Productos.nuevo</h2>
 
-@using (Html.BeginForm("NuevoProducto", "Producto", FormMethod.Post))
+@using (Html.BeginForm("NuevoProducto", "Producto", FormMethod.Post, new { name = "frm" }))
 {
 
     <div class="row">
         <div class="col-md-12">
+           
 
             <div>
                 @*@Html.LabelFor(model => model.NOMBREP)*@
@@ -21,9 +22,25 @@
             </div>
             <div>
                 @*@Html.LabelFor(model => model.CATEGORIA)*@
-                @AppFunkoPop.Resources.Productos.categoria
-                @Html.EditorFor(model => model.CATEGORIA, "", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })
+                <label class="control-label col-md-2">@AppFunkoPop.Resources.Productos.categoria</label>
+                <select name="categoria" onclick="cambiar()">
+                    <option value="1">Marvel</option>
+                    <option value="2">Juego de tronos</option>
+                    <option value="0">Star Wars</option>
+
+                </select>
+                @*@Html.LabelFor(model => model.SUBCATEGORIA)*@
+                <label class="control-label col-md-2">@AppFunkoPop.Resources.Productos.subcategoria</label>
+                <select name="subcategoria">
+                    <option value="-"></option>
+                </select>
+                @*@Html.EditorFor(model => model.CATEGORIA, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })*@
+            </div>
+            <br />
+            <div>
+                
+
             </div>
             <div>
                 @*@Html.LabelFor(model => model.PRECIO)*@
@@ -73,3 +90,5 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+   
