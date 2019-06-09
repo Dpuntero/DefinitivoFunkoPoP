@@ -100,15 +100,21 @@ namespace ProyectoDawFunko.Controllers
             }
             else
             {
-                return View();
+                return RedirectToAction("CarritoVacio","Carrito");
             }
 
 
                
         }
 
+        public ActionResult CarritoVacio()
+        {
+            return View();
+        }
+        
 
-        public ActionResult CreacionCarrito(AppFunkoPop.Models.PRODUCTO productoModel)
+
+            public ActionResult CreacionCarrito(AppFunkoPop.Models.PRODUCTO productoModel)
         {
             using (Database1Entities1 db = new Database1Entities1())
             {
