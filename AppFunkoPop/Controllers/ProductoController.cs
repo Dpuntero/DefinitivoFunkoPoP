@@ -51,6 +51,7 @@ namespace AppFunkoPop.Controllers
         {
             nuevoProd.IMAGEN = nuevoProd.NOMBREP + ".jpg";
             nuevoProd.IMAGEN2 = nuevoProd.NOMBREP + ".jpg";
+            
             using (Database1Entities1 db = new Database1Entities1())
             {
 

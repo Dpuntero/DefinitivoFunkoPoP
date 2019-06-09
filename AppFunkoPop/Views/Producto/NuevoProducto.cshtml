@@ -12,7 +12,7 @@
 
     <div class="row">
         <div class="col-md-12">
-           
+
 
             <div>
                 @*@Html.LabelFor(model => model.NOMBREP)*@
@@ -24,9 +24,9 @@
                 @*@Html.LabelFor(model => model.CATEGORIA)*@
                 <label class="control-label col-md-2">@AppFunkoPop.Resources.Productos.categoria</label>
                 <select name="categoria" onclick="cambiar()">
-                    <option value="1">Marvel</option>
-                    <option value="2">Juego de tronos</option>
-                    <option value="0">Star Wars</option>
+                    <option value="marvel">Marvel</option>
+                    <option value="got">Juego de tronos</option>
+                    <option value="starwars">Star Wars</option>
 
                 </select>
             </div>
@@ -37,28 +37,28 @@
                     <option value="-"></option>
                 </select>
                 @*@Html.EditorFor(model => model.CATEGORIA, "", new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })*@
+            @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })*@
             </div>
             <br />
             <div>
-                
+
 
             </div>
             <div>
                 @Html.LabelFor(model => model.CATEGORIA_INGLES)
-               
+
                 @Html.EditorFor(model => model.CATEGORIA_INGLES, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CATEGORIA_INGLES, null, new { @class = "red" })
             </div>
             <div>
                 @Html.LabelFor(model => model.SUBCATEGORIA)
-               
+
                 @Html.EditorFor(model => model.SUBCATEGORIA, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.SUBCATEGORIA, null, new { @class = "red" })
             </div>
             <div>
                 @Html.LabelFor(model => model.SUBCATEGORIA_INGLES)
-              
+
                 @Html.EditorFor(model => model.SUBCATEGORIA_INGLES, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.SUBCATEGORIA_INGLES, null, new { @class = "red" })
             </div>
@@ -100,11 +100,18 @@
                 @Html.ValidationMessageFor(model => model.IMAGEN, null, new { @class = "red" })
             </div>
 
+
             <div>
                 @Html.LabelFor(model => model.IMAGEN2)
-            
+
                 @Html.EditorFor(model => model.IMAGEN2, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IMAGEN2, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.DESTACADO)
+
+                @Html.EditorFor(model => model.DESTACADO, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DESTACADO, null, new { @class = "red" })
             </div>
         </div>
         <br />
