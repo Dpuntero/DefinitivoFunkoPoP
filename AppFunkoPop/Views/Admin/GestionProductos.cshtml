@@ -42,6 +42,9 @@
                     Categoria
                 </th>
                 <th>
+                    Subcategoria
+                </th>
+                <th>
                     Unidades
                 </th>
                 <th>
@@ -51,7 +54,7 @@
                     Imagen
                 </th>
                 <th>
-                    Link
+                    Otra Imagen
                 </th>
                 <th>
                     Borrar
@@ -66,45 +69,48 @@
         <tbody>
             @foreach (var unProducto in listadoProductos)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => unProducto.PRODUCTO_ID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unProducto.NOMBREP)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unProducto.PRECIO)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unProducto.DESCRIP)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unProducto.CATEGORIA)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unProducto.UD_DISPO)
-                    <td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unProducto.PROVEEDOR_ID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unProducto.IMAGEN)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unProducto.IMAGEN2)
-                    </td>
-                    <td>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck" name="borrados" value="@unProducto.PRODUCTO_ID">
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => unProducto.PRODUCTO_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unProducto.NOMBREP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unProducto.PRECIO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unProducto.DESCRIP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unProducto.CATEGORIA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unProducto.SUBCATEGORIA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unProducto.UD_DISPO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unProducto.PROVEEDOR_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unProducto.IMAGEN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => unProducto.IMAGEN2)
+                </td>
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck" name="borrados" value="@unProducto.PRODUCTO_ID">
 
-                        </div>
+                    </div>
 
-                    </td>
-                    <td>
-                        @Html.ActionLink("Editar", "EditarProducto", new { id = unProducto.PRODUCTO_ID })
-                    </td>
-                </tr>
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarProducto", new { id = unProducto.PRODUCTO_ID })
+                </td>
+            </tr>
 
             }
         </tbody>
@@ -113,5 +119,5 @@
         Confirmar borrado
     </button>
     <br />
-    <p>O quizas quieras: @Html.ActionLink("Añadir un producto", "NuevoProducto", "Admin")</p>
+    <p>O quizas quieras: @Html.ActionLink("Añadir un producto", "NuevoProducto", "Producto")</p>
 }
