@@ -1,6 +1,7 @@
 ﻿using AppFunkoPop.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,32 +11,20 @@ namespace ProyectoDawFunko.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-
-
         {
+
+            Database1Entities1 db = new Database1Entities1();
             
-           /* USUARIO nuevo = new USUARIO()
-            {
+                var prod = db.PRODUCTOes.Where(x => x.DESTACADO == true).ToList().GetRange(db.PRODUCTOes.Where(x => x.DESTACADO == true).ToList().Count()-3, db.PRODUCTOes.Where(x => x.DESTACADO == true).ToList().Count()-1);
                 
-                NOMBRE = "david",
-                APELLIDOS = "puntero",
-                EMAIL = "wma",
-                PASSWD = "1232",
-                TLFN=123,
-                DIRECCION="asjkd",
-                CIUDAD="asd",
-                PAIS="asd",
-                CP=123,
-                ID_ROL = 1
-            };
+                foreach (var item in prod)
+                {
+                    Debug.WriteLine(item.NOMBREP);
+               
+                }
+
             
-            using ( Database1Entities db= new Database1Entities())
-            {
-                db.USUARIOs.Add(nuevo);
-                db.SaveChanges();
-            }
-            */
-            return View();
+            return View(prod);
         }
 
         public ActionResult About()

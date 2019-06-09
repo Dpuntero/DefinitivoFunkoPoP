@@ -1,80 +1,97 @@
-﻿@{
+﻿@model IEnumerable<AppFunkoPop.Models.PRODUCTO>
+
+@{
     ViewBag.Title = "Index";
 }
 
 
 
-        <!--INICIO CARROUSEL-->
-       
-            <h2></h2>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <!--IMAGENES DE CARROUSEL-->
+<!--INICIO CARROUSEL-->
 
-                    <div class="item active">
-                        <img src="~/Content/images/SliderGOT.png" alt="Los Angeles" style="width:100%;">
-                        <div class="carousel-caption">
-                            <h3>Los Angeles</h3>
-                            <p>LA is always so much fun!</p>
-                        </div>
-                    </div>
+<h2></h2>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <!--IMAGENES DE CARROUSEL-->
 
-                    <div class="item">
-                        <img src="~/Content/images/slidermarvel.jpg" alt="Chicago" style="width:100%;">
-                        <div class="carousel-caption">
-                            <h3>Chicago</h3>
-                            <p>Thank you, Chicago!</p>
-                        </div>
-                    </div>
+        <div class="item active">
+            <img src="~/Content/images/SliderGOT.png" alt="Los Angeles" style="width:100%;">
+            <div class="carousel-caption">
 
-                    <div class="item">
-                        <img src="~/Content/images/SliderStarWars.png" alt="New York" style="width:100%;">
-                        <div class="carousel-caption">
-                            <h3>New York</h3>
-                            <p>We love the Big Apple!</p>
-                        </div>
-                    </div>
-                    <!--FIN IMAGENES DE CARROUSEL-->
-                </div>
-                <!-- CONTROLES DE MOVIMIENTO DE CARROUSEL -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                <!--FIN DE CONTROLES DE CARROUSEL-->
-            </div>
-            <!--fIN DE CARROUSEL-->
-            <div class="col-md-4 imagenes">
-
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%"
-                     alt="Image">
-                <p>Current Project</p>
-            </div>
-            <div class="col-sm-4 imagenes">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%"
-                     alt="Image">
-                <p>Project 2</p>
-
-            </div>
-            <div class="col-sm-4 imagenes">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%"
-                     alt="Image">
-                <p>Project 2</p>
             </div>
         </div>
+
+        <div class="item">
+            <img src="~/Content/images/slidermarvel.jpg" alt="Chicago" style="width:100%;">
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="~/Content/images/SliderStarWars.png" alt="New York" style="width:100%;">
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+        <!--FIN IMAGENES DE CARROUSEL-->
     </div>
-    <!--COMIENZO IMAGENES DE PRODUCTOS-->
-    <!--FIN IMAGENES DE PRODUCTOS-->
+    <!-- CONTROLES DE MOVIMIENTO DE CARROUSEL -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    <!--FIN DE CONTROLES DE CARROUSEL-->
+</div>
+<!--fIN DE CARROUSEL-->
+<br/>
+<div class="row">
+    <h3 style=" text-align:center"> ¡Echa un vistazo a nuestros productos destacados!</h3>
+</div>
+    <div class="row">
+        <br />
+
+        @foreach (var prod in Model)
+        {
 
 
 
+            <div class="col-sm-4 col-md-4">
+                <div class="thumbnail">
+                    <img src="~/Content/images/@prod.CATEGORIA/@prod.IMAGEN" style="height: 250px; " />
+                    <div class="caption">
+                        <h3>@prod.NOMBREP</h3>
+                        <p>@prod.DESCRIP</p>
+                        <p>
+                            <a href="~/Producto/Productos/@prod.PRODUCTO_ID" class="btn btn-primary" role="button">Ver Producto</a>
+                            @using (Html.BeginForm("RecogerIdEnviarProducto", "Carrito", FormMethod.Post))
+                            {
+                                <div style='display: none'>
+
+                                    @Html.TextBox("id", ViewBag.Num1 as string, new { @Value = prod.PRODUCTO_ID })
+                                    @Html.TextBox("unidades", ViewBag.Num1 as string, new { @Value = "1" })
+                                </div>
+
+                                <button type="submit" class="btn btn-default">@AppFunkoPop.Resources.Productos.añadirCarrito</button>
+                            }
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+    </div>
+</div>
+    </div>
+<!--COMIENZO IMAGENES DE PRODUCTOS-->
+<!--FIN IMAGENES DE PRODUCTOS-->
 <!--FIN CONTENIDO-->
