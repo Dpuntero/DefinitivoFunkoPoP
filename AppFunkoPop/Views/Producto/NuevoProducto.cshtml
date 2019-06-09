@@ -15,8 +15,8 @@
 
             <div>
                 @*@Html.LabelFor(model => model.NOMBREP)*@
-                @AppFunkoPop.Resources.Productos.nombre
-                @Html.EditorFor(model => model.NOMBREP, "", new { @class = "form-control" })
+                <label class="control-label col-md-2"> @AppFunkoPop.Resources.Productos.nombre</label>
+                @Html.EditorFor(model => model.NOMBREP, "", new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NOMBREP, null, new { @class = "red" })
             </div>
             <div>
