@@ -26,6 +26,24 @@
                 @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })
             </div>
             <div>
+                @Html.LabelFor(model => model.CATEGORIA_INGLES)
+               
+                @Html.EditorFor(model => model.CATEGORIA_INGLES, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CATEGORIA_INGLES, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.SUBCATEGORIA)
+               
+                @Html.EditorFor(model => model.SUBCATEGORIA, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SUBCATEGORIA, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.SUBCATEGORIA_INGLES)
+              
+                @Html.EditorFor(model => model.SUBCATEGORIA_INGLES, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SUBCATEGORIA_INGLES, null, new { @class = "red" })
+            </div>
+            <div>
                 @*@Html.LabelFor(model => model.PRECIO)*@
                 @AppFunkoPop.Resources.Productos.precio
                 @Html.EditorFor(model => model.PRECIO, "", new { @class = "form-control" })
@@ -43,6 +61,12 @@
                 @Html.EditorFor(model => model.DESCRIP, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DESCRIP, null, new { @class = "red" })
             </div>
+            <div>
+                @Html.LabelFor(model => model.DESCRIP_INGLES)
+
+                @Html.EditorFor(model => model.DESCRIP_INGLES, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DESCRIP_INGLES, null, new { @class = "red" })
+            </div>
 
             <div>
                 @*@Html.LabelFor(model => model.V_ID)*@
@@ -58,8 +82,8 @@
             </div>
 
             <div>
-                @*@Html.LabelFor(model => model.LINK)*@
-                @AppFunkoPop.Resources.Productos.link
+                @Html.LabelFor(model => model.IMAGEN2)
+            
                 @Html.EditorFor(model => model.IMAGEN2, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IMAGEN2, null, new { @class = "red" })
             </div>

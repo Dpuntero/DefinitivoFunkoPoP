@@ -30,27 +30,39 @@ namespace AppFunkoPop.Controllers
             {
                 using (Database1Entities1 db = new Database1Entities1())
                 {
-                    userModel.ID_ROL = 1;
-                    userModel.FECHA_CREACION = DateTime.UtcNow;
-                    db.USUARIOs.Add(userModel);
+                    
+                    USUARIO usuario = db.USUARIOs.Where(x => x.EMAIL == userModel.EMAIL).FirstOrDefault();
+                    if (usuario != null)
+                    {
+                        userModel.LoginErrorMessage = "Ese email ya ha sido registrado";
+                        return View(userModel);
+                    }
+                    else
+                    {
 
-                    db.SaveChanges();
+                        userModel.ID_ROL = 1;
+                        userModel.FECHA_CREACION = DateTime.UtcNow;
+                        db.USUARIOs.Add(userModel);
 
-                    var userDetails = db.USUARIOs.Where(x => x.EMAIL == userModel.EMAIL && x.PASSWD == userModel.PASSWD).FirstOrDefault();
+                        db.SaveChanges();
 
-                    Session["USUARIO_ID"] = userDetails.USUARIO_ID;
-                    Session["NOMBRE"] = userDetails.NOMBRE;
-                    Session["APELLIDOS"] = userDetails.APELLIDOS;
-                    Session["EMAIL"] = userDetails.EMAIL;
-                    Session["PASSWD"] = userDetails.PASSWD;
-                    Session["TLFN"] = userDetails.TLFN;
-                    Session["DIRECCION"] = userDetails.DIRECCION;
-                    Session["CIUDAD"] = userDetails.CIUDAD;
-                    Session["PAIS"] = userDetails.PAIS;
-                    Session["CP"] = userDetails.CP;
-                    Session["ID_ROL"] = userDetails.ID_ROL;
+                        var userDetails = db.USUARIOs.Where(x => x.EMAIL == userModel.EMAIL && x.PASSWD == userModel.PASSWD).FirstOrDefault();
+
+                        Session["USUARIO_ID"] = userDetails.USUARIO_ID;
+                        Session["NOMBRE"] = userDetails.NOMBRE;
+                        Session["APELLIDOS"] = userDetails.APELLIDOS;
+                        Session["EMAIL"] = userDetails.EMAIL;
+                        Session["PASSWD"] = userDetails.PASSWD;
+                        Session["TLFN"] = userDetails.TLFN;
+                        Session["DIRECCION"] = userDetails.DIRECCION;
+                        Session["CIUDAD"] = userDetails.CIUDAD;
+                        Session["PAIS"] = userDetails.PAIS;
+                        Session["CP"] = userDetails.CP;
+                        Session["ID_ROL"] = userDetails.ID_ROL;
+                    }
+                    return RedirectToAction("Index", "Home");
                 }
-                return RedirectToAction("Index", "Home");
+                
             }
             else
             {

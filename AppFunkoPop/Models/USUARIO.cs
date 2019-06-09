@@ -30,7 +30,7 @@ namespace AppFunkoPop.Models
         [Required(ErrorMessage = "Es necesario introducir un Apellido")]
         public string APELLIDOS { get; set; }
         [Required(ErrorMessage = "Es necesario introducir un email")]
-        [EmailValidation(ErrorMessage = "Ese e-mail ya ha sido utilizado")]
+        //[EmailValidation(ErrorMessage = "Ese e-mail ya ha sido utilizado")]
         public string EMAIL { get; set; }
         [Required(ErrorMessage = "Es necesario introducir un password")]
         [DataType(DataType.Password)]
@@ -56,28 +56,28 @@ namespace AppFunkoPop.Models
 
         public string LoginErrorMessage { get; set; }
 
-        public class EmailValidation : ValidationAttribute
-        {
-            private Database1Entities1 db = new Database1Entities1();
+        //public class EmailValidation : ValidationAttribute
+        //{
+        //    private Database1Entities1 db = new Database1Entities1();
 
-            protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-            {
-                var email = (string)value;
+        //    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        //    {
+        //        var email = (string)value;
 
-                USUARIO usuario = db.USUARIOs.Where(x => x.EMAIL == email).FirstOrDefault();
+        //        USUARIO usuario = db.USUARIOs.Where(x => x.EMAIL == email).FirstOrDefault();
 
-                if (usuario != null)
-                {
-                    return new ValidationResult(ErrorMessage);
-                }
-                else
-                {
-                    return ValidationResult.Success;
-                }
+        //        if (usuario != null)
+        //        {
+        //            return new ValidationResult(ErrorMessage);
+        //        }
+        //        else
+        //        {
+        //            return ValidationResult.Success;
+        //        }
 
-            }
+        //    }
 
 
-        }
+        //}
     }
 }
