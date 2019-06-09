@@ -6,7 +6,7 @@
     }
     else
     {
-       if (Session["ID_ROL"].ToString() != "2")
+        if (Session["ID_ROL"].ToString() != "2")
         {
             Response.Redirect("~/Home/Index");
         }
@@ -20,7 +20,8 @@
 
 <h2>Listado de Productos</h2>
 <p>Listado de sus Productos:</p>
-<form>
+@using (Html.BeginForm("EliminarProductos", "Admin", FormMethod.Post))
+{
     <table class="table table-striped">
         <thead>
             <tr>
@@ -83,7 +84,7 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => unProducto.UD_DISPO)
-                    </td>
+                    <td>
                     <td>
                         @Html.DisplayFor(modelItem => unProducto.V_ID)
                     </td>
@@ -95,7 +96,7 @@
                     </td>
                     <td>
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="borrados" value="@unProducto.PRODUCTO_ID">
 
                         </div>
 
@@ -108,7 +109,9 @@
             }
         </tbody>
     </table>
-    <button type="submit" class="btn btn-primary mb-2">Validar Acciones</button>
+    <button type="submit" class="btn btn-primary mb-2" style="color: white;" name="borrados">
+        Confirmar borrado
+    </button>
     <br />
     <p>O quizas quieras: @Html.ActionLink("Añadir un producto", "NuevoProducto", "Admin")</p>
-</form>
+}

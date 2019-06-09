@@ -117,7 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Home" xml:space="preserve">
-    <value>inicio</value>
+  <data name="añadirProducto" xml:space="preserve">
+    <value>Añadir un producto</value>
+  </data>
+  <data name="cambiarContrasena" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="categoria" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="decripcion" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="editar" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="estado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="gestionarMisDatos" xml:space="preserve">
+    <value>Gestionar mis datos</value>
+  </data>
+  <data name="gestionesAdmin" xml:space="preserve">
+    <value>Gestiones de Admin</value>
+  </data>
+  <data name="gestionesPropioUsuario" xml:space="preserve">
+    <value>Gestiones sobre el propio usuario</value>
+  </data>
+  <data name="gestionPedidos" xml:space="preserve">
+    <value>Gestión de Pedidos</value>
+  </data>
+  <data name="gestionProductos" xml:space="preserve">
+    <value>Gestión de Productos</value>
+  </data>
+  <data name="gestionUsuarios" xml:space="preserve">
+    <value>Gestión de Usuarios</value>
+  </data>
+  <data name="guardar" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="idProducto" xml:space="preserve">
+    <value>Código de producto</value>
+  </data>
+  <data name="idVendedor" xml:space="preserve">
+    <value>Código del proveedor</value>
+  </data>
+  <data name="imagen" xml:space="preserve">
+    <value>Imagen</value>
+  </data>
+  <data name="infoPago" xml:space="preserve">
+    <value>Información de pago</value>
+  </data>
+  <data name="link" xml:space="preserve">
+    <value>Enlace</value>
+  </data>
+  <data name="listadoPedidos" xml:space="preserve">
+    <value>Listado de pedidos</value>
+  </data>
+  <data name="nombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="precio" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="producto" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="unidadesDisp" xml:space="preserve">
+    <value>Unidades disponibles</value>
+  </data>
+  <data name="validarAcciones" xml:space="preserve">
+    <value>Validad acciones</value>
+  </data>
+  <data name="vendedor" xml:space="preserve">
+    <value>Vendedor</value>
+  </data>
+  <data name="volver" xml:space="preserve">
+    <value>Volver</value>
   </data>
 </root>

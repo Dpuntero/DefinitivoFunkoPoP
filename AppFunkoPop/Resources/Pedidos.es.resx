@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Home" xml:space="preserve">
-    <value>inicio</value>
+  <data name="articulos" xml:space="preserve">
+    <value>Artículos</value>
+  </data>
+  <data name="estado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="listaPedidos" xml:space="preserve">
+    <value>Listado de pedidos</value>
+  </data>
+  <data name="listaPedidosEstado" xml:space="preserve">
+    <value>Listado de pedidos y su estado</value>
+  </data>
+  <data name="numPedido" xml:space="preserve">
+    <value>Nº de pedido</value>
+  </data>
+  <data name="precioTotal" xml:space="preserve">
+    <value>Precio total</value>
   </data>
 </root>

@@ -117,7 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Home" xml:space="preserve">
-    <value>inicio</value>
+  <data name="añadir" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="añadirCarrito" xml:space="preserve">
+    <value>Añadir al carrito</value>
+  </data>
+  <data name="categoria" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="descripcion" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="idVendedor" xml:space="preserve">
+    <value>Proveedor</value>
+  </data>
+  <data name="imagen" xml:space="preserve">
+    <value>Imagen</value>
+  </data>
+  <data name="link" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="nombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="nuevo" xml:space="preserve">
+    <value>Nuevo producto</value>
+  </data>
+  <data name="precio" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="productos" xml:space="preserve">
+    <value>Productos</value>
+  </data>
+  <data name="udDisp" xml:space="preserve">
+    <value>Unidades disponibles</value>
   </data>
 </root>

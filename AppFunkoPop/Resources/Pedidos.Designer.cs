@@ -22,24 +22,24 @@ namespace AppFunkoPop.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ProductosTexts {
+    internal class Pedidos {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ProductosTexts() {
+        internal Pedidos() {
         }
         
         /// <summary>
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppFunkoPop.Resources.ProductosTexts", typeof(ProductosTexts).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AppFunkoPop.Resources.Pedidos", typeof(Pedidos).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace AppFunkoPop.Resources {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,11 +61,56 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Description products.
+        ///   Busca una cadena traducida similar a Articles.
         /// </summary>
-        public static string DescriptionProducts {
+        internal static string articulos {
             get {
-                return ResourceManager.GetString("DescriptionProducts", resourceCulture);
+                return ResourceManager.GetString("articulos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Status.
+        /// </summary>
+        internal static string estado {
+            get {
+                return ResourceManager.GetString("estado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Orders list.
+        /// </summary>
+        internal static string listaPedidos {
+            get {
+                return ResourceManager.GetString("listaPedidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a My orders list.
+        /// </summary>
+        internal static string listaPedidosEstado {
+            get {
+                return ResourceManager.GetString("listaPedidosEstado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Order number.
+        /// </summary>
+        internal static string numPedido {
+            get {
+                return ResourceManager.GetString("numPedido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total price.
+        /// </summary>
+        internal static string precioTotal {
+            get {
+                return ResourceManager.GetString("precioTotal", resourceCulture);
             }
         }
     }
