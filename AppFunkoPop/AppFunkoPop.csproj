@@ -198,6 +198,7 @@
     <Compile Include="Models\USUARIO.cs">
       <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UsuarioSobreVal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Account.es.Designer.cs">
       <DependentUpon>Account.es.resx</DependentUpon>
