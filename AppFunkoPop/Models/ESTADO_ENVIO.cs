@@ -22,6 +22,7 @@ namespace AppFunkoPop.Models
     
         public int ID_ESTADO { get; set; }
         public string TEXTO_ESTADO { get; set; }
+        public string TEXTO_ESTADO_INGLES { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEDIDO> PEDIDOes { get; set; }

@@ -22,10 +22,10 @@ namespace AppFunkoPop.Models
             this.CARRITOes = new HashSet<CARRITO>();
             this.PEDIDOes = new HashSet<PEDIDO>();
         }
-    
+
         public int USUARIO_ID { get; set; }
-        [Required(ErrorMessage ="Es necesario introducir un nombre")]
-      
+        [Required(ErrorMessage = "Es necesario introducir un nombre")]
+
         public string NOMBRE { get; set; }
         [Required(ErrorMessage = "Es necesario introducir un Apellido")]
         public string APELLIDOS { get; set; }
@@ -45,13 +45,8 @@ namespace AppFunkoPop.Models
         public string PAIS { get; set; }
         [Required(ErrorMessage = "Es necesario introducir un codigo postal")]
         public int CP { get; set; }
-
-        
-
-
         public int ID_ROL { get; set; }
-
-        public string LoginErrorMessage { get; set; }
+        public Nullable<System.DateTime> FECHA_CREACION { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CARRITO> CARRITOes { get; set; }
@@ -59,9 +54,11 @@ namespace AppFunkoPop.Models
         public virtual ICollection<PEDIDO> PEDIDOes { get; set; }
         public virtual ROL ROL { get; set; }
 
+        public string LoginErrorMessage { get; set; }
+
         public class EmailValidation : ValidationAttribute
         {
-            private Database1Entities db = new Database1Entities();
+            private Database1Entities1 db = new Database1Entities1();
 
             protected override ValidationResult IsValid(object value, ValidationContext validationContext)
             {
@@ -82,7 +79,5 @@ namespace AppFunkoPop.Models
 
 
         }
-
-
     }
 }

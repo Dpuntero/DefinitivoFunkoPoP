@@ -15,7 +15,7 @@ namespace AppFunkoPop.Models
     public partial class CARRITOPRODUCTO
     {
         public int CARRITO_ID { get; set; }
-        public int P_ID { get; set; }
+        public int PRODUCTO_ID { get; set; }
         public int UNIDADES { get; set; }
         public decimal PRECIO { get; set; }
         public int DESCUENTO { get; set; }

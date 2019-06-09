@@ -17,7 +17,7 @@ namespace AppFunkoPop.Controllers
                
             
                 PRODUCTO prod = new PRODUCTO();
-                using (Database1Entities db = new Database1Entities())
+                using (Database1Entities1 db = new Database1Entities1())
                 {
 
                     prod = db.PRODUCTOes.Find(id);
@@ -50,8 +50,8 @@ namespace AppFunkoPop.Controllers
         public ActionResult NuevoProducto(AppFunkoPop.Models.PRODUCTO nuevoProd)
         {
             nuevoProd.IMAGEN = nuevoProd.NOMBREP + "1.jpg";
-            nuevoProd.LINK = nuevoProd.NOMBREP + "2.jpg";
-            using (Database1Entities db = new Database1Entities())
+            nuevoProd.IMAGEN2 = nuevoProd.NOMBREP + "2.jpg";
+            using (Database1Entities1 db = new Database1Entities1())
             {
 
                 db.PRODUCTOes.Add(nuevoProd);

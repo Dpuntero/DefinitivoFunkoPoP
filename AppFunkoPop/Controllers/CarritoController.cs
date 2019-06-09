@@ -73,7 +73,7 @@ namespace ProyectoDawFunko.Controllers
 
                         foreach (var item in listProductos)
                         {
-                            using (Database1Entities db = new Database1Entities())
+                            using (Database1Entities1 db = new Database1Entities1())
                             {
                                 int w = Convert.ToInt32(item.producto_Id);
                                 PRODUCTO añadir = db.PRODUCTOes.Where(x => x.PRODUCTO_ID ==w).FirstOrDefault();
@@ -110,12 +110,12 @@ namespace ProyectoDawFunko.Controllers
 
         public ActionResult CreacionCarrito(AppFunkoPop.Models.PRODUCTO productoModel)
         {
-            using (Database1Entities db = new Database1Entities())
+            using (Database1Entities1 db = new Database1Entities1())
             {
                 CARRITO nuevoCarrito = new CARRITO();
                 nuevoCarrito.FECHA_CR = DateTime.Today;
                 nuevoCarrito.USUARIO_ID = Convert.ToInt32(Session["USUARIO_ID"]);
-                nuevoCarrito.PRECIO_T = "3";
+                nuevoCarrito.PRECIO_T = 3;
                 nuevoCarrito.CARRITO_ID = 1;
                 db.CARRITOes.Add(nuevoCarrito);
                 db.SaveChanges();

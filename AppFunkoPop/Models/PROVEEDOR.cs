@@ -21,10 +21,10 @@ namespace AppFunkoPop.Models
         }
     
         public int PROVEEDOR_ID { get; set; }
-        public string NOMBREV { get; set; }
-        public int TLFNV { get; set; }
-        public string EMAILV { get; set; }
-        public string DESCV { get; set; }
+        public string NOMBRE_PROV { get; set; }
+        public int TLFN_PROV { get; set; }
+        public string EMAIL_PROV { get; set; }
+        public string DESCRIPCION_PROV { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRODUCTO> PRODUCTOes { get; set; }
