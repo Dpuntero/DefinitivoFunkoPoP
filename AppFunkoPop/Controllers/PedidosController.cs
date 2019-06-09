@@ -32,33 +32,49 @@ namespace ProyectoDawFunko.Controllers
         [HttpPost]
         public ActionResult RealizarPedido(IEnumerable<AppFunkoPop.Models.ProductoUnidades> listcarrito)
         {
-            Debug.WriteLine("My debug string here");
-            Database1Entities1 db = new Database1Entities1();
-            
+            if (Session["USUARIO_ID"] == null)
+            {
+                return RedirectToAction("Login","Account");
+            }
+            else
+            {
+
+
+
+
+
+                Debug.WriteLine("My debug string here");
+                Database1Entities1 db = new Database1Entities1();
+
                 PEDIDO nuevoPedido = new PEDIDO();
-           
-            nuevoPedido.PEDIDO_ID = 3;
-            nuevoPedido.USUARIO_ID = Convert.ToInt32(Session["USUARIO_ID"]);
+
+                nuevoPedido.PEDIDO_ID = 3;
+                nuevoPedido.USUARIO_ID = Convert.ToInt32(Session["USUARIO_ID"]);
                 nuevoPedido.PRECIO_TOTAL = 0;
                 nuevoPedido.INFO_PAGO = "irrelevante";
                 nuevoPedido.ESTADO_ENVIO = 1;
-            db.PEDIDOes.Add(nuevoPedido);
-            db.SaveChanges();
-            
-            foreach (var i in listcarrito)
-            {
-                
-                PEDIDOPRODUCTO nuevoProductoPedido = new PEDIDOPRODUCTO();
-                nuevoProductoPedido.PEDIDO_ID = nuevoPedido.PEDIDO_ID;
-                nuevoProductoPedido.P_ID = i.PRODUCTO_ID;
-                nuevoProductoPedido.UNIDADES = i.UD_DISPO.Value;
-                nuevoProductoPedido.PRECIO = i.PRECIO;
-                db.PEDIDOPRODUCTOes.Add(nuevoProductoPedido);
+                db.PEDIDOes.Add(nuevoPedido);
                 db.SaveChanges();
-                
-            }
 
-            return RedirectToAction("MisPedidos","Pedidos");
+                foreach (var i in listcarrito)
+                {
+
+                    PEDIDOPRODUCTO nuevoProductoPedido = new PEDIDOPRODUCTO();
+                    nuevoProductoPedido.PEDIDO_ID = nuevoPedido.PEDIDO_ID;
+                    nuevoProductoPedido.P_ID = i.PRODUCTO_ID;
+                    nuevoProductoPedido.UNIDADES = i.UD_DISPO.Value;
+                    nuevoProductoPedido.PRECIO = i.PRECIO;
+                    db.PEDIDOPRODUCTOes.Add(nuevoProductoPedido);
+                    db.SaveChanges();
+
+                }
+                var cookie = Request.Cookies["Carrito"];
+                cookie.Expires = DateTime.Now.AddDays(-1);
+                cookie.Value = string.Empty;
+                Response.Cookies.Add(cookie);
+
+                return RedirectToAction("MisPedidos", "Pedidos");
+            }
         }
 
 
