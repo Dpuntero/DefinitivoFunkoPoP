@@ -1,4 +1,4 @@
-﻿@model AppFunkoPop.Models.USUARIO
+﻿@model AppFunkoPop.Models.PRODUCTO
 @{
     if (Session["ID_ROL"] == null)
     {
@@ -12,90 +12,96 @@
         }
     }
 
-    ViewBag.Title = "GestionUsuarios";
-    List<AppFunkoPop.Models.USUARIO> listadoUsuarios = ViewBag.Usuarios;
+    ViewBag.Title = "GestionProductos";
+    List<AppFunkoPop.Models.PRODUCTO> listadoProductos = ViewBag.Productos;
 }
 
-<h2>@AppFunkoPop.Resources.Admin.listaUsuarios</h2>
+
+
+<h2>@AppFunkoPop.Resources.Admin.listaProductos</h2>
 
 <form>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>
+                    @AppFunkoPop.Resources.Admin.idProducto
+
+                </th>
+                <th>
                     @AppFunkoPop.Resources.Admin.nombre
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.apellido
+                    @AppFunkoPop.Resources.Admin.precio
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.email
+                    @AppFunkoPop.Resources.Admin.decripcion
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.contrasena
+                    @AppFunkoPop.Resources.Admin.categoria
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.telefono
+                    @AppFunkoPop.Resources.Admin.unidadesDisp
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.direccion
+                    @AppFunkoPop.Resources.Admin.idVendedor
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.ciudad
+                    @AppFunkoPop.Resources.Admin.imagen
                 </th>
                 <th>
-                    @AppFunkoPop.Resources.Admin.pais
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.rol
+                    @AppFunkoPop.Resources.Admin.link
                 </th>
                 <th>
                     @AppFunkoPop.Resources.Admin.borrar
+
                 </th>
                 <th>
                     @AppFunkoPop.Resources.Admin.editar
                 </th>
+
             </tr>
         </thead>
         <tbody>
-            @foreach (var unUsuario in listadoUsuarios)
+            @foreach (var unProducto in listadoProductos)
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => unUsuario.NOMBRE)
+                        @Html.DisplayFor(modelItem => unProducto.PRODUCTO_ID)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => unUsuario.APELLIDOS)
+                        @Html.DisplayFor(modelItem => unProducto.NOMBREP)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => unUsuario.EMAIL)
+                        @Html.DisplayFor(modelItem => unProducto.PRECIO)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => unUsuario.PASSWD)
+                        @Html.DisplayFor(modelItem => unProducto.DESCRIP)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => unUsuario.TLFN)
+                        @Html.DisplayFor(modelItem => unProducto.CATEGORIA)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => unUsuario.DIRECCION)
+                        @Html.DisplayFor(modelItem => unProducto.UD_DISPO)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => unUsuario.CIUDAD)
+                        @Html.DisplayFor(modelItem => unProducto.V_ID)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => unUsuario.PAIS)
+                        @Html.DisplayFor(modelItem => unProducto.IMAGEN)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => unUsuario.ROL.N_ROL)
+                        @Html.DisplayFor(modelItem => unProducto.LINK)
                     </td>
                     <td>
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+
                         </div>
 
                     </td>
                     <td>
-                        @Html.ActionLink(@AppFunkoPop.Resources.Admin.editar, "EditarUsuario", new { id = unUsuario.USUARIO_ID })
+                        @Html.ActionLink(@AppFunkoPop.Resources.Admin.editar, "EditarProducto", new { id = unProducto.PRODUCTO_ID })
                     </td>
                 </tr>
 
@@ -104,6 +110,5 @@
     </table>
     <button type="submit" class="btn btn-primary mb-2">@AppFunkoPop.Resources.Admin.validarAcciones</button>
     <br />
+    <p>O quizas quieras: @Html.ActionLink(@AppFunkoPop.Resources.Admin.añadirProducto, "NuevoProducto", "Admin")</p>
 </form>
-
-
