@@ -195,4 +195,52 @@
   <data name="volver" xml:space="preserve">
     <value>Go back</value>
   </data>
+  <data name="apellido" xml:space="preserve">
+    <value>surname</value>
+  </data>
+  <data name="ciudad" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="codigoPostal" xml:space="preserve">
+    <value>Postal code</value>
+  </data>
+  <data name="contrasena" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="direccion" xml:space="preserve">
+    <value>Adress</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="pais" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="rol" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="telefono" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="borrar" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="idPedido" xml:space="preserve">
+    <value>Order Id</value>
+  </data>
+  <data name="idUsuario" xml:space="preserve">
+    <value>User id</value>
+  </data>
+  <data name="listaProductos" xml:space="preserve">
+    <value>Products list</value>
+  </data>
+  <data name="listaUsuarios" xml:space="preserve">
+    <value>Users list</value>
+  </data>
+  <data name="panelControlAdmin" xml:space="preserve">
+    <value>Admin control panel</value>
+  </data>
+  <data name="queQuieresHacer" xml:space="preserve">
+    <value>What do you want to do?</value>
+  </data>
 </root>

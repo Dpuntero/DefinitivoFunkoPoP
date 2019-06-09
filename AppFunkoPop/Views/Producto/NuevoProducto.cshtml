@@ -5,7 +5,7 @@
     ViewBag.Title = "NuevoProducto";
 }
 
-<h2>Nuevo</h2>
+<h2>@AppFunkoPop.Resources.Productos.nuevo</h2>
 
 @using (Html.BeginForm("NuevoProducto", "Producto", FormMethod.Post))
 {
@@ -14,51 +14,59 @@
         <div class="col-md-12">
 
             <div>
-                @Html.LabelFor(model => model.NOMBREP)
+                @*@Html.LabelFor(model => model.NOMBREP)*@
+                @AppFunkoPop.Resources.Productos.nombre
                 @Html.EditorFor(model => model.NOMBREP, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.NOMBREP, null, new { @class = "red" })
             </div>
             <div>
-                @Html.LabelFor(model => model.CATEGORIA)
+                @*@Html.LabelFor(model => model.CATEGORIA)*@
+                @AppFunkoPop.Resources.Productos.categoria
                 @Html.EditorFor(model => model.CATEGORIA, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })
             </div>
             <div>
-                @Html.LabelFor(model => model.PRECIO)
+                @*@Html.LabelFor(model => model.PRECIO)*@
+                @AppFunkoPop.Resources.Productos.precio
                 @Html.EditorFor(model => model.PRECIO, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.PRECIO, null, new { @class = "red" })
             </div>
             <div>
-                @Html.LabelFor(model => model.UD_DISPO)
+                @*@Html.LabelFor(model => model.UD_DISPO)*@
+                @AppFunkoPop.Resources.Productos.udDisp
                 @Html.EditorFor(model => model.UD_DISPO, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.UD_DISPO, null, new { @class = "red" })
             </div>
             <div>
-                @Html.LabelFor(model => model.DESCRIP)
+                @*@Html.LabelFor(model => model.DESCRIP)*@
+                @AppFunkoPop.Resources.Productos.descripcion
                 @Html.EditorFor(model => model.DESCRIP, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DESCRIP, null, new { @class = "red" })
             </div>
 
             <div>
-                @Html.LabelFor(model => model.V_ID)
+                @*@Html.LabelFor(model => model.V_ID)*@
+                @AppFunkoPop.Resources.Productos.idVendedor
                 @Html.EditorFor(model => model.V_ID, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.V_ID, null, new { @class = "red" })
             </div>
             <div>
-                @Html.LabelFor(model => model.IMAGEN)
+                @*@Html.LabelFor(model => model.IMAGEN)*@
+                @AppFunkoPop.Resources.Productos.imagen
                 @Html.EditorFor(model => model.IMAGEN, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IMAGEN, null, new { @class = "red" })
             </div>
 
             <div>
-                @Html.LabelFor(model => model.LINK)
+                @*@Html.LabelFor(model => model.LINK)*@
+                @AppFunkoPop.Resources.Productos.link
                 @Html.EditorFor(model => model.LINK, "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.LINK, null, new { @class = "red" })
             </div>
         </div>
         <br />
         <div>
-            <input type="submit" value="Añadir" class="btn btn-primary" />
+            <input type="submit" value="@AppFunkoPop.Resources.Productos.añadir" class="btn btn-primary" />
         </div>
     </div>
 }
