@@ -36,8 +36,8 @@ namespace ProyectoDawFunko.Controllers
             Database1Entities db = new Database1Entities();
             
                 PEDIDO nuevoPedido = new PEDIDO();
-            var x = db.PEDIDOes.Last();
-            nuevoPedido.PEDIDO_ID = x.PEDIDO_ID + 1;
+           
+            nuevoPedido.PEDIDO_ID = 3;
             nuevoPedido.USUARIO_ID = Convert.ToInt32(Session["USUARIO_ID"]);
                 nuevoPedido.PRECIO_TOTAL = 0;
                 nuevoPedido.INFO_PAGO = "irrelevante";

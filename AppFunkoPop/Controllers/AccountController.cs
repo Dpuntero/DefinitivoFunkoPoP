@@ -61,7 +61,7 @@ namespace AppFunkoPop.Controllers
         }
   
         [HttpPost]
-        public ActionResult Autorizar(AppFunkoPop.Models.USUARIO userModel)
+        public ActionResult Autorizar(AppFunkoPop.Models.autorizar userModel)
         {
             using (Database1Entities db = new Database1Entities())
             {

@@ -150,6 +150,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\autorizar.cs" />
     <Compile Include="Models\CARRITO.cs">
       <DependentUpon>DDBBFunkoModel.tt</DependentUpon>
     </Compile>
