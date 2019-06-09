@@ -11,99 +11,105 @@
             Response.Redirect("~/Home/Index");
         }
     }
-
-    ViewBag.Title = "GestionUsuarios";
-    List<AppFunkoPop.Models.USUARIO> listadoUsuarios = ViewBag.Usuarios;
 }
 
-<h2>@AppFunkoPop.Resources.Admin.listaUsuarios</h2>
-
-<form>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>
-                    @AppFunkoPop.Resources.Admin.nombre
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.apellido
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.email
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.contrasena
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.telefono
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.direccion
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.ciudad
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.pais
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.rol
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.borrar
-                </th>
-                <th>
-                    @AppFunkoPop.Resources.Admin.editar
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var unUsuario in listadoUsuarios)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => unUsuario.NOMBRE)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unUsuario.APELLIDOS)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unUsuario.EMAIL)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unUsuario.PASSWD)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unUsuario.TLFN)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unUsuario.DIRECCION)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unUsuario.CIUDAD)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unUsuario.PAIS)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => unUsuario.ROL.N_ROL)
-                    </td>
-                    <td>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
-                        </div>
-
-                    </td>
-                    <td>
-                        @Html.ActionLink(@AppFunkoPop.Resources.Admin.editar, "EditarUsuario", new { id = unUsuario.USUARIO_ID })
-                    </td>
-                </tr>
-
-            }
-        </tbody>
-    </table>
-    <button type="submit" class="btn btn-primary mb-2">@AppFunkoPop.Resources.Admin.validarAcciones</button>
-    <br />
-</form>
+@using (Html.BeginForm("EditandoUsuario", "Admin", FormMethod.Post))
+{
 
 
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>USUARIO</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.USUARIO_ID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NOMBRE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NOMBRE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NOMBRE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.APELLIDOS, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.APELLIDOS, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.APELLIDOS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EMAIL, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TLFN, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TLFN, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TLFN, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DIRECCION, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DIRECCION, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DIRECCION, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CIUDAD, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CIUDAD, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CIUDAD, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PAIS, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PAIS, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PAIS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CP, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CP, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ROL.N_ROL, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ROL.N_ROL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PAIS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+<div>
+    @Html.ActionLink("Volver", "GestionUsuario")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

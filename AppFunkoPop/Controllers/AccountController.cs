@@ -114,7 +114,7 @@ namespace AppFunkoPop.Controllers
 
                 usuario.NOMBRE = userModel.NOMBRE;
                 usuario.APELLIDOS = userModel.APELLIDOS;
-                usuario.EMAIL = userModel.EMAIL;
+                usuario.EMAIL = usuario.EMAIL;
 
                 usuario.TLFN = userModel.TLFN;
                 usuario.DIRECCION = userModel.DIRECCION;
