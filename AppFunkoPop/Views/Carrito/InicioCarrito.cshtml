@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AppFunkoPop.Models.ProductoUnidades>
+﻿@model IList<AppFunkoPop.Models.ProductoUnidades>
 @{
     ViewBag.Title = "MiCarrito";
 }
@@ -46,11 +46,22 @@
 </table>
 @using (Html.BeginForm("RealizarPedido", "Pedidos", FormMethod.Post))
 {
-    <div style='display: none'>
-        ...
-        @Html.TextBoxFor(model => model)
-    </div>
 
+
+
+
+    int i= 0;
+    foreach (var item in Model)
+    {
+        @Html.Hidden("[" + i + "].CATEGORIA", item.CATEGORIA, new { @id = "[" + i + "].CATEGORIA" })
+        @Html.Hidden("[" + i + "].IMAGEN", item.IMAGEN, new { @id = "[" + i + "].IMAGEN" })
+        @Html.Hidden("[" + i + "].PRODUCTO_ID", item.PRODUCTO_ID, new { @id = "[" + i + "].PRODUCTO_ID" })
+        @Html.Hidden("[" + i + "].PRECIO", item.PRECIO, new { @id = "[" + i + "].PRECIO" })
+        @Html.Hidden("[" + i + "].PRECIOUnidad", item.PRECIOUnidad, new { @id = "[" + i + "].PRECIOUnidad" })
+        @Html.Hidden("[" + i + "].UD_DISPO", item.UD_DISPO, new { @id = "[" + i + "].UD_DISPO" })
+        @Html.Hidden("[" + i + "].Unidades", item.Unidades, new { @id = "[" + i + "].Unidades" })
+        i++;
+    }
 
     <input type="submit" name="entrar" value="Realizar pedido" />
 

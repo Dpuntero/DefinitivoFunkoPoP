@@ -94,10 +94,7 @@ namespace ProyectoDawFunko.Controllers
 
 
                     }
-                    else
-                    {
-                        return View(listfinal);
-                    }               
+                               
                 }
                 return View(listfinal);
             }
@@ -148,18 +145,18 @@ namespace ProyectoDawFunko.Controllers
 
                 
                 int loop1, loop2;
-                HttpCookieCollection MyCookieColl;
+                //HttpCookieCollection MyCookieColl;
                 HttpCookie MyCookie;
 
-                MyCookieColl = Request.Cookies;
+                MyCookie = Request.Cookies["Carrito"];
 
                 // Capture all cookie names into a string array.
-                String[] arr1 = MyCookieColl.AllKeys;
+                //String[] arr1 = MyCookieColl.AllKeys;
                 var listProductos = new List<ProductoCookie>();
                 // Grab individual cookie objects by cookie name.
-                for (loop1 = 0; loop1 < arr1.Length; loop1++)
-                {
-                    MyCookie = MyCookieColl[arr1[loop1]];
+                //for (loop1 = 0; loop1 < arr1.Length; loop1++)
+                //{
+                   // MyCookie = MyCookieColl[arr1[loop1]];
                     if (MyCookie.Name == "Carrito")
                     {
                         Boolean comp = false;
@@ -169,7 +166,7 @@ namespace ProyectoDawFunko.Controllers
                         {
                             if (Convert.ToString(productoModel.PRODUCTO_ID) ==(item.producto_Id))
                             {
-                                item.unidades = item.unidades+unidades;
+                                item.unidades =Convert.ToString( Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades));
                                 comp = true;
                             }
                         }
@@ -183,7 +180,7 @@ namespace ProyectoDawFunko.Controllers
                         }
 
                         //MyCookie.Value = MyCookie.Value + "," + " Id:"+Convert.ToString(productoModel.PRODUCTO_ID)+"-Unidades:"+unidades;
-                    }
+                   // }
                     var json = new JavaScriptSerializer().Serialize(listProductos);
                     MyCookie.Value = json;
                     DateTime now = DateTime.Now;
