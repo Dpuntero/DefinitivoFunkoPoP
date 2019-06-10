@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "MisPedidos";
 }
 
@@ -22,15 +23,7 @@
         <tr>
             <td>@prod.PEDIDO_ID</td>
             <td>
-                @foreach (var prod2 in prod.PEDIDOPRODUCTOes)
-                {
-                <a href="~/Producto/Productos/@prod2.PRODUCTO.PRODUCTO_ID">
-                    <img src="~/Content/images/@prod2.PRODUCTO.CATEGORIA/@prod2.PRODUCTO.IMAGEN" width="100 px" />
-                    @prod2.PRODUCTO.NOMBREP
-                </a>
-
-                    <br />
-                }
+                @Html.ActionLink("Ver pedido", "VerPedidoUnico", new { id = prod.PEDIDO_ID })
             </td>
             <td>@prod.PRECIO_TOTAL</td>
             <td>@prod.ESTADO_ENVIO1.TEXTO_ESTADO</td>
