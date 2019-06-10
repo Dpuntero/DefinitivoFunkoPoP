@@ -41,16 +41,18 @@ namespace ProyectoDawFunko.Controllers
 
 
 
-
-
                 Debug.WriteLine("My debug string here");
                 Database1Entities1 db = new Database1Entities1();
 
                 PEDIDO nuevoPedido = new PEDIDO();
 
-                nuevoPedido.PEDIDO_ID = 3;
+                //nuevoPedido.PEDIDO_ID = 3;
                 nuevoPedido.USUARIO_ID = Convert.ToInt32(Session["USUARIO_ID"]);
-                nuevoPedido.PRECIO_TOTAL = 0;
+                foreach (var i in listcarrito)
+                {
+                    nuevoPedido.PRECIO_TOTAL = nuevoPedido.PRECIO_TOTAL +Convert.ToInt32(i.PRECIOUnidad) * Convert.ToInt32 (i.Unidades);
+                }
+               
                 nuevoPedido.INFO_PAGO = "irrelevante";
                 nuevoPedido.ESTADO_ENVIO = 1;
                 db.PEDIDOes.Add(nuevoPedido);
@@ -62,7 +64,8 @@ namespace ProyectoDawFunko.Controllers
                     PEDIDOPRODUCTO nuevoProductoPedido = new PEDIDOPRODUCTO();
                     nuevoProductoPedido.PEDIDO_ID = nuevoPedido.PEDIDO_ID;
                     nuevoProductoPedido.P_ID = i.PRODUCTO_ID;
-                    nuevoProductoPedido.UNIDADES = i.UD_DISPO.Value;
+                    // nuevoProductoPedido.UNIDADES = i.UD_DISPO.Value;
+                    nuevoProductoPedido.UNIDADES = Convert.ToInt32(i.Unidades);
                     nuevoProductoPedido.PRECIO = i.PRECIO;
                     db.PEDIDOPRODUCTOes.Add(nuevoProductoPedido);
                     db.SaveChanges();
