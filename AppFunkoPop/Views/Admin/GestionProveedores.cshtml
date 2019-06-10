@@ -1,0 +1,61 @@
+﻿@model AppFunkoPop.Models.PROVEEDOR
+@{
+    List<AppFunkoPop.Models.PROVEEDOR> listadoProveedores = ViewBag.Proveedores;
+}
+<p>
+    @Html.ActionLink("Nuevo Proveedor", "NuevoProveedor")
+</p>
+@using (Html.BeginForm("BorrarProveedor", "Admin", FormMethod.Post))
+{
+    <table class="table">
+        <tr>
+            <th>
+                @AppFunkoPop.Resources.Account.nombre
+            </th>
+            <th>
+                @AppFunkoPop.Resources.Account.tlfn
+            </th>
+            <th>
+                @AppFunkoPop.Resources.Account.email
+            </th>
+            <th>
+                @AppFunkoPop.Resources.Productos.descripcion
+            </th>
+
+            <th></th>
+            <th>Borrar</th>
+        </tr>
+
+        @foreach (var item in listadoProveedores)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOMBRE_PROV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TLFN_PROV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EMAIL_PROV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DESCRIPCION_PROV)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarProveedor", new { id = item.PROVEEDOR_ID }) 
+
+                    
+                </td>
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck" name="borrados" value="@item.PROVEEDOR_ID">
+
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <button type="submit" class="btn btn-primary mb-2" style="color: white;" name="borrados">
+        @AppFunkoPop.Resources.Admin.borrar
+    </button>}

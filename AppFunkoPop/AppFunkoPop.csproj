@@ -377,9 +377,13 @@
     <Content Include="Views\Admin\EditandoUsuario.cshtml" />
     <Content Include="Views\Admin\EditandoProducto.cshtml" />
     <Content Include="Views\Carrito\CarritoVacio.cshtml" />
+    <Content Include="Views\Admin\GestionProveedores.cshtml" />
+    <Content Include="Views\Admin\NuevoProveedor.cshtml" />
+    <Content Include="Views\Admin\EditandoProveedor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Languaje\" />
+    <Folder Include="Views\Proveedor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

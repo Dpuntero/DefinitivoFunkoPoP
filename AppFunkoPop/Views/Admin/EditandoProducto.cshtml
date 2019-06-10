@@ -13,7 +13,7 @@
     }
 }
 
-@using (Html.BeginForm("EditandoProducto", "Admin", FormMethod.Post))
+@using (Html.BeginForm("EditandoProducto", "Admin", FormMethod.Post, new { name = "frm", id = "frm" }))
 {
 
 
@@ -27,7 +27,7 @@
 
     <div class="form-group">
         @*@Html.LabelFor(model => model.NOMBREP, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        @AppFunkoPop.Resources.Admin.nombre
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.nombre</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.NOMBREP, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.NOMBREP, "", new { @class = "text-danger" })
@@ -36,16 +36,17 @@
 
     <div class="form-group">
         @*@Html.LabelFor(model => model.PRECIO, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        @AppFunkoPop.Resources.Admin.precio
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.precio</label>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.PRECIO, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.EditorFor(model => model.PRECIO), new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.PRECIO, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
         @*@Html.LabelFor(model => model.DESCRIP, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        @AppFunkoPop.Resources.Admin.decripcion
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.decripcion</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.DESCRIP, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.DESCRIP, "", new { @class = "text-danger" })
@@ -54,16 +55,70 @@
 
     <div class="form-group">
         @*@Html.LabelFor(model => model.CATEGORIA, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        @AppFunkoPop.Resources.Admin.categoria
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.categoria</label>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.CATEGORIA, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.CATEGORIA, "", new { @class = "text-danger" })
+            @*@Html.EditorFor(model => model.CATEGORIA, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.CATEGORIA, "", new { @class = "text-danger" })*@
+            <select class="form-control" name="categoria" onclick="cambiar()" onchange="seleccionaSubcategoria()">
+                @if (Model.CATEGORIA == "todos")
+                {
+                    <option value="todos" selected>Todos</option>}
+                else
+                {
+                    <option value="todos">Todos</option>}
+                @if (Model.CATEGORIA == "marvel")
+                {
+                    <option value="marvel" selected>Marvel</option>
+                }
+                else
+                {
+                    <option value="marvel">Marvel</option>
+                }
+                @if (Model.CATEGORIA == "got")
+                {
+                    <option value="got" selected>Juego de tronos</option>
+                }
+                else
+                {
+                    <option value="got">Juego de tronos</option>
+                }
+                @if (Model.CATEGORIA == "starwars")
+                {
+                    <option value="starwars" selected>Star Wars</option>
+                }
+                else
+                {
+                    <option value="starwars">Star Wars</option>
+                }
+
+            </select>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+<div class="form-group">
+        @*@Html.LabelFor(model => model.CATEGORIA, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.subcategoria</label>
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.SUBCATEGORIA, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.SUBCATEGORIA, "", new { @class = "text-danger" })*@
+
+            <select class="form-control" name="subcategoria">
+                <option value="todos">Todos</option>
+            </select>
         </div>
     </div>
 
     <div class="form-group">
         @*@Html.LabelFor(model => model.UD_DISPO, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        @AppFunkoPop.Resources.Admin.unidadesDisp
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.unidadesDisp</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.UD_DISPO, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.UD_DISPO, "", new { @class = "text-danger" })
@@ -72,7 +127,7 @@
 
     <div class="form-group">
         @*@Html.LabelFor(model => model.V_ID, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        @AppFunkoPop.Resources.Admin.idVendedor
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.idVendedor</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.PROVEEDOR_ID, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.PROVEEDOR_ID, "", new { @class = "text-danger" })
@@ -82,7 +137,7 @@
 
     <div class="form-group">
         @*@Html.LabelFor(model => model.IMAGEN, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        @AppFunkoPop.Resources.Admin.imagen
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.imagen</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.IMAGEN, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.IMAGEN, "", new { @class = "text-danger" })
@@ -91,7 +146,7 @@
 
     <div class="form-group">
         @*@Html.LabelFor(model => model.LINK, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        @AppFunkoPop.Resources.Admin.link
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.otraImagen</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.IMAGEN2, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.IMAGEN2, "", new { @class = "text-danger" })
@@ -100,7 +155,7 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="@AppFunkoPop.Resources.Admin.guardar" class="btn btn-default" />
+            <button type="submit" class="btn btn-primary mb-2">@AppFunkoPop.Resources.Admin.guardar</button>
         </div>
     </div>
 </div>
@@ -108,7 +163,7 @@
 
 
 <div>
-    @Html.ActionLink("Volver", "GestionProductos")
+    @Html.ActionLink(@AppFunkoPop.Resources.Admin.volver, "GestionProductos")
 </div>
 
 @section Scripts {

@@ -243,4 +243,13 @@
   <data name="queQuieresHacer" xml:space="preserve">
     <value>¿Qué quieres hacer?</value>
   </data>
+  <data name="subcatgoria" xml:space="preserve">
+    <value>Subcategoría</value>
+  </data>
+  <data name="otraImagen" xml:space="preserve">
+    <value>Otra imagen</value>
+  </data>
+  <data name="gestionProveedores" xml:space="preserve">
+    <value>Gestion de proveedores</value>
+  </data>
 </root>
