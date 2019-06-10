@@ -24,26 +24,45 @@ namespace AppFunkoPop.Models
         }
 
         public int USUARIO_ID { get; set; }
+        [Display(Name="Nombre")]
         [Required(ErrorMessage = "Es necesario introducir un nombre")]
-
+        [StringLength(20, MinimumLength = 2)]
         public string NOMBRE { get; set; }
+        [Display(Name = "Apellidos")]
+        [StringLength(20, MinimumLength = 2)]
         [Required(ErrorMessage = "Es necesario introducir un Apellido")]
         public string APELLIDOS { get; set; }
+        [Display(Name = "E-Mail")]
+        [StringLength(50, MinimumLength = 5)]
+        [DataType(DataType.EmailAddress)]
+        [EmailAddress]
         [Required(ErrorMessage = "Es necesario introducir un email")]
         //[EmailValidation(ErrorMessage = "Ese e-mail ya ha sido utilizado")]
         public string EMAIL { get; set; }
+        [Display(Name = "Password")]
+        [StringLength(20, MinimumLength = 8)]
         [Required(ErrorMessage = "Es necesario introducir un password")]
         [DataType(DataType.Password)]
         public string PASSWD { get; set; }
+        [Display(Name = "Teléfono")]
+        [Range(100000000, 999999999, ErrorMessage = "Debe introducir un telefono valido")]
         [Required(ErrorMessage = "Es necesario introducir un telefono")]
         public int TLFN { get; set; }
+        [Display(Name = "Dirección")]
+        [StringLength(50, MinimumLength = 5)]
         [Required(ErrorMessage = "Es necesario introducir una direccion")]
         public string DIRECCION { get; set; }
         [Required(ErrorMessage = "Es necesario introducir una ciudad")]
+        [StringLength(20, MinimumLength = 4)]
+        [Display(Name = "Ciudad")]
         public string CIUDAD { get; set; }
         [Required(ErrorMessage = "Es necesario introducir un pais")]
+        [StringLength(20, MinimumLength = 4)]
+        [Display(Name = "País")]
         public string PAIS { get; set; }
         [Required(ErrorMessage = "Es necesario introducir un codigo postal")]
+        [Range(10000,99999, ErrorMessage= "Debe introducir un codigo postal valido")]
+        [Display(Name = "Codigo Postal")]
         public int CP { get; set; }
         public int ID_ROL { get; set; }
         public Nullable<System.DateTime> FECHA_CREACION { get; set; }
