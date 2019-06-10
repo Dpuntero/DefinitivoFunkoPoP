@@ -8,19 +8,22 @@
 
 
 
-<div>
+
 
 
     <div class="row" style="padding-bottom: 15px; padding-left:100px;">
         <div class="col-sm-9">
 
             <h4> @AppFunkoPop.Resources.Account.crearNuevaCuenta</h4>
+
             <hr />
+
             @using (Html.BeginForm("Register", "Account", FormMethod.Post))
             {
-            <p>
-                @AppFunkoPop.Resources.Account.nombre
-            </p>
+                <br />
+                <p>
+                    @AppFunkoPop.Resources.Account.nombre
+                </p>
                 <p>
                     @Html.EditorFor(model => model.NOMBRE)
                 </p>
@@ -31,10 +34,12 @@
                 <p>
                     @Html.EditorFor(model => model.APELLIDOS)
                 </p>
+                <br />
                 <p>
                     @*@Html.LabelFor(model => model.EMAIL)*@
                     @AppFunkoPop.Resources.Account.email
                 </p>
+
                 <p>
                     @Html.EditorFor(model => model.EMAIL)
                 </p>
@@ -45,6 +50,7 @@
                 <p>
                     @Html.EditorFor(model => model.PASSWD)
                 </p>
+                <br />
                 <p>
                     @*@Html.LabelFor(model => model.DIRECCION)*@
                     @AppFunkoPop.Resources.Account.direccion
@@ -99,21 +105,7 @@
                 <input type="reset" name="borrar" value=" @AppFunkoPop.Resources.Account.borrar" />
             }
 
-            <!--
-    <form action="CrearUsuario" method="post">
-        <label>Nombre: <input type="text" name="nombre" value="" /></label></br>
-        <label>Apellidos: <input type="text" name="apellidos" value="" /></label></br>
-        <label>Email: <input type="text" name="email" value="" /></label></br>
-        <label>Password: <input type="text" name="passwd" value="" /></label></br>
-        <label>Teléfono: <input type="text" name="telefono" value="" /></label></br>
-        <label>Dirección: <input type="text" name="direccion" value="" /></label></br>
-        <label>Ciudad: <input type="text" name="ciudad" value="" /></label></br>
-        <label>País: <input type="text" name="pais" value="" /></label></br>
-        <label>Codigo Postal: <input type="text" name="cp" value="" /></label></br>
 
-        <input type="submit" name="enviar" value="enviar" />
-
-    </form>-->
             @Html.ValidationSummary()
 
         </div>
