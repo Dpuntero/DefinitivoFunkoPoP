@@ -26,8 +26,8 @@ namespace AppFunkoPop.Controllers
             }
             return View(usuario);
         }
-
-        public ActionResult CambiarContraseña(AppFunkoPop.Models.PasswordChangeModel passModel= null )
+       
+            public ActionResult CambiarContraseña(AppFunkoPop.Models.PasswordChangeModel passModel= null )
         {
             if (passModel == null)
             {

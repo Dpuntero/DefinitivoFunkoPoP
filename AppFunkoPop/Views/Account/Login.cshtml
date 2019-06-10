@@ -22,14 +22,14 @@
 <div id="login-div">
     @using (Html.BeginForm("Autorizar", "Account", FormMethod.Post))
     {
-        <p>
-            @AppFunkoPop.Resources.Account.email
-        </p>
+    <p>
+        <strong> @AppFunkoPop.Resources.Account.email</strong>
+    </p>
         <p>
             @Html.EditorFor(model => model.EMAIL)
         </p>
         <p>
-            @AppFunkoPop.Resources.Account.passwd
+            <strong> @AppFunkoPop.Resources.Account.passwd</strong>
         </p>
         <p>
             @Html.EditorFor(model => model.PASSWD)

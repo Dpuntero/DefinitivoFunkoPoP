@@ -1,31 +1,44 @@
 ﻿@model IEnumerable<AppFunkoPop.Models.PRODUCTO>
-
+@{ 
+    var texto = "";
+}
 <h2>@AppFunkoPop.Resources.Catalogo.catalogo</h2>
 
 
 <div class="row">
     <form action="Catalogo" method="post" name="frm">
 
-        
-            <div class=" col-sm-6 ">
-                @*@Html.LabelFor(model => model.CATEGORIA)*@
+
+        <div class=" col-sm-12 ">
+            @*@Html.LabelFor(model => model.CATEGORIA)*@
+            <div class="col-sm-6">
                 <label >@AppFunkoPop.Resources.Productos.categoria</label>
-                <select name="categoria" onclick="cambiar()">
-                    <option value="1">Marvel</option>
-                    <option value="2">Juego de tronos</option>
-                    <option value="0">Star Wars</option>
                 
+                <select name="categoria" onclick="cambiar()">
+                    <option value="todos">Todos</option>
+                    <option value="marvel">Marvel</option>
+                    <option value="got">Juego de tronos</option>
+                    <option value="starwars">Star Wars</option>
+
                 </select>
+              
                 @*@Html.LabelFor(model => model.SUBCATEGORIA)*@
-                <label> @AppFunkoPop.Resources.Productos.subcategoria </label>
-                <select name="subcategoria">
-                    <option value="-"></option>
-                </select>
+               
+                    <label style="padding-left:30px;"> @AppFunkoPop.Resources.Productos.subcategoria </label>
+                   
+                    <select name="subcategoria">
+                        <option value="todos">Todos</option>
+                    </select>
+                </div>
                 @*@Html.EditorFor(model => model.CATEGORIA, "", new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })*@
+            @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })*@
             </div>
-        <button type="submit" class="btn btn-default">@AppFunkoPop.Resources.Catalogo.filtrar</button>
-    </form>
+        <row>
+            <div style="padding-left:350px">
+                <button type="submit" class="btn btn-default">@AppFunkoPop.Resources.Catalogo.filtrar</button>
+            </div>
+        </row>
+</form>
 </div>
 
 
@@ -37,15 +50,28 @@
 
 
 
-        <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
+        <div class="col-sm-6 col-md-3" >
+            <div class="thumbnail"  style="max-height:542px; min-height:500px;" >
                 <img src="~/Content/images/@prod.CATEGORIA/@prod.IMAGEN" style= "height: 250px; "/>
                 <div class="caption">
-                    <h3>@prod.NOMBREP</h3>
-                    <p>@prod.DESCRIP</p>
-                    <p>
-                        <a href="~/Producto/Productos/@prod.PRODUCTO_ID" class="btn btn-primary" role="button">Ver Producto</a>
+                    <h3 style="text-align:center; font-variant:small-caps; font-weight:bold";>@prod.NOMBREP</h3>
+                    
+                    @if (prod.DESCRIP.Length > 42)
+                    {
+                        texto = prod.DESCRIP;
+                        texto = texto.Remove(42);
+                        texto = texto + "...";
 
+                    }
+                    else
+                    {
+                        texto = prod.DESCRIP;
+                    }
+                        <p>Descripción: @texto </p>
+                    <p>Unidades disponibles: @prod.UD_DISPO</p>
+                    <p>
+                        <a href="~/Producto/Productos/@prod.PRODUCTO_ID" class="btn btn-primary col-xs-5 col-sm-5 col-md-5"  role="button">Ver</a>
+                        <div class=" col-xs-2 col-sm-2 col-md-2" ></div>
                         @using (Html.BeginForm("RecogerIdEnviarProducto", "Carrito", FormMethod.Post))
                         {
                         <div style='display: none'>
@@ -54,7 +80,7 @@
                             @Html.TextBox("unidades", ViewBag.Num1 as string, new { @Value = "1" })
                         </div>
                            
-                            <button type="submit" class="btn btn-default">@AppFunkoPop.Resources.Productos.añadirCarrito</button>
+                            <button type="submit" class="btn btn-default col-xs-5 col-sm-5 col-md-5">@AppFunkoPop.Resources.Productos.añadirCarrito</button>
                         }
 
 
@@ -68,13 +94,13 @@
     }
 </div>
 
-<div class="row">
+@*<div class="row">
     <ul class="pagination justify-content-end">
         <li class="page-item"><a class="page-link" href="javascript:void(0);">@AppFunkoPop.Resources.Catalogo.anterior</a></li>
         <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
         <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
         <li class="page-item"><a class="page-link" href="javascript:void(0);">@AppFunkoPop.Resources.Catalogo.siguiente</a></li>
     </ul>
-</div>
+</div>*@
 
 

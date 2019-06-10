@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,10 +11,14 @@ namespace ProyectoDawFunko.Controllers
     public class CatalogoController : Controller
     {
         // GET: Catalogo
-        public ActionResult Catalogo()
+      
+
+            public ActionResult Catalogo()
         {
+            
             List<PRODUCTO> prod = new List<PRODUCTO>();
             string Categoria = Request.Form["categoria"];
+            string Subcategoria = Request.Form["subcategoria"];
             if (Categoria == null||Categoria=="todos")
             {
                
@@ -23,7 +28,7 @@ namespace ProyectoDawFunko.Controllers
 
                 }
             }
-            else
+            else if(Categoria!=null&&Subcategoria==null)
             {
                
               
@@ -37,11 +42,92 @@ namespace ProyectoDawFunko.Controllers
             return View(prod);
 
         }
+        [HttpPost]
+        public ActionResult Catalogo(FormCollection collection)
+        {
+            string Categoria = Convert.ToString(collection["categoria"]);
+            List<PRODUCTO> prod = new List<PRODUCTO>();
+            
+            string Subcategoria = Convert.ToString(collection["subcategoria"]);
+            if (Categoria == null || Categoria == "todos")
+            {
+
+                using (Database1Entities1 db = new Database1Entities1())
+                {
+                    prod = db.PRODUCTOes.ToList();
+
+                }
+            }
+            else if (Categoria != null && (Subcategoria == null|| Subcategoria == "Todos"))
+            {
+
+
+                using (Database1Entities1 db = new Database1Entities1())
+                {
+                    prod = db.PRODUCTOes.Where(c => c.CATEGORIA == Categoria).ToList();
+
+                }
+            }
+            else
+            {
+                using (Database1Entities1 db = new Database1Entities1())
+                {
+                    prod = db.PRODUCTOes.Where(c => c.SUBCATEGORIA == Subcategoria).ToList();
+
+                }
+
+
+            }
+
+            return View(prod);
+            
+        }
+
+        public ActionResult EnvioMenu(string Categoria, string Subcategoria)
+        {
+            
+            List<PRODUCTO> prod = new List<PRODUCTO>();
+
+            
+            if (Categoria == null || Categoria == "todos")
+            {
+
+                using (Database1Entities1 db = new Database1Entities1())
+                {
+                    prod = db.PRODUCTOes.ToList();
+
+                }
+            }
+            else if (Categoria != null && (Subcategoria == null || Subcategoria == "Todos"))
+            {
+
+
+                using (Database1Entities1 db = new Database1Entities1())
+                {
+                    prod = db.PRODUCTOes.Where(c => c.CATEGORIA == Categoria).ToList();
+
+                }
+            }
+            else
+            {
+                using (Database1Entities1 db = new Database1Entities1())
+                {
+                    prod = db.PRODUCTOes.Where(c => c.SUBCATEGORIA == Subcategoria).ToList();
+
+                }
+
+
+            }
+
+            return View("Catalogo", prod);
+
+        }
+
         /*
         public ActionResult MostrarProductos()
         {
 
-            
+
             return View();
         }
         [HttpPost]

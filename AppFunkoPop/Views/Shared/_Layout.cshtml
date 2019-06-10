@@ -8,9 +8,9 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script type="text/javascript">
-        var opt1 = new Array("Todos", "Vengadores", "X-men");
-        var opt2 = new Array("Todos", "Lanister", "Targaryen", "El norte");
-        var opt3 = new Array("Todos", "Episodio 3", "El ultimo Jedi");
+        var optmarvel = new Array("Todos", "Vengadores", "X-men","Otros");
+        var optgot = new Array("Todos", "Lanister", "Targaryen", "El norte");
+        var optstarwars = new Array("Todos", "Episodio 3", "El ultimo Jedi","El retorno del Jedi");
 
         function cambiar() {
             var categoria;
@@ -30,13 +30,13 @@
     </script>
     <style>
         .affix {
-            top: 0;
+            top: 0px;
             width: 100%;
             z-index: 9999 !important;
         }
 
             .affix + .container-fluid {
-                padding-top: 70px;
+                padding-top: 0px;
             }
 
         #footer {
@@ -66,22 +66,24 @@
         body {
             padding: 0px;
         }
+
+
     </style>
 
 </head>
 <body>
-    <li>
-        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="en" }, null)">
-            <img src="~/Content/images/Flags/555417.svg" alt="ROMO Logo" /> <span>EN</span>
+    <div style="background-color:slategrey;">
+        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="en" }, null)" style=" padding-left:10px;">
+            <img src="~/Content/images/banderausa.jpg"  style="height:15px;"/> <span style=" color: white"><strong>English</strong></span>
         </a>
-        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="es" }, null)">
-            <img src="~/Content/images/Flags/555635.svg" alt="ROMO Logo" /> <span>ES</span>
+        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="es" }, null)"style=" padding-left:10px;">
+            <img src="~/Content/images/banderaesp.jpg"  style="height:15px;"/> <span style=" color: white"><strong>Spanish</strong></span>
         </a>
-    </li>
-    <div style="background-color: #00A2E8">
-        <img src="~/Content/images/logo.png" class="img-responsive" style="width:30%;">
     </div>
-    <div class="navbar navbar-inverse " data-spy="affix" data-offset-top="200">
+    <div style="background-color: #00A2E8">
+        <img src="~/Content/images/logo.png" class="img-responsive" style="width:200px;">
+    </div>
+    <div class="navbar navbar-inverse " data-spy="affix" data-offset-top="116">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

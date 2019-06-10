@@ -5,13 +5,16 @@
 
 <nav class="col-sm-2">
     <ul class="nav nav-pills nav-stacked " style="padding-top: 2%;margin-left: 3%">
+        <li>@Html.ActionLink("Todos", "Catalogo", "Catalogo")</li>
         <li data-toggle="collapse" data-target="#primerdesplegable">
             <a href="#section2">Juego de tronos</a>
             <div id="primerdesplegable" class="collapse">
                 <ul class="nav nav-pills nav-stacked " style="padding-left: 15%">
-                    <li><a href="#section1">Dragones</a></li>
-                    <li><a href="#section2">Invernalia</a></li>
-                    <li><a href="#section3">El otro lao</a></li>
+                    <li>@Html.ActionLink("Todos", "EnvioMenu", "Catalogo", new { categoria = "got", subcategoria = "Todos" }, null)</li>
+                    <li>@Html.ActionLink("Lanister", "EnvioMenu", "Catalogo", new { categoria = "got", subcategoria = "Lanister" }, null)</li>
+                    <li>@Html.ActionLink("Targaryen", "EnvioMenu", "Catalogo", new { categoria = "got", subcategoria = "Targaryen" }, null)</li>
+                    <li>@Html.ActionLink("El norte", "EnvioMenu", "Catalogo", new { categoria = "got", subcategoria = "El norte" }, null)</li>
+
                 </ul>
             </div>
         </li>
@@ -20,9 +23,11 @@
             <a href="#section2">Marvel</a>
             <div id="segundodesplegable" class="collapse">
                 <ul class="nav nav-pills nav-stacked " style="padding-left: 15%">
-                    <li><a href="#section1">Avengers </a></li>
-                    <li><a href="#section2">Thanos </a></li>
-                    <li><a href="#section3">Dioses 3</a></li>
+                    <li>@Html.ActionLink("Todos", "EnvioMenu", "Catalogo", new { categoria = "marvel", subcategoria = "Todos" }, null)</li>
+                    <li>@Html.ActionLink("Vengadores", "EnvioMenu", "Catalogo", new { categoria = "marvel", subcategoria = "Vengadores" }, null)</li>
+                    <li>@Html.ActionLink("X-men", "EnvioMenu", "Catalogo", new { categoria = "marvel", subcategoria = "X-men" }, null)</li>
+                    <li>@Html.ActionLink("Otros", "EnvioMenu", "Catalogo", new { categoria = "marvel", subcategoria = "Otros" }, null)</li>
+
                 </ul>
             </div>
         </li>
@@ -31,9 +36,11 @@
             <a href="#section2">Star Wars</a>
             <div id="tercerdesplegable" class="collapse">
                 <ul class="nav nav-pills nav-stacked " style="padding-left: 15%">
-                    <li><a href="#section1">Trilogia 1</a></li>
-                    <li><a href="#section2">Trilogia 2</a></li>
-                    <li><a href="#section3">Trilogia 3</a></li>
+                    <li>@Html.ActionLink("Todos", "EnvioMenu", "Catalogo", new { categoria = "starwars", subcategoria = "Todos" }, null)</li>
+                    <li>@Html.ActionLink("Episodio 3", "EnvioMenu", "Catalogo", new { categoria = "starwars", subcategoria = "Episodio 3" }, null)</li>
+                    <li>@Html.ActionLink("El ultimo Jedi", "EnvioMenu", "Catalogo", new { categoria = "starwars", subcategoria = "El ultimo Jedi" }, null)</li>
+                    <li>@Html.ActionLink("El retorno del Jedi", "EnvioMenu", "Catalogo", new { categoria = "starwars", subcategoria = "El retorno del Jedi" }, null)</li>
+
                 </ul>
             </div>
         </li>
@@ -69,5 +76,9 @@
               </div>
           </li>-->
     </ul>
+    <div class="col-xs-12 col-md-2">
+        <hr />
+    </div>
 </nav>
+
 <!--FIN DE MENU LATERAL-->

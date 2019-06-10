@@ -121,7 +121,7 @@
     <value>Añadir</value>
   </data>
   <data name="añadirCarrito" xml:space="preserve">
-    <value>Añadir al carrito</value>
+    <value>Añadir </value>
   </data>
   <data name="categoria" xml:space="preserve">
     <value>Categoría</value>
