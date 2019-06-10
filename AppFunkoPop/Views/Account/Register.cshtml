@@ -8,21 +8,25 @@
 
 
 
-<div>
+
 
 
     <div class="row" style="padding-bottom: 15px; padding-left:100px;">
         <div class="col-sm-9">
 
             <h4> @AppFunkoPop.Resources.Account.crearNuevaCuenta</h4>
+
             <hr />
+
             @using (Html.BeginForm("Register", "Account", FormMethod.Post))
             {
-            <p>
-                @AppFunkoPop.Resources.Account.nombre
-            </p>
+                <br />
+                <p>
+                    @AppFunkoPop.Resources.Account.nombre
+                </p>
                 <p>
                     @Html.EditorFor(model => model.NOMBRE)
+                    @Html.ValidationMessageFor(model => model.NOMBRE, "", new { @class = "text-danger" })
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.APELLIDOS)*@
@@ -30,13 +34,17 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.APELLIDOS)
+                    @Html.ValidationMessageFor(model => model.APELLIDOS, "", new { @class = "text-danger" })
                 </p>
+
                 <p>
                     @*@Html.LabelFor(model => model.EMAIL)*@
                     @AppFunkoPop.Resources.Account.email
                 </p>
+                
                 <p>
                     @Html.EditorFor(model => model.EMAIL)
+                    @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.PASSWD)*@
@@ -44,13 +52,17 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.PASSWD)
+                    @Html.ValidationMessageFor(model => model.PASSWD, "", new { @class = "text-danger" })
                 </p>
+                <br />
                 <p>
                     @*@Html.LabelFor(model => model.DIRECCION)*@
                     @AppFunkoPop.Resources.Account.direccion
                 </p>
                 <p>
                     @Html.EditorFor(model => model.DIRECCION)
+                    @Html.ValidationMessageFor(model => model.DIRECCION, "", new { @class = "text-danger" })
+                  
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.TLFN)*@
@@ -58,6 +70,8 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.TLFN)
+                    @Html.ValidationMessageFor(model => model.TLFN, "", new { @class = "text-danger" })
+
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.CIUDAD)*@
@@ -65,6 +79,7 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.CIUDAD)
+                    @Html.ValidationMessageFor(model => model.CIUDAD, "", new { @class = "text-danger" })
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.PAIS)*@
@@ -72,6 +87,7 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.PAIS)
+                    @Html.ValidationMessageFor(model => model.PAIS, "", new { @class = "text-danger" })
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.CP)*@
@@ -79,19 +95,12 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.CP)
+                    @Html.ValidationMessageFor(model => model.CP, "", new { @class = "text-danger" })
                 </p>
 
 
                 <p>
-                    @Html.ValidationMessageFor(model => model.NOMBRE)
-                    @Html.ValidationMessageFor(model => model.APELLIDOS)
-                    @Html.ValidationMessageFor(model => model.EMAIL)
-                    @Html.ValidationMessageFor(model => model.PASSWD)
-                    @Html.ValidationMessageFor(model => model.TLFN)
-                    @Html.ValidationMessageFor(model => model.DIRECCION)
-                    @Html.ValidationMessageFor(model => model.CIUDAD)
-                    @Html.ValidationMessageFor(model => model.PAIS)
-                    @Html.ValidationMessageFor(model => model.CP)
+
 
                 </p>
                 <label> @Html.DisplayFor(model => model.LoginErrorMessage)</label>
@@ -99,21 +108,7 @@
                 <input type="reset" name="borrar" value=" @AppFunkoPop.Resources.Account.borrar" />
             }
 
-            <!--
-    <form action="CrearUsuario" method="post">
-        <label>Nombre: <input type="text" name="nombre" value="" /></label></br>
-        <label>Apellidos: <input type="text" name="apellidos" value="" /></label></br>
-        <label>Email: <input type="text" name="email" value="" /></label></br>
-        <label>Password: <input type="text" name="passwd" value="" /></label></br>
-        <label>Teléfono: <input type="text" name="telefono" value="" /></label></br>
-        <label>Dirección: <input type="text" name="direccion" value="" /></label></br>
-        <label>Ciudad: <input type="text" name="ciudad" value="" /></label></br>
-        <label>País: <input type="text" name="pais" value="" /></label></br>
-        <label>Codigo Postal: <input type="text" name="cp" value="" /></label></br>
 
-        <input type="submit" name="enviar" value="enviar" />
-
-    </form>-->
             @Html.ValidationSummary()
 
         </div>
