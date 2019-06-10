@@ -79,8 +79,13 @@ namespace ProyectoDawFunko.Controllers
                 return RedirectToAction("MisPedidos", "Pedidos");
             }
         }
+        public ActionResult VerPedidoUnico(int id)
+        {
+            Database1Entities1 db = new Database1Entities1();
+            List<PEDIDOPRODUCTO> productos = db.PEDIDOPRODUCTOes.Where(c => c.PEDIDO_ID == id).ToList();
 
-
+            return View("MiPedido2", productos);
+        }
 
     }
 }

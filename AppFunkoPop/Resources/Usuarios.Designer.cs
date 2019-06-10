@@ -19,7 +19,7 @@ namespace AppFunkoPop.Resources {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Usuarios {
@@ -255,6 +255,15 @@ namespace AppFunkoPop.Resources {
         public static string telefono {
             get {
                 return ResourceManager.GetString("telefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a See order.
+        /// </summary>
+        public static string VerPedidoUnico {
+            get {
+                return ResourceManager.GetString("VerPedidoUnico", resourceCulture);
             }
         }
     }
