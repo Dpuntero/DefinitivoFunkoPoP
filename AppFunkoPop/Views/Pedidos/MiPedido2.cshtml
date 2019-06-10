@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AppFunkoPop.Models.PEDIDOPRODUCTO>
+
+@{
+    ViewBag.Title = "MiPedido2";
+}
+
+<h2>Mi Pedido</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            PRODUCTO
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UNIDADES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRECIO)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        <a href="~/Producto/Productos/@item.PRODUCTO.PRODUCTO_ID">
+            <img src="~/Content/images/@item.PRODUCTO.CATEGORIA/@item.PRODUCTO.IMAGEN" width="80 px" />
+            @item.PRODUCTO.NOMBREP
+        </a>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UNIDADES)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PRECIO)
+    </td>
+</tr>
+}
+
+</table>

@@ -1,6 +1,7 @@
 ﻿@model IList<AppFunkoPop.Models.ProductoUnidades>
 @{
     ViewBag.Title = "MiCarrito";
+    decimal suma=0;
 }
 
 
@@ -13,9 +14,13 @@
             <th>Imagen</th>
             <th>Nombre</th>
             <th>Unidades</th>
-            <th>Precio</th>
+            <th>Unidades disponibles</th>
+            <th>Borrar Unidad</th>
+            <th>Añadir Unidad</th>
+            <th>Borrar Producto</th>
+            <th>Precio Unidad</th>
+            <th>Precio </th>
             <th>Precio Total</th>
-
 
         </tr>
     </thead>
@@ -27,19 +32,28 @@
         @foreach (var prod in Model)
         {
 
-            <tr>
+        <tr>
 
 
-                <td><a href="~/Producto/Productos/@prod.PRODUCTO_ID"><img src="~/Content/images/@prod.CATEGORIA/@prod.IMAGEN" style="height: 50px; "></a></td>
-                <td>@prod.NOMBRE</td>
-                <td>@prod.Unidades</td>
-                <td>@prod.PRECIOUnidad</td>
-                <td>@prod.PRECIO</td>
+            <td><a href="~/Producto/Productos/@prod.PRODUCTO_ID"><img src="~/Content/images/@prod.CATEGORIA/@prod.IMAGEN" style="height: 50px; "></a></td>
+            <td>@prod.NOMBRE</td>
+            <td>@prod.Unidades</td>
+            <td>@prod.UD_DISPO</td>
+            <td>@Html.ActionLink("Borrar una unidad", "Eliminar1ProductoCarrito", new { id = prod.PRODUCTO_ID })</td>
+            <td>@Html.ActionLink("Añadir una unidad", "Añadir1ProductoCarrito", new { id = prod.PRODUCTO_ID })</td>
+            <td>@Html.ActionLink("Borrar producto", "EliminarProductoCarrito", new { id = prod.PRODUCTO_ID })</td>
+            <td>@prod.PRECIOUnidad</td>
+            <td>@prod.PRECIO</td>
+            @{
+                suma = suma + @prod.PRECIO;
+                    }
 
-
-            </tr>
+        </tr>
         }
-
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td>@suma</td>
+        </tr>
     </tbody>
 
 
@@ -64,5 +78,5 @@
     }
 
     <input type="submit" name="entrar" value="Realizar pedido" />
-
+    @Html.ActionLink("Vaciar Carrito","VaciarCarrito","Carrito")
 }

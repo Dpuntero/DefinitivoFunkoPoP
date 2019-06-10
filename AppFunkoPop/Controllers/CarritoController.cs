@@ -78,7 +78,17 @@ namespace ProyectoDawFunko.Controllers
                                 int w = Convert.ToInt32(item.producto_Id);
                                 PRODUCTO añadir = db.PRODUCTOes.Where(x => x.PRODUCTO_ID ==w).FirstOrDefault();
                                 ProductoUnidades prodfin = new ProductoUnidades();
-                                prodfin.Unidades = item.unidades;
+
+                                if (añadir.UD_DISPO < Convert.ToInt32(item.unidades))
+                                {
+                                   
+                                    prodfin.Unidades = Convert.ToString(añadir.UD_DISPO);
+                                    item.unidades = prodfin.Unidades;
+                                }
+                                else
+                                {
+                                    prodfin.Unidades = item.unidades;
+                                }
                                 prodfin.CATEGORIA = añadir.CATEGORIA;
                                 prodfin.IMAGEN = añadir.IMAGEN;
                                 prodfin.NOMBRE = añadir.NOMBREP;
@@ -107,9 +117,19 @@ namespace ProyectoDawFunko.Controllers
                
         }
 
+        public ActionResult VaciarCarrito()
+        {
+            var cookie = Request.Cookies["Carrito"];
+            cookie.Expires = DateTime.Now.AddDays(-1);
+            cookie.Value = string.Empty;
+            Response.Cookies.Add(cookie);
+
+            return RedirectToAction("CarritoVacio", "Carrito");
+        }
+
         public ActionResult CarritoVacio()
         {
-            Database1Entities1 db = new Database1Entities1();
+           
 
             return View();
         }
@@ -168,7 +188,17 @@ namespace ProyectoDawFunko.Controllers
                         {
                             if (Convert.ToString(productoModel.PRODUCTO_ID) ==(item.producto_Id))
                             {
-                                item.unidades =Convert.ToString( Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades));
+                                    if(productoModel.UD_DISPO< Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades))
+                                    {
+                                item.unidades = Convert.ToString(productoModel.UD_DISPO);
+                            }
+                            else
+                            {
+
+                                item.unidades = Convert.ToString(Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades));
+                            }
+
+                                
                                 comp = true;
                             }
                         }
@@ -203,6 +233,134 @@ namespace ProyectoDawFunko.Controllers
                 Response.Cookies.Add(MyCookie);
             }
             return RedirectToAction("InicioCarrito", "Carrito");
+        }
+
+    
+        public ActionResult Eliminar1ProductoCarrito(int id)
+        {
+            var listProductos = new List<ProductoCookie>();
+            HttpCookie MyCookie;
+            MyCookie = Request.Cookies["Carrito"];
+            listProductos = JsonConvert.DeserializeObject<List<ProductoCookie>>(MyCookie.Value);
+            string idborrar = "";
+            foreach (var item in listProductos)
+            {
+                if (Convert.ToInt32( item.producto_Id)== id)
+                {
+                    item.unidades = Convert.ToString(Convert.ToInt32(item.unidades) - 1);
+                    if (Convert.ToInt32(item.unidades) <= 0)
+                    {
+                        idborrar = item.producto_Id;
+                    }
+                }
+            }
+
+            Database1Entities1 db = new Database1Entities1();
+            
+
+            ProductoCookie borrar = listProductos.Where(x => x.producto_Id == idborrar).FirstOrDefault();
+
+            listProductos.Remove(borrar);
+            if (listProductos.Count() == 0)
+            {
+
+
+                return RedirectToAction("VaciarCarrito", "Carrito");
+            }
+            else
+            {
+                var json = new JavaScriptSerializer().Serialize(listProductos);
+                MyCookie.Value = json;
+                DateTime now = DateTime.Now;
+                MyCookie.Expires = now.AddHours(1);
+                Response.Cookies.Add(MyCookie);
+
+                return RedirectToAction("InicioCarrito", "Carrito");
+            }
+
+            
+        }
+
+        public ActionResult Añadir1ProductoCarrito(int id)
+        {
+            var listProductos = new List<ProductoCookie>();
+            HttpCookie MyCookie;
+            MyCookie = Request.Cookies["Carrito"];
+            listProductos = JsonConvert.DeserializeObject<List<ProductoCookie>>(MyCookie.Value);
+        
+            foreach (var item in listProductos)
+            {
+                if (Convert.ToInt32(item.producto_Id) == id)
+                {
+                    Database1Entities1 db = new Database1Entities1();
+                    int c = Convert.ToInt32(item.producto_Id);
+                   var producto = db.PRODUCTOes.Where(x => x.PRODUCTO_ID == c).FirstOrDefault();
+                    if (producto.UD_DISPO < Convert.ToInt32(item.unidades) + 1)
+                    {
+                        item.unidades = Convert.ToString(producto.UD_DISPO);
+                    }
+                    else
+                    {
+                        item.unidades = Convert.ToString(Convert.ToInt32(item.unidades) + 1);
+                    }
+
+                                        
+                }
+            }
+
+            
+
+                var json = new JavaScriptSerializer().Serialize(listProductos);
+                MyCookie.Value = json;
+                DateTime now = DateTime.Now;
+                MyCookie.Expires = now.AddHours(1);
+                Response.Cookies.Add(MyCookie);
+
+                return RedirectToAction("InicioCarrito", "Carrito");
+
+        }
+
+        public ActionResult EliminarProductoCarrito(int id)
+        {
+            var listProductos = new List<ProductoCookie>();
+            HttpCookie MyCookie;
+            MyCookie = Request.Cookies["Carrito"];
+            listProductos = JsonConvert.DeserializeObject<List<ProductoCookie>>(MyCookie.Value);
+            string idborrar = "";
+            foreach (var item in listProductos)
+            {
+                if (Convert.ToInt32(item.producto_Id) == id)
+                {
+                    item.unidades = "0";
+                    if (item.unidades == "0")
+                    {
+                        idborrar = item.producto_Id;
+                    }
+                }
+            }
+
+          
+            ProductoCookie borrar = listProductos.Where(x => x.producto_Id == idborrar).FirstOrDefault();
+
+            listProductos.Remove(borrar);
+            if (listProductos.Count() == 0)
+            {
+
+
+                return RedirectToAction("VaciarCarrito", "Carrito");
+            }
+            else
+            {
+                var json = new JavaScriptSerializer().Serialize(listProductos);
+                MyCookie.Value = json;
+                DateTime now = DateTime.Now;
+                MyCookie.Expires = now.AddHours(1);
+                Response.Cookies.Add(MyCookie);
+
+                return RedirectToAction("InicioCarrito", "Carrito");
+            }
+
+
         }
     }   
 }

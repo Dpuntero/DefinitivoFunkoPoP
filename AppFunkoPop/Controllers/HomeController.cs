@@ -15,7 +15,7 @@ namespace ProyectoDawFunko.Controllers
 
             Database1Entities1 db = new Database1Entities1();
             
-                var prod = db.PRODUCTOes.Where(x => x.DESTACADO == true).ToList().GetRange(db.PRODUCTOes.Where(x => x.DESTACADO == true).ToList().Count()-3, db.PRODUCTOes.Where(x => x.DESTACADO == true).ToList().Count()-1);
+                var prod = db.PRODUCTOes.Where(x => x.DESTACADO == true).ToList();
                 
                 foreach (var item in prod)
                 {
