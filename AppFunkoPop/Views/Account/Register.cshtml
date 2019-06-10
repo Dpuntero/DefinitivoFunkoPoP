@@ -26,6 +26,7 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.NOMBRE)
+                    @Html.ValidationMessageFor(model => model.NOMBRE, "", new { @class = "text-danger" })
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.APELLIDOS)*@
@@ -33,6 +34,7 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.APELLIDOS)
+                    @Html.ValidationMessageFor(model => model.APELLIDOS, "", new { @class = "text-danger" })
                 </p>
 
                 <p>
@@ -42,6 +44,7 @@
                 
                 <p>
                     @Html.EditorFor(model => model.EMAIL)
+                    @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.PASSWD)*@
@@ -49,6 +52,7 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.PASSWD)
+                    @Html.ValidationMessageFor(model => model.PASSWD, "", new { @class = "text-danger" })
                 </p>
                 <br />
                 <p>
@@ -57,6 +61,8 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.DIRECCION)
+                    @Html.ValidationMessageFor(model => model.DIRECCION, "", new { @class = "text-danger" })
+                  
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.TLFN)*@
@@ -64,6 +70,8 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.TLFN)
+                    @Html.ValidationMessageFor(model => model.TLFN, "", new { @class = "text-danger" })
+
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.CIUDAD)*@
@@ -71,6 +79,7 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.CIUDAD)
+                    @Html.ValidationMessageFor(model => model.CIUDAD, "", new { @class = "text-danger" })
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.PAIS)*@
@@ -78,6 +87,7 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.PAIS)
+                    @Html.ValidationMessageFor(model => model.PAIS, "", new { @class = "text-danger" })
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.CP)*@
@@ -85,19 +95,12 @@
                 </p>
                 <p>
                     @Html.EditorFor(model => model.CP)
+                    @Html.ValidationMessageFor(model => model.CP, "", new { @class = "text-danger" })
                 </p>
 
 
                 <p>
-                    @Html.ValidationMessageFor(model => model.NOMBRE)
-                    @Html.ValidationMessageFor(model => model.APELLIDOS)
-                    @Html.ValidationMessageFor(model => model.EMAIL)
-                    @Html.ValidationMessageFor(model => model.PASSWD)
-                    @Html.ValidationMessageFor(model => model.TLFN)
-                    @Html.ValidationMessageFor(model => model.DIRECCION)
-                    @Html.ValidationMessageFor(model => model.CIUDAD)
-                    @Html.ValidationMessageFor(model => model.PAIS)
-                    @Html.ValidationMessageFor(model => model.CP)
+
 
                 </p>
                 <label> @Html.DisplayFor(model => model.LoginErrorMessage)</label>
