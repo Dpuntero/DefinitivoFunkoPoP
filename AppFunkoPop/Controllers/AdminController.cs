@@ -129,6 +129,7 @@ namespace ProyectoDawFunko.Controllers
         {
             Database1Entities1 db = new Database1Entities1();
             USUARIO usuarioAEditar = db.USUARIOs.Find(id);
+            ViewBag.Roles = db.ROLs.ToList();
 
             return View("EditandoUsuario", usuarioAEditar);
         }
@@ -139,6 +140,7 @@ namespace ProyectoDawFunko.Controllers
         {
             using (Database1Entities1 db = new Database1Entities1())
             {
+                
                 USUARIO usuarioOriginal = db.USUARIOs.Where(c => c.USUARIO_ID == usuarioModificado.USUARIO_ID).First();
                 usuarioOriginal.NOMBRE = usuarioModificado.NOMBRE;
                 usuarioOriginal.APELLIDOS = usuarioModificado.APELLIDOS;
@@ -149,7 +151,7 @@ namespace ProyectoDawFunko.Controllers
                 usuarioOriginal.CIUDAD = usuarioModificado.CIUDAD;
                 usuarioOriginal.PAIS = usuarioModificado.PAIS;
                 usuarioOriginal.CP = usuarioModificado.CP;
-                usuarioOriginal.ROL.NOMBRE_ROL = usuarioModificado.ROL.NOMBRE_ROL;
+                usuarioOriginal.ID_ROL = usuarioModificado.ID_ROL;
                 db.SaveChanges();
                 return RedirectToAction("GestionUsuarios");
             }
@@ -172,6 +174,19 @@ namespace ProyectoDawFunko.Controllers
 
                     }
                 }
+                db.SaveChanges();
+                return RedirectToAction("GestionUsuarios");
+            }
+        }
+
+        public ActionResult CambiarRoles(int usuarioId, int rolId)
+        {
+            using (Database1Entities1 db = new Database1Entities1())
+            {
+                USUARIO usuarioOriginal = db.USUARIOs.Where(c => c.USUARIO_ID == usuarioId).First();
+
+                usuarioOriginal.ROL.ID_ROL = rolId;
+
                 db.SaveChanges();
                 return RedirectToAction("GestionUsuarios");
             }
