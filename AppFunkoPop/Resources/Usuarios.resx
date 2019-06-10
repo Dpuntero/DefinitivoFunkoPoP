@@ -183,4 +183,7 @@
   <data name="nuevaCuenta" xml:space="preserve">
     <value>Create new account</value>
   </data>
+  <data name="VerPedidoUnico" xml:space="preserve">
+    <value>See order</value>
+  </data>
 </root>

@@ -377,6 +377,7 @@
     <Content Include="Views\Admin\EditandoUsuario.cshtml" />
     <Content Include="Views\Admin\EditandoProducto.cshtml" />
     <Content Include="Views\Carrito\CarritoVacio.cshtml" />
+    <Content Include="Views\Pedidos\MiPedido.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Languaje\" />
