@@ -223,6 +223,15 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Provider&apos;s management.
+        /// </summary>
+        public static string gestionProveedores {
+            get {
+                return ResourceManager.GetString("gestionProveedores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Users management.
         /// </summary>
         public static string gestionUsuarios {
@@ -340,6 +349,15 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Another image.
+        /// </summary>
+        public static string otraImagen {
+            get {
+                return ResourceManager.GetString("otraImagen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Country.
         /// </summary>
         public static string pais {
@@ -390,6 +408,15 @@ namespace AppFunkoPop.Resources {
         public static string rol {
             get {
                 return ResourceManager.GetString("rol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Subcategory.
+        /// </summary>
+        public static string subcategoria {
+            get {
+                return ResourceManager.GetString("subcategoria", resourceCulture);
             }
         }
         

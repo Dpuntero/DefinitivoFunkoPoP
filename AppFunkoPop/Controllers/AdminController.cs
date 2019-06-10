@@ -22,13 +22,85 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
 
+        public ActionResult NuevoProveedor()
+        {
+            ViewBag.Message = "Your application description page.";
 
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CrearProveedor (AppFunkoPop.Models.PROVEEDOR nuevoProv)
+        {
+                       
+            using (Database1Entities1 db = new Database1Entities1())
+            {
+
+                db.PROVEEDORs.Add(nuevoProv);
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("GestionProveedores");
+
+        }
+        public ActionResult GestionProveedores()
+        {
+            Database1Entities1 db = new Database1Entities1();
+            ViewBag.Proveedores = db.PROVEEDORs.ToList();
+            return View();
+        }
+        public ActionResult EditarProveedor(int id)
+        {
+            using (Database1Entities1 db = new Database1Entities1())
+            {
+                PROVEEDOR buscarProveedor = db.PROVEEDORs.Find(id);
+           
+            return View("EditandoProveedor", buscarProveedor);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult EditandoProveedor(PROVEEDOR proveedorEditar)
+        {
+            using(Database1Entities1 db = new Database1Entities1()){
+            PROVEEDOR buscarProveedor = db.PROVEEDORs.Find(proveedorEditar.PROVEEDOR_ID);
+            buscarProveedor.NOMBRE_PROV = proveedorEditar.NOMBRE_PROV;
+            buscarProveedor.EMAIL_PROV = proveedorEditar.EMAIL_PROV;
+            buscarProveedor.TLFN_PROV = proveedorEditar.TLFN_PROV;
+            buscarProveedor.DESCRIPCION_PROV = proveedorEditar.DESCRIPCION_PROV;
+            db.SaveChanges();
+            return RedirectToAction("GestionProveedores");
+        }
+        }
+
+        // GET: PROVEEDORs/Delete/5
+        public ActionResult BorrarProveedor(int[] borrados)
+        {
+            
+            using (Database1Entities1 db = new Database1Entities1())
+            {
+                foreach (var id in borrados)
+                {
+                    if (id != 0)
+                    {
+                        
+                        PROVEEDOR aEliminar = db.PROVEEDORs.Find(id);
+                        db.PROVEEDORs.Remove(aEliminar);
+
+                    }
+                }
+                db.SaveChanges();
+                return RedirectToAction("GestionProveedores");
+            }
+            
+        }
         //METODOS PARA GESTION DE PRODUCTOS
         // GET: PRODUCTOes
         public ActionResult GestionProductos()
         {
-            Database1Entities1 db = new Database1Entities1();
-            ViewBag.Productos = db.PRODUCTOes.ToList();
+            using (Database1Entities1 db = new Database1Entities1())
+            {
+                ViewBag.Productos = db.PRODUCTOes.ToList();
+            }
             return View();
         }
 
@@ -51,11 +123,15 @@ namespace ProyectoDawFunko.Controllers
                 PRODUCTO productoOriginal = db.PRODUCTOes.Where(c => c.PRODUCTO_ID == productoModificado.PRODUCTO_ID).First();
                 productoOriginal.NOMBREP = productoModificado.NOMBREP;
                 productoOriginal.CATEGORIA = productoModificado.CATEGORIA;
+                productoOriginal.SUBCATEGORIA = productoModificado.SUBCATEGORIA;
                 productoOriginal.DESCRIP = productoModificado.DESCRIP;
                 productoOriginal.UD_DISPO = productoModificado.UD_DISPO;
+
+                
                 productoOriginal.PRECIO = productoModificado.PRECIO;
                 productoOriginal.PROVEEDOR_ID = productoModificado.PROVEEDOR_ID;
-                productoOriginal.IMAGEN = productoModificado.IMAGEN2;
+                productoOriginal.IMAGEN = productoModificado.IMAGEN;
+                productoOriginal.IMAGEN2 = productoModificado.IMAGEN2;
                 db.SaveChanges();
                 return RedirectToAction("GestionProductos");
             }

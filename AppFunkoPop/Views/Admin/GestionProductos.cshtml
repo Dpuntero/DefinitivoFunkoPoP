@@ -18,50 +18,50 @@
 
 
 
-<h2>Listado de Productos</h2>
-<p>Listado de sus Productos:</p>
+<h2>@AppFunkoPop.Resources.Admin.listaProductos</h2>
+<p>@AppFunkoPop.Resources.Admin.listadoPedidos</p>
 @using (Html.BeginForm("EliminarProductos", "Admin", FormMethod.Post))
 {
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>
-                    ID
+                    @AppFunkoPop.Resources.Admin.idProducto
 
                 </th>
                 <th>
-                    Nombre
+                    @AppFunkoPop.Resources.Admin.nombre
                 </th>
                 <th>
-                    Precio
+                    @AppFunkoPop.Resources.Admin.precio
                 </th>
                 <th>
-                    Descripción
+                    @AppFunkoPop.Resources.Admin.decripcion
                 </th>
                 <th>
-                    Categoria
+                    @AppFunkoPop.Resources.Admin.categoria
                 </th>
                 <th>
-                    Subcategoria
+                    @AppFunkoPop.Resources.Admin.subcategoria
                 </th>
                 <th>
-                    Unidades
+                    @AppFunkoPop.Resources.Admin.unidadesDisp
                 </th>
                 <th>
-                    Proveedor
+                    @AppFunkoPop.Resources.Admin.idVendedor
                 </th>
                 <th>
-                    Imagen
+                    @AppFunkoPop.Resources.Admin.imagen
                 </th>
                 <th>
-                    Otra Imagen
+                    @AppFunkoPop.Resources.Admin.otraImagen
                 </th>
                 <th>
-                    Borrar
+                    @AppFunkoPop.Resources.Admin.borrar
 
                 </th>
                 <th>
-                    Editar
+                    @AppFunkoPop.Resources.Admin.editar
                 </th>
 
             </tr>
@@ -69,55 +69,56 @@
         <tbody>
             @foreach (var unProducto in listadoProductos)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => unProducto.PRODUCTO_ID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => unProducto.NOMBREP)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => unProducto.PRECIO)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => unProducto.DESCRIP)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => unProducto.CATEGORIA)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => unProducto.SUBCATEGORIA)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => unProducto.UD_DISPO)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => unProducto.PROVEEDOR_ID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => unProducto.IMAGEN)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => unProducto.IMAGEN2)
-                </td>
-                <td>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck" name="borrados" value="@unProducto.PRODUCTO_ID">
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.PRODUCTO_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.NOMBREP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.PRECIO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.DESCRIP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.CATEGORIA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.SUBCATEGORIA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.UD_DISPO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.PROVEEDOR_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.IMAGEN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => unProducto.IMAGEN2)
+                    </td>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="borrados" value="@unProducto.PRODUCTO_ID">
 
-                    </div>
+                        </div>
 
-                </td>
-                <td>
-                    @Html.ActionLink("Editar", "EditarProducto", new { id = unProducto.PRODUCTO_ID })
-                </td>
-            </tr>
+                    </td>
+                    <td>
+                        @Html.ActionLink(@AppFunkoPop.Resources.Admin.editar, "EditarProducto", new { id = unProducto.PRODUCTO_ID })
+                    </td>
+                </tr>
 
             }
         </tbody>
     </table>
     <button type="submit" class="btn btn-primary mb-2" style="color: white;" name="borrados">
-        Confirmar borrado
+        @AppFunkoPop.Resources.Admin.borrar
     </button>
     <br />
-    <p>O quizas quieras: @Html.ActionLink("Añadir un producto", "NuevoProducto", "Producto")</p>
+    <br />
+    <p>@Html.ActionLink(@AppFunkoPop.Resources.Admin.añadirProducto, "NuevoProducto", "Producto")</p>
 }
