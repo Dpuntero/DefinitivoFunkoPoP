@@ -107,9 +107,19 @@ namespace ProyectoDawFunko.Controllers
                
         }
 
+        public ActionResult VaciarCarrito()
+        {
+            var cookie = Request.Cookies["Carrito"];
+            cookie.Expires = DateTime.Now.AddDays(-1);
+            cookie.Value = string.Empty;
+            Response.Cookies.Add(cookie);
+
+            return RedirectToAction("CarritoVacio", "Carrito");
+        }
+
         public ActionResult CarritoVacio()
         {
-            Database1Entities1 db = new Database1Entities1();
+           
 
             return View();
         }
