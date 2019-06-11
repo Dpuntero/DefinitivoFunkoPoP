@@ -15,18 +15,27 @@
 
 <h2>@Model.NOMBREP</h2>
 
-
+@*<script type="text/javascript">
+    function changeImg() {
+        var imagen = document.getElementById('imagenCambiando');
+        if (imagen.src == "~/Content/images/marvel/thor1.jpg") {
+            document.getElementById('imagenCambiando').src = "~/Content/images/marvel/thor2.jpg";
+        } else {
+            document.getElementById('imagenCambiando').src = "~/Content/images/marvel/thor1.jpg";
+        }
+    }
+</script>*@
 <div class="row">
 
     <hr />
     <div class="col-sm-12 col-md-12">
         <div class="col-xs-4 col-sm-2 col-md-2">
-            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN" class="col-xs-6 col-sm-12 col-md-12" />
-            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN2" class="col-xs-6 col-sm-12 col-md-12" />
+            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN" class="col-xs-6 col-sm-12 col-md-12" onclick="changeImg()" />
+            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN2" class="col-xs-6 col-sm-12 col-md-12"  onclick="changeImg()"/>
 
         </div>
         <div class="col-sm-8 col-md-8">
-            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN" Style="width:70%" class="col-xs-12 col-sm-12 col-md-12" />
+            <img id="imagenCambiando" src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN" Style="width:70%" class="col-xs-12 col-sm-12 col-md-12"  />
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2">
             @AppFunkoPop.Resources.Productos.descripcion:
@@ -69,6 +78,6 @@
 
 
 @*<div class="row">
-    <a href="~/Producto/NuevoProducto">Nuevo</a>
-</div>*@
+        <a href="~/Producto/NuevoProducto">Nuevo</a>
+    </div>*@
 

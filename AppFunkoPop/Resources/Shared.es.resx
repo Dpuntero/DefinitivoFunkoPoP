@@ -165,6 +165,9 @@
   <data name="got" xml:space="preserve">
     <value>Juego de Tronos</value>
   </data>
+  <data name="hazPregunta" xml:space="preserve">
+    <value>Haznos una pregunta</value>
+  </data>
   <data name="hola" xml:space="preserve">
     <value>Hola</value>
   </data>
