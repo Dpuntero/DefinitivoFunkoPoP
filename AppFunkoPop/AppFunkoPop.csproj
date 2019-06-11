@@ -291,11 +291,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\candado.png" />
     <Content Include="Content\images\descarga.jpg" />
+    <Content Include="Content\images\facebook.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logoClara.png" />
     <Content Include="Content\images\mapa.png" />
     <Content Include="Content\images\naranja.png" />
     <Content Include="Content\images\rojo.png" />
+    <Content Include="Content\images\twitter.png" />
     <Content Include="Content\images\verde.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

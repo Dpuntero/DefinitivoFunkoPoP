@@ -47,8 +47,12 @@
 
         #tituloFooter {
             font-size: 20px;
-            text-decoration-line: underline;
-            text-decoration-color: yellow;
+            text-decoration: none;
+
+        }
+        #tituloFooterPequeño {
+            font-size: 15px;
+            text-decoration: none;
         }
 
         .imagenes {
@@ -59,8 +63,10 @@
 
         footer {
             color: white;
-            height: 250px;
             background-color: slategrey;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
         header {
@@ -69,11 +75,17 @@
 
         body {
             padding: 0px;
+           
         }
+        
 
         footer a {
             color: white;
             text-decoration: none;
+         
+        }
+        #copyright {
+            min-height: 30px;
         }
     </style>
 
@@ -124,38 +136,48 @@
 
 
     </div>
-    <footer class="page-footer font-small blue pt-4">
+    <footer class="page-footer font-small blue pt-4" style="margin-top: 6%;">
+        <div class="footer-copyright text-center py-3" style="background-color:slategrey;" color:white" id="copyright">
+        </div>
         <div id="footer" class="container-fluid text-center text-md-left">
-            <div class="row">
-                <div class="col-md-3 mt-md-0 mt-3">
-                    <h5 class="text-uppercase">@Html.ActionLink(AppFunkoPop.Resources.Shared.avisoLegal, "AvisoLegal", "Otros")</h5>
+            <div class="row" style="padding:2%">
+                <div class="col-md-3 mt-md-0 mt-3" style="padding-top:3%">
+                    <h5 class="text-uppercase" id="tituloFooter">@Html.ActionLink(AppFunkoPop.Resources.Shared.avisoLegal, "AvisoLegal", "Otros")</h5>
                     <p id="tituloFooter">@Html.ActionLink(AppFunkoPop.Resources.Shared.politicaPrivacidad, "PoliticaPrivacidad", "Otros")</p>
-                </div>
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <form name="formularioContacto" action="mailto:mariameraf@gmail.com">
-                    <h5 class="text-uppercase">@AppFunkoPop.Resources.Shared.contactanos</h5>                   
-                    <input type="submit" value="Haznos una pregunta" class="btn btn-default"/>
-                    </form>
-                    <a href="tel:674328434">674328434</a>
-                </div>
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <div class="col-lg-3">
-                        <a href="https://es-es.facebook.com/FunkoPopESP/">Facebook </a><br />
-                        <a href="https://twitter.com/funkopopesp?lang=es">Twiter </a><br />
 
+                    <img src="~/Content/images/candado.png" style="height: 5em"/>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3" style="padding-top:4%">
+                    <form name="formularioContacto" action="mailto:mariameraf@gmail.com">
+                        <h5 class="text-uppercase" id="tituloFooter">@AppFunkoPop.Resources.Shared.contactanos</h5>
+                        <input type="submit" value="Haznos una pregunta" class="btn btn-default" />
+                    </form>
+                    <a href="tel:674328434" id="tituloFooter">674328434</a>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3" style="padding-top:2%">
+                    <div class="col-lg-12" style="text-align:center">
+
+                        <img src="~/Content/images/facebook.png" style="height:20px;" /><a href="https://es-es.facebook.com/FunkoPopESP/" id="tituloFooter"> Facebook </a><br />
+                        <br />
+                        <img src="~/Content/images/twitter.png" style="height:20px;" /><a href="https://twitter.com/funkopopesp?lang=es" id="tituloFooter">Twiter </a><br />
+                         <br />
+                        <br />
+                        <a href="http://ies.claradelrey.madrid.educa.madrid.org/portal/index.php?lang=es"><img src="~/Content/images/logoClara.png" style="height:5em;" /></a>
                     </div>
                 </div>
                 <div class="col-md-3 mb-md-0 mb-3">
                     <div class="col-lg-12">
                         <p id="tituloFooter">@AppFunkoPop.Resources.Shared.dondeEstamos</p>
                         <div>
-                            <img src="~/Content/images/mapa.png" class="img-responsive" style="width:100%; margin-bottom:10px;" alt="Image">
+                            <a href="https://www.google.com/search?q=tienda+madrid+funko+pop&npsic=0&rflfq=1&rlha=0&rllag=40452284,-3709945,3357&tbm=lcl&ved=2ahUKEwjkzN7ejuLiAhVMXBoKHUMbDo8QtgN6BAgKEAU&tbs=lrf:!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:10&rldoc=1#rlfi=hd:;si:;mv:!1m2!1d40.487212299999996!2d-3.6572522000000003!2m2!1d40.3968979!2d-3.7167936999999998!3m12!1m3!1d43776.216222783274!2d-3.68702295!3d40.4420551!2m3!1f0!2f0!3f0!3m2!1i174!2i346!4f13.1;tbs:lrf:!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:10">
+                                <img src="~/Content/images/mapa.png" class="img-responsive" style="width:100%; margin-bottom:10px;" alt="Image">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright text-center py-3" style="background-color:slategrey;" color:white">
+        <div class="footer-copyright text-center py-3" style="background-color:slategrey;" color:white" id="copyright">
             © 2019 Copyright:
             <a href=""> PopShop- DAW2</a>
         </div>
