@@ -25,91 +25,98 @@
             <hr />
             @using (Html.BeginForm("ActualizarUsuario", "Account", FormMethod.Post))
             {
-            <p>
-                @*@Html.LabelFor(model => model.NOMBRE)*@
-                @AppFunkoPop.Resources.Usuarios.nombre
-            </p>
                 <p>
-                    @Html.TextBoxFor(model => model.NOMBRE)
-                    
+                    @*@Html.LabelFor(model => model.NOMBRE)*@
+
+                    <label class="control-label col-md-2"> @AppFunkoPop.Resources.Usuarios.nombre</label>
+                </p>
+                <p>
+                    @Html.EditorFor(model => model.NOMBRE, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NOMBRE, "", new { @class = "text-danger" })
+
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.APELLIDOS)*@
-                    @AppFunkoPop.Resources.Usuarios.apellidos
+                    <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.apellidos</label>
+
                 </p>
                 <p>
-                    @Html.EditorFor(model => model.APELLIDOS)
+                    @Html.EditorFor(model => model.APELLIDOS, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.APELLIDOS, "", new { @class = "text-danger" })
+
                 </p>
-             
+
                 <p>
                     @*@Html.LabelFor(model => model.DIRECCION)*@
-                    @AppFunkoPop.Resources.Usuarios.direccion
+
+                    <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.direccion</label>
                 </p>
                 <p>
-                    @Html.EditorFor(model => model.DIRECCION)
+                    @Html.EditorFor(model => model.DIRECCION, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.TLFN)*@
-                    @AppFunkoPop.Resources.Usuarios.telefono
+
+                    <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.telefono </label>
                 </p>
                 <p>
-                    @Html.EditorFor(model => model.TLFN)
+                    @Html.EditorFor(model => model.TLFN, new { htmlAttributes = new { @class = "form-control" } })
+
+                    @Html.ValidationMessageFor(model => model.TLFN, "", new { @class = "text-danger" })
+                    
+
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.CIUDAD)*@
-                    @AppFunkoPop.Resources.Usuarios.ciudad
+
+                    <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.ciudad</label>
                 </p>
                 <p>
-                    @Html.EditorFor(model => model.CIUDAD)
+                    @Html.EditorFor(model => model.CIUDAD, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CIUDAD, "", new { @class = "text-danger" })
+
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.PAIS)*@
-                    @AppFunkoPop.Resources.Usuarios.pais
+
+                    <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.pais</label>
                 </p>
                 <p>
-                    @Html.EditorFor(model => model.PAIS)
+                    @Html.EditorFor(model => model.PAIS, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PAIS, "", new { @class = "text-danger" })
                 </p>
                 <p>
                     @*@Html.LabelFor(model => model.CP)*@
-                    @AppFunkoPop.Resources.Usuarios.codigoPostal
+
+                    <label class="control-label col-md-2"> @AppFunkoPop.Resources.Usuarios.codigoPostal</label>
                 </p>
                 <p>
-                    @Html.EditorFor(model => model.CP)
+                    @Html.EditorFor(model => model.CP, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CP, "", new { @class = "text-danger" })
                 </p>
 
-
-                <p>
-                    @Html.ValidationMessageFor(model => model.NOMBRE)
-                    @Html.ValidationMessageFor(model => model.APELLIDOS)
-                    @Html.ValidationMessageFor(model => model.EMAIL)
-                    @Html.ValidationMessageFor(model => model.PASSWD)
-                    @Html.ValidationMessageFor(model => model.TLFN)
-                    @Html.ValidationMessageFor(model => model.DIRECCION)
-                    @Html.ValidationMessageFor(model => model.CIUDAD)
-                    @Html.ValidationMessageFor(model => model.PAIS)
-                    @Html.ValidationMessageFor(model => model.CP)
-
-                </p>
                 <label> @Html.DisplayFor(model => model.LoginErrorMessage)</label>
-                <input type="submit" name="entrar" value="@AppFunkoPop.Resources.Usuarios.entrar" />
-                <input type="reset" name="borrar" value="@AppFunkoPop.Resources.Usuarios.borrar" />
+                <input type="submit" name="entrar" value="@AppFunkoPop.Resources.Usuarios.entrar" class="btn btn-primary" />
+                <input type="reset" name="borrar" value="@AppFunkoPop.Resources.Usuarios.borrar" class="btn btn-default"/>
             }
 
             <!--
-            <form action="CrearUsuario" method="post">
-                <label>Nombre: <input type="text" name="nombre" value="" /></label></br>
-                <label>Apellidos: <input type="text" name="apellidos" value="" /></label></br>
-                <label>Email: <input type="text" name="email" value="" /></label></br>
-                <label>Password: <input type="text" name="passwd" value="" /></label></br>
-                <label>Teléfono: <input type="text" name="telefono" value="" /></label></br>
-                <label>Dirección: <input type="text" name="direccion" value="" /></label></br>
-                <label>Ciudad: <input type="text" name="ciudad" value="" /></label></br>
-                <label>País: <input type="text" name="pais" value="" /></label></br>
-                <label>Codigo Postal: <input type="text" name="cp" value="" /></label></br>
+    <form action="CrearUsuario" method="post">
+        <label>Nombre: <input type="text" name="nombre" value="" /></label></br>
+        <label>Apellidos: <input type="text" name="apellidos" value="" /></label></br>
+        <label>Email: <input type="text" name="email" value="" /></label></br>
+        <label>Password: <input type="text" name="passwd" value="" /></label></br>
+        <label>Teléfono: <input type="text" name="telefono" value="" /></label></br>
+        <label>Dirección: <input type="text" name="direccion" value="" /></label></br>
+        <label>Ciudad: <input type="text" name="ciudad" value="" /></label></br>
+        <label>País: <input type="text" name="pais" value="" /></label></br>
+        <label>Codigo Postal: <input type="text" name="cp" value="" /></label></br>
 
-                <input type="submit" name="enviar" value="enviar" />
+        <input type="submit" name="enviar" value="enviar" />
 
-            </form>-->
+    </form>-->
             @Html.ValidationSummary()
 
         </div>

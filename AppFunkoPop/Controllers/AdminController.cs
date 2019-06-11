@@ -44,10 +44,13 @@ namespace ProyectoDawFunko.Controllers
         }
         public ActionResult GestionProveedores()
         {
-            Database1Entities1 db = new Database1Entities1();
-            ViewBag.Proveedores = db.PROVEEDORs.ToList();
-            return View();
+            using (Database1Entities1 db = new Database1Entities1())
+            {
+                ViewBag.Proveedores = db.PROVEEDORs.ToList();
+                return View();
+            }
         }
+
         public ActionResult EditarProveedor(int id)
         {
             using (Database1Entities1 db = new Database1Entities1())
@@ -106,14 +109,15 @@ namespace ProyectoDawFunko.Controllers
 
         // GET: PRODUCTOes/EditarProducto/5
 
-        public ActionResult EditarProducto(int? id)
+        public ActionResult EditarProducto(int id)
         {
-            Database1Entities1 db = new Database1Entities1();
-            PRODUCTO productoAEditar = db.PRODUCTOes.Find(id);
+            using (Database1Entities1 db = new Database1Entities1())
+            {
+                PRODUCTO productoAEditar = db.PRODUCTOes.Where(x => x.PRODUCTO_ID == id).FirstOrDefault();
 
-            return View("EditandoProducto", productoAEditar);
+                return View ("EditandoProducto", productoAEditar);
+            }
         }
-       
 
         [HttpPost]
         public ActionResult EditandoProducto(PRODUCTO productoModificado)

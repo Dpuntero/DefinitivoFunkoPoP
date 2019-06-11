@@ -25,7 +25,7 @@
                     document.frm.subcategoria.options[i].text = misOpts[i];
                 }
             }
-            //document.frm.subcategoria.options[0].selected = true;
+            
         }
     </script>
     <style>
@@ -57,6 +57,8 @@
 
         footer {
             color: white;
+            height: 250px;
+            background-color: slategrey;
         }
 
         header {
@@ -67,7 +69,10 @@
             padding: 0px;
         }
 
-
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
     </style>
 
 </head>
@@ -124,28 +129,30 @@
                     <p id="tituloFooter">@AppFunkoPop.Resources.Shared.politicaPrivacidad</p>
                 </div>
                 <div class="col-md-3 mb-md-0 mb-3">
-
-                    <h5 class="text-uppercase">@AppFunkoPop.Resources.Shared.contactanos</h5>
-                    <p>funko.pop.shop@gmail.com</p>
-                    <p>916530986</p>
+                    <form name="formularioContacto" action="mailto:mariameraf@gmail.com">
+                    <h5 class="text-uppercase">@AppFunkoPop.Resources.Shared.contactanos</h5>                   
+                    <input type="submit" value="Haznos una pregunta" class="btn btn-default"/>
+                    </form>
+                    <a href="tel:674328434">674328434</a>
                 </div>
                 <div class="col-md-3 mb-md-0 mb-3">
                     <div class="col-lg-3">
-                        <p>(Redes sociales)</p>
+                        <a href="https://es-es.facebook.com/FunkoPopESP/">Facebook </a><br />
+                        <a href="https://twitter.com/funkopopesp?lang=es">Twiter </a><br />
+
                     </div>
                 </div>
                 <div class="col-md-3 mb-md-0 mb-3">
-                    <div class="col-lg-3">
+                    <div class="col-lg-12">
                         <p id="tituloFooter">@AppFunkoPop.Resources.Shared.dondeEstamos</p>
                         <div>
-                            <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%"
-                                 alt="Image">
+                            <img src="~/Content/images/mapa.png" class="img-responsive" style="width:100%; margin-bottom:10px;" alt="Image">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright text-center py-3">
+        <div class="footer-copyright text-center py-3" style="background-color:slategrey;" color:white">
             © 2019 Copyright:
             <a href=""> PopShop- DAW2</a>
         </div>

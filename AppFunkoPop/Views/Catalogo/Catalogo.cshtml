@@ -13,31 +13,31 @@
             @*@Html.LabelFor(model => model.CATEGORIA)*@
             <div class="col-sm-6">
                 <label >@AppFunkoPop.Resources.Productos.categoria</label>
-                
-                <select name="categoria" onclick="cambiar()">
+                <br />
+                <select name="categoria" onclick="cambiar()" class = "form-control">
                     <option value="todos">Todos</option>
                     <option value="marvel">Marvel</option>
                     <option value="got">Juego de tronos</option>
                     <option value="starwars">Star Wars</option>
 
                 </select>
-              
+                <div style="padding-left:350px">
+                    <button type="submit" class="btn btn-default">@AppFunkoPop.Resources.Catalogo.filtrar</button>
+                </div>
                 @*@Html.LabelFor(model => model.SUBCATEGORIA)*@
                
-                    <label style="padding-left:30px;"> @AppFunkoPop.Resources.Productos.subcategoria </label>
-                   
-                    <select name="subcategoria">
+                    <label > @AppFunkoPop.Resources.Productos.subcategoria </label>
+                   <br />
+                    <select name="subcategoria" class = "form-control">
                         <option value="todos">Todos</option>
                     </select>
                 </div>
                 @*@Html.EditorFor(model => model.CATEGORIA, "", new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })*@
             </div>
-        <row>
-            <div style="padding-left:350px">
-                <button type="submit" class="btn btn-default">@AppFunkoPop.Resources.Catalogo.filtrar</button>
-            </div>
-        </row>
+        @*<row>
+            Aqui iba el boton de filtar
+        </row>*@
 </form>
 </div>
 
