@@ -142,6 +142,15 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Featured products.
+        /// </summary>
+        public static string destacado {
+            get {
+                return ResourceManager.GetString("destacado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Adress.
         /// </summary>
         public static string direccion {

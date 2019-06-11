@@ -130,7 +130,7 @@ namespace ProyectoDawFunko.Controllers
                 productoOriginal.SUBCATEGORIA = productoModificado.SUBCATEGORIA;
                 productoOriginal.DESCRIP = productoModificado.DESCRIP;
                 productoOriginal.UD_DISPO = productoModificado.UD_DISPO;
-
+                productoOriginal.DESTACADO = productoModificado.DESTACADO;
                 
                 productoOriginal.PRECIO = productoModificado.PRECIO;
                 productoOriginal.PROVEEDOR_ID = productoModificado.PROVEEDOR_ID;

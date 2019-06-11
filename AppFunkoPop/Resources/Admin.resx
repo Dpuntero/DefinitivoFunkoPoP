@@ -252,4 +252,7 @@
   <data name="gestionProveedores" xml:space="preserve">
     <value>Provider's management</value>
   </data>
+  <data name="destacado" xml:space="preserve">
+    <value>Featured products</value>
+  </data>
 </root>
