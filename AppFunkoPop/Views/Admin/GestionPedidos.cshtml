@@ -52,7 +52,7 @@
                         @*@Html.DropDownList("estadoId", (SelectList)ViewBag.listaEstados, new { onchange = "this.form.submit();" })*@
 
 
-                        <select id="estadoId" name="estadoId" onchange="this.form.submit()">
+                        <select id="estadoId" name="estadoId" onchange="this.form.submit()" class = "form-control">
 
                             @foreach (var estado in estados)
                             {

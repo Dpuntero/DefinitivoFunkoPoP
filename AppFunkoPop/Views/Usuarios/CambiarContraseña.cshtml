@@ -15,33 +15,34 @@
 {
 <p>
     @*@Html.LabelFor(model => model.contrasenaAntigua)*@
-    @AppFunkoPop.Resources.Usuarios.contAntigua
+    <label class="control-label col-md-2"> @AppFunkoPop.Resources.Usuarios.contAntigua </label>
+</p>
+<p>
+    @Html.EditorFor(model => model.contrasenaAntigua, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.contrasenaAntigua, "", new { @class = "text-danger" })
 </p>
     <p>
-        @Html.EditorFor(model => model.contrasenaAntigua)
-    </p>
-    <p>
         @*@Html.LabelFor(model => model.contrasenaNueva)*@
-        @AppFunkoPop.Resources.Usuarios.contNueva
-    </p>
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.contNueva </label>
+</p>
     <p>
-        @Html.EditorFor(model => model.contrasenaNueva)
+        @Html.EditorFor(model => model.contrasenaNueva, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.contrasenaNueva, "", new { @class = "text-danger" })
     </p>
     <p>
         @*@Html.LabelFor(model => model.contrasenaRepetida)*@
-        @AppFunkoPop.Resources.Usuarios.confContNueva
-    </p>
+        <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.confContNueva</label>
+</p>
     <p>
-        @Html.EditorFor(model => model.contrasenaRepetida)
+        @Html.EditorFor(model => model.contrasenaRepetida, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.contrasenaRepetida, "", new { @class = "text-danger" })
     </p>
 
-    <p>
-        @Html.ValidationMessageFor(model => model.contrasenaAntigua)
-        @Html.ValidationMessageFor(model => model.contrasenaNueva)
-        @Html.ValidationMessageFor(model => model.contrasenaRepetida)
-    </p>
+   
     <label> @Html.DisplayFor(model => model.contrasenaErrorMessage)</label>
-    <input type="submit" name="entrar" value="@AppFunkoPop.Resources.Usuarios.entrar" />
-    <input type="reset" name="borrar" value="@AppFunkoPop.Resources.Usuarios.borrar" />
+    <br />
+    <br />
+    <input type="submit" name="entrar" value="@AppFunkoPop.Resources.Usuarios.entrar"  class="btn btn-primary" />
+    <input type="reset" name="borrar" value="@AppFunkoPop.Resources.Usuarios.borrar" class="btn btn-default" />
 }
 
