@@ -252,4 +252,7 @@
   <data name="gestionProveedores" xml:space="preserve">
     <value>Gestion de proveedores</value>
   </data>
+  <data name="destacado" xml:space="preserve">
+    <value>Productos destacados</value>
+  </data>
 </root>
