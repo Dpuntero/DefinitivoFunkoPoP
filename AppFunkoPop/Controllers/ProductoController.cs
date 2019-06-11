@@ -49,8 +49,8 @@ namespace AppFunkoPop.Controllers
         [HttpPost]
         public ActionResult NuevoProducto(AppFunkoPop.Models.PRODUCTO nuevoProd)
         {
-            nuevoProd.IMAGEN = nuevoProd.NOMBREP + ".jpg";
-            nuevoProd.IMAGEN2 = nuevoProd.NOMBREP + ".jpg";
+            nuevoProd.IMAGEN = nuevoProd.IMAGEN + ".jpg";
+            nuevoProd.IMAGEN2 = nuevoProd.IMAGEN2 + ".jpg";
             
             using (Database1Entities1 db = new Database1Entities1())
             {
