@@ -135,4 +135,7 @@
   <data name="siguiente" xml:space="preserve">
     <value>Next</value>
   </data>
+  <data name="ver" xml:space="preserve">
+    <value>See</value>
+  </data>
 </root>

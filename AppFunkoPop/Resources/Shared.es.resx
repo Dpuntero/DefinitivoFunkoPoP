@@ -138,11 +138,20 @@
   <data name="contactanos" xml:space="preserve">
     <value>Contáctanos</value>
   </data>
+  <data name="contacto" xml:space="preserve">
+    <value>Contacto</value>
+  </data>
   <data name="cuentaBloqueada" xml:space="preserve">
     <value>Esta cuenta está bloqueada, por favor inténtelo mas tarde</value>
   </data>
+  <data name="destacado" xml:space="preserve">
+    <value>¡Echa un vistazo a nuestros productos destacados!</value>
+  </data>
   <data name="dondeEstamos" xml:space="preserve">
     <value>Dónde estamos</value>
+  </data>
+  <data name="episodio3" xml:space="preserve">
+    <value>Episodio 3</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>
@@ -150,8 +159,17 @@
   <data name="errorSolicitud" xml:space="preserve">
     <value>Error al procesar la solicitud</value>
   </data>
+  <data name="español" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="got" xml:space="preserve">
+    <value>Juego de Tronos</value>
+  </data>
   <data name="hola" xml:space="preserve">
     <value>Hola</value>
+  </data>
+  <data name="ingles" xml:space="preserve">
+    <value>Inglés</value>
   </data>
   <data name="iniciarSesion" xml:space="preserve">
     <value>Iniciar sesión</value>
@@ -159,10 +177,28 @@
   <data name="inicio" xml:space="preserve">
     <value>Inicio</value>
   </data>
+  <data name="norte" xml:space="preserve">
+    <value>El norte</value>
+  </data>
+  <data name="otros" xml:space="preserve">
+    <value>Otros</value>
+  </data>
   <data name="politicaPrivacidad" xml:space="preserve">
     <value>Política de privacidad</value>
   </data>
   <data name="registrarse" xml:space="preserve">
     <value>Registrarse</value>
+  </data>
+  <data name="retorno" xml:space="preserve">
+    <value>El retorno del Jedi</value>
+  </data>
+  <data name="todos" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="ultimo" xml:space="preserve">
+    <value>El último Jedi</value>
+  </data>
+  <data name="vengadores" xml:space="preserve">
+    <value>Vengadores</value>
   </data>
 </root>

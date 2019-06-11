@@ -3,6 +3,13 @@
 @{
     ViewBag.Title = "Index";
     var texto = "";
+    HttpCookie cookie = HttpContext.Current.Request.Cookies["Language"];
+    string x = "";
+    string traduccion = "";
+    if (cookie != null)
+    {
+        x = cookie.Value;
+    }
 }
 
 
@@ -55,7 +62,7 @@
 <!--fIN DE CARROUSEL-->
 <br/>
 <div class="row">
-    <h3 style=" text-align:center"> ¡Echa un vistazo a nuestros productos destacados!</h3>
+    <h3 style=" text-align:center"> @AppFunkoPop.Resources.Shared.destacado</h3>
 </div>
 <div class="row">
     <br />
@@ -69,21 +76,39 @@
                 <div class="caption">
                     <h3 style="text-align:center; font-variant:small-caps; font-weight:bold" ;>@prod.NOMBREP</h3>
 
-                    @if (prod.DESCRIP.Length > 42)
+                    @if (x == "" || x == "es")
                     {
-                        texto = prod.DESCRIP;
-                        texto = texto.Remove(42);
-                        texto = texto + "...";
+                        if (prod.DESCRIP.Length > 42)
+                        {
+                            texto = prod.DESCRIP;
+                            texto = texto.Remove(42);
+                            texto = texto + "...";
 
+                        }
+                        else
+                        {
+                            texto = prod.DESCRIP;
+                        }
                     }
                     else
                     {
-                        texto = prod.DESCRIP;
+                        if (prod.DESCRIP_INGLES.Length > 42)
+                        {
+                            texto = prod.DESCRIP_INGLES;
+                            texto = texto.Remove(42);
+                            texto = texto + "...";
+
+                        }
+                        else
+                        {
+                            texto = prod.DESCRIP_INGLES;
+                        }
                     }
-                    <p>Descripción: @texto </p>
-                    <p>Unidades disponibles: @prod.UD_DISPO</p>
+                    <p>@AppFunkoPop.Resources.Productos.descripcion: @texto </p>
+                    <p>@AppFunkoPop.Resources.Productos.udDisp: @prod.UD_DISPO</p>
+                    <p> @AppFunkoPop.Resources.Productos.precio: @prod.PRECIO €</p>
                     <p>
-                        <a href="~/Producto/Productos/@prod.PRODUCTO_ID" class="btn btn-primary col-xs-5 col-sm-5 col-md-5" role="button">Ver</a>
+                        <a href="~/Producto/Productos/@prod.PRODUCTO_ID" class="btn btn-primary col-xs-5 col-sm-5 col-md-5" role="button">@AppFunkoPop.Resources.Productos.mirar</a>
                         <div class=" col-xs-2 col-sm-2 col-md-2"></div>
                         @using (Html.BeginForm("RecogerIdEnviarProducto", "Carrito", FormMethod.Post))
                         {

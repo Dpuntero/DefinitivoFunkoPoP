@@ -27,6 +27,8 @@
             }
             
         }
+
+
     </script>
     <style>
         .affix {
@@ -79,10 +81,10 @@
 <body>
     <div style="background-color:slategrey;">
         <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="en" }, null)" style=" padding-left:10px;">
-            <img src="~/Content/images/banderausa.jpg"  style="height:15px;"/> <span style=" color: white"><strong>English</strong></span>
+            <img src="~/Content/images/banderausa.jpg"  style="height:15px;"/> <span style=" color: white"><strong>@AppFunkoPop.Resources.Shared.ingles</strong></span>
         </a>
         <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="es" }, null)"style=" padding-left:10px;">
-            <img src="~/Content/images/banderaesp.jpg"  style="height:15px;"/> <span style=" color: white"><strong>Spanish</strong></span>
+            <img src="~/Content/images/banderaesp.jpg"  style="height:15px;"/> <span style=" color: white"><strong>@AppFunkoPop.Resources.Shared.español</strong></span>
         </a>
     </div>
     <div style="background-color: #00A2E8">
@@ -102,6 +104,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink(AppFunkoPop.Resources.Shared.inicio, "Index", "Home")</li>
                     <li>@Html.ActionLink(AppFunkoPop.Resources.Shared.catalogo, "Catalogo", "Catalogo")</li>
+                    <li>@Html.ActionLink(AppFunkoPop.Resources.Shared.contacto, "Contacto", "Otros")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -125,8 +128,8 @@
         <div id="footer" class="container-fluid text-center text-md-left">
             <div class="row">
                 <div class="col-md-3 mt-md-0 mt-3">
-                    <h5 class="text-uppercase">@AppFunkoPop.Resources.Shared.avisoLegal</h5>
-                    <p id="tituloFooter">@AppFunkoPop.Resources.Shared.politicaPrivacidad</p>
+                    <h5 class="text-uppercase">@Html.ActionLink(AppFunkoPop.Resources.Shared.avisoLegal, "AvisoLegal", "Otros")</h5>
+                    <p id="tituloFooter">@Html.ActionLink(AppFunkoPop.Resources.Shared.politicaPrivacidad, "PoliticaPrivacidad", "Otros")</p>
                 </div>
                 <div class="col-md-3 mb-md-0 mb-3">
                     <form name="formularioContacto" action="mailto:mariameraf@gmail.com">

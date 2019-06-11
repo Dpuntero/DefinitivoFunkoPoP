@@ -138,11 +138,20 @@
   <data name="contactanos" xml:space="preserve">
     <value>Contact us</value>
   </data>
+  <data name="contacto" xml:space="preserve">
+    <value>Conctact us</value>
+  </data>
   <data name="cuentaBloqueada" xml:space="preserve">
     <value>This account id blocked, try it again later.</value>
   </data>
+  <data name="destacado" xml:space="preserve">
+    <value>Check out our featured products!</value>
+  </data>
   <data name="dondeEstamos" xml:space="preserve">
     <value>Where we are</value>
+  </data>
+  <data name="episodio3" xml:space="preserve">
+    <value>Episode 3</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>
@@ -150,8 +159,17 @@
   <data name="errorSolicitud" xml:space="preserve">
     <value>Error procesing the reguest</value>
   </data>
+  <data name="español" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="got" xml:space="preserve">
+    <value>Game of Throne</value>
+  </data>
   <data name="hola" xml:space="preserve">
     <value>Hello</value>
+  </data>
+  <data name="ingles" xml:space="preserve">
+    <value>English</value>
   </data>
   <data name="iniciarSesion" xml:space="preserve">
     <value>Log in</value>
@@ -159,10 +177,28 @@
   <data name="inicio" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="norte" xml:space="preserve">
+    <value>The North</value>
+  </data>
+  <data name="otros" xml:space="preserve">
+    <value>Others</value>
+  </data>
   <data name="politicaPrivacidad" xml:space="preserve">
     <value>Privacy policy</value>
   </data>
   <data name="registrarse" xml:space="preserve">
     <value>Sign in</value>
+  </data>
+  <data name="retorno" xml:space="preserve">
+    <value>Return of the Jedi</value>
+  </data>
+  <data name="todos" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="ultimo" xml:space="preserve">
+    <value>The last Jedi</value>
+  </data>
+  <data name="vengadores" xml:space="preserve">
+    <value>Avengers</value>
   </data>
 </root>

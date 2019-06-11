@@ -138,6 +138,9 @@
   <data name="link" xml:space="preserve">
     <value>Link</value>
   </data>
+  <data name="mirar" xml:space="preserve">
+    <value>Ver</value>
+  </data>
   <data name="nombre" xml:space="preserve">
     <value>Nombre</value>
   </data>

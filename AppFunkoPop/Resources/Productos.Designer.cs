@@ -124,6 +124,15 @@ namespace AppFunkoPop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to See.
+        /// </summary>
+        public static string mirar {
+            get {
+                return ResourceManager.GetString("mirar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string nombre {

@@ -139,6 +139,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\OtrosController.cs" />
     <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
@@ -215,11 +216,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources\HomeTexts.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HomeTexts.resx</DependentUpon>
-    </Compile>
     <Compile Include="Resources\Pedidos.Designer.cs">
       <DependentUpon>Pedidos.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -234,11 +230,6 @@
       <DependentUpon>Productos.es.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Resources\Home.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Home.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Admin.es.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -262,6 +253,16 @@
     </Compile>
     <Compile Include="Resources\Shared.es.Designer.cs">
       <DependentUpon>Shared.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Carrito.Designer.cs">
+      <DependentUpon>Carrito.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Carrito.es.Designer.cs">
+      <DependentUpon>Carrito.es.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -377,6 +378,10 @@
     <Content Include="Views\Admin\EditandoProducto.cshtml" />
     <Content Include="Views\Carrito\CarritoVacio.cshtml" />
     <Content Include="Views\Pedidos\MiPedido2.cshtml" />
+    <Content Include="Views\Otros\PoliticaPrivacidad.cshtml" />
+    <Content Include="Views\Otros\Contacto.cshtml" />
+    <Content Include="Views\Otros\AvisoLegal.cshtml" />
+    <Content Include="Views\Otros\SobreNosotros.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Languaje\" />
@@ -422,14 +427,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Productos.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Home.es.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Home.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\HomeTexts.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>HomeTexts.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Admin.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Admin.es.Designer.cs</LastGenOutput>
@@ -449,6 +446,14 @@
     <EmbeddedResource Include="Resources\Shared.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Shared.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Carrito.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Carrito.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Carrito.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Carrito.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Usuarios.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
