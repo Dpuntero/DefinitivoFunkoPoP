@@ -250,6 +250,18 @@ namespace ProyectoDawFunko.Controllers
                     {
                         System.Diagnostics.Debug.WriteLine(id);
                         USUARIO aEliminar = db.USUARIOs.Find(id);
+                        List<PEDIDO> pEliminar = db.PEDIDOes.Where(c => c.USUARIO_ID == id).ToList();
+                        List<PEDIDOPRODUCTO> ppEliminar = new List<PEDIDOPRODUCTO>();
+                        foreach (var x in pEliminar)
+                        {
+                            ppEliminar = db.PEDIDOPRODUCTOes.Where(b => b.PEDIDO_ID == x.PEDIDO_ID).ToList();
+                            foreach(var y in ppEliminar)
+                            {
+                                db.PEDIDOPRODUCTOes.Remove(y);
+                            }
+                            db.PEDIDOes.Remove(x);
+
+                        }
                         db.USUARIOs.Remove(aEliminar);
 
                     }

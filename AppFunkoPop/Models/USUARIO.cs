@@ -22,7 +22,6 @@ namespace AppFunkoPop.Models
             this.CARRITOes = new HashSet<CARRITO>();
             this.PEDIDOes = new HashSet<PEDIDO>();
         }
-
         public int USUARIO_ID { get; set; }
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "Es necesario introducir un nombre")]
@@ -74,6 +73,5 @@ namespace AppFunkoPop.Models
         public virtual ROL ROL { get; set; }
 
         public string LoginErrorMessage { get; set; }
-
     }
 }
