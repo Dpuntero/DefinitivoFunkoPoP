@@ -22,7 +22,7 @@ namespace ProyectoDawFunko.Controllers
             if (Categoria == null||Categoria=="todos")
             {
                
-                using (Database1Entities1 db = new Database1Entities1())
+                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.ToList();
 
@@ -32,7 +32,7 @@ namespace ProyectoDawFunko.Controllers
             {
                
               
-                using (Database1Entities1 db = new Database1Entities1())
+                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.Where(c => c.CATEGORIA == Categoria).ToList();
 
@@ -52,7 +52,7 @@ namespace ProyectoDawFunko.Controllers
             if (Categoria == null || Categoria == "todos")
             {
 
-                using (Database1Entities1 db = new Database1Entities1())
+                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.ToList();
 
@@ -62,7 +62,7 @@ namespace ProyectoDawFunko.Controllers
             {
 
 
-                using (Database1Entities1 db = new Database1Entities1())
+                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.Where(c => c.CATEGORIA == Categoria).ToList();
 
@@ -70,7 +70,7 @@ namespace ProyectoDawFunko.Controllers
             }
             else
             {
-                using (Database1Entities1 db = new Database1Entities1())
+                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.Where(c => c.SUBCATEGORIA == Subcategoria).ToList();
 
@@ -92,7 +92,7 @@ namespace ProyectoDawFunko.Controllers
             if (Categoria == null || Categoria == "todos")
             {
 
-                using (Database1Entities1 db = new Database1Entities1())
+                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.ToList();
 
@@ -102,7 +102,7 @@ namespace ProyectoDawFunko.Controllers
             {
 
 
-                using (Database1Entities1 db = new Database1Entities1())
+                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.Where(c => c.CATEGORIA == Categoria).ToList();
 
@@ -110,7 +110,7 @@ namespace ProyectoDawFunko.Controllers
             }
             else
             {
-                using (Database1Entities1 db = new Database1Entities1())
+                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.Where(c => c.SUBCATEGORIA == Subcategoria).ToList();
 

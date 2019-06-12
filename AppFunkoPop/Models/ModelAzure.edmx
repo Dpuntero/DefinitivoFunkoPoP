@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="FunkoPopDDBBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CARRITO">
           <Key>
             <PropertyRef Name="CARRITO_ID" />
@@ -235,7 +235,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Database1ModelStoreContainer">
+        <EntityContainer Name="FunkoPopDDBBModelStoreContainer">
           <EntitySet Name="CARRITO" EntityType="Self.CARRITO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CARRITOPRODUCTO" EntityType="Self.CARRITOPRODUCTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ESTADO_ENVIO" EntityType="Self.ESTADO_ENVIO" Schema="dbo" store:Type="Tables" />
@@ -291,7 +291,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="FunkoPopDDBBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="CARRITO">
           <Key>
             <PropertyRef Name="CARRITO_ID" />
@@ -512,7 +512,7 @@
           <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
           <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Database1Entities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FunkoPopDDBBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CARRITOes" EntityType="Self.CARRITO" />
           <EntitySet Name="CARRITOPRODUCTOes" EntityType="Self.CARRITOPRODUCTO" />
           <EntitySet Name="ESTADO_ENVIO" EntityType="Self.ESTADO_ENVIO" />
@@ -564,9 +564,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
+        <EntityContainerMapping StorageEntityContainer="FunkoPopDDBBModelStoreContainer" CdmEntityContainer="FunkoPopDDBBEntities">
           <EntitySetMapping Name="CARRITOes">
-            <EntityTypeMapping TypeName="Database1Model.CARRITO">
+            <EntityTypeMapping TypeName="FunkoPopDDBBModel.CARRITO">
               <MappingFragment StoreEntitySet="CARRITO">
                 <ScalarProperty Name="CARRITO_ID" ColumnName="CARRITO_ID" />
                 <ScalarProperty Name="USUARIO_ID" ColumnName="USUARIO_ID" />
@@ -576,7 +576,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CARRITOPRODUCTOes">
-            <EntityTypeMapping TypeName="Database1Model.CARRITOPRODUCTO">
+            <EntityTypeMapping TypeName="FunkoPopDDBBModel.CARRITOPRODUCTO">
               <MappingFragment StoreEntitySet="CARRITOPRODUCTO">
                 <ScalarProperty Name="CARRITO_ID" ColumnName="CARRITO_ID" />
                 <ScalarProperty Name="PRODUCTO_ID" ColumnName="PRODUCTO_ID" />
@@ -587,7 +587,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ESTADO_ENVIO">
-            <EntityTypeMapping TypeName="Database1Model.ESTADO_ENVIO">
+            <EntityTypeMapping TypeName="FunkoPopDDBBModel.ESTADO_ENVIO">
               <MappingFragment StoreEntitySet="ESTADO_ENVIO">
                 <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
                 <ScalarProperty Name="TEXTO_ESTADO" ColumnName="TEXTO_ESTADO" />
@@ -596,7 +596,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PEDIDOes">
-            <EntityTypeMapping TypeName="Database1Model.PEDIDO">
+            <EntityTypeMapping TypeName="FunkoPopDDBBModel.PEDIDO">
               <MappingFragment StoreEntitySet="PEDIDO">
                 <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
                 <ScalarProperty Name="USUARIO_ID" ColumnName="USUARIO_ID" />
@@ -607,7 +607,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PEDIDOPRODUCTOes">
-            <EntityTypeMapping TypeName="Database1Model.PEDIDOPRODUCTO">
+            <EntityTypeMapping TypeName="FunkoPopDDBBModel.PEDIDOPRODUCTO">
               <MappingFragment StoreEntitySet="PEDIDOPRODUCTO">
                 <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
                 <ScalarProperty Name="P_ID" ColumnName="P_ID" />
@@ -617,7 +617,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PRODUCTOes">
-            <EntityTypeMapping TypeName="Database1Model.PRODUCTO">
+            <EntityTypeMapping TypeName="FunkoPopDDBBModel.PRODUCTO">
               <MappingFragment StoreEntitySet="PRODUCTO">
                 <ScalarProperty Name="PRODUCTO_ID" ColumnName="PRODUCTO_ID" />
                 <ScalarProperty Name="NOMBREP" ColumnName="NOMBREP" />
@@ -638,7 +638,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PROVEEDORs">
-            <EntityTypeMapping TypeName="Database1Model.PROVEEDOR">
+            <EntityTypeMapping TypeName="FunkoPopDDBBModel.PROVEEDOR">
               <MappingFragment StoreEntitySet="PROVEEDOR">
                 <ScalarProperty Name="PROVEEDOR_ID" ColumnName="PROVEEDOR_ID" />
                 <ScalarProperty Name="NOMBRE_PROV" ColumnName="NOMBRE_PROV" />
@@ -649,7 +649,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ROLs">
-            <EntityTypeMapping TypeName="Database1Model.ROL">
+            <EntityTypeMapping TypeName="FunkoPopDDBBModel.ROL">
               <MappingFragment StoreEntitySet="ROL">
                 <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
                 <ScalarProperty Name="NOMBRE_ROL" ColumnName="NOMBRE_ROL" />
@@ -657,7 +657,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="USUARIOs">
-            <EntityTypeMapping TypeName="Database1Model.USUARIO">
+            <EntityTypeMapping TypeName="FunkoPopDDBBModel.USUARIO">
               <MappingFragment StoreEntitySet="USUARIO">
                 <ScalarProperty Name="USUARIO_ID" ColumnName="USUARIO_ID" />
                 <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
@@ -674,7 +674,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="PROVEEDORPRODUCTO" TypeName="Database1Model.PROVEEDORPRODUCTO" StoreEntitySet="PROVEEDORPRODUCTO">
+          <AssociationSetMapping Name="PROVEEDORPRODUCTO" TypeName="FunkoPopDDBBModel.PROVEEDORPRODUCTO" StoreEntitySet="PROVEEDORPRODUCTO">
             <EndProperty Name="PRODUCTO">
               <ScalarProperty Name="PRODUCTO_ID" ColumnName="PRODUCTO_ID" />
             </EndProperty>

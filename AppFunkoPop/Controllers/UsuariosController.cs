@@ -18,7 +18,7 @@ namespace AppFunkoPop.Controllers
         public ActionResult GestionDatos()
         {
             USUARIO usuario = new USUARIO();
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 int idUsu = Convert.ToInt32(Session["USUARIO_ID"]);
                 usuario = db.USUARIOs.Where(c => c.USUARIO_ID == idUsu).First();
@@ -44,7 +44,7 @@ namespace AppFunkoPop.Controllers
         public ActionResult VerPedido()
         {
             USUARIO usuario = new USUARIO();
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 int idUsu = Convert.ToInt32(Session["USUARIO_ID"]);
                 usuario = db.USUARIOs.Where(c => c.USUARIO_ID == idUsu).First();
