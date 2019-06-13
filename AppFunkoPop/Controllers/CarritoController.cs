@@ -46,6 +46,8 @@ namespace ProyectoDawFunko.Controllers
 
                 return RedirectToAction("Index","Home");
         }*/
+
+        //Método para iniciar un carrito asociado a una cookie
         public ActionResult InicioCarrito()
         {
             if (Convert.ToString(Request.Cookies["Carrito"]) != "")
@@ -116,7 +118,7 @@ namespace ProyectoDawFunko.Controllers
 
                
         }
-
+        //Método que elimina los productos del carrido
         public ActionResult VaciarCarrito()
         {
             var cookie = Request.Cookies["Carrito"];
@@ -127,6 +129,7 @@ namespace ProyectoDawFunko.Controllers
             return RedirectToAction("CarritoVacio", "Carrito");
         }
 
+        //Método que devuelve a la vista del carrito para comprobar que se ha vaciado
         public ActionResult CarritoVacio()
         {
            
@@ -134,7 +137,7 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
         
-
+     
             public ActionResult CreacionCarrito(AppFunkoPop.Models.PRODUCTO productoModel)
         {
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
