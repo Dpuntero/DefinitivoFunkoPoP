@@ -13,35 +13,35 @@
 
 
 
-<h2>@Model.NOMBREP</h2>
+<h1 style=" font-variant:small-caps; font-weight:bold;">@Model.NOMBREP</h1>
 
 <script type="text/javascript">
 
     function changeImg1() {
 
         document.getElementById('imagenCambiando').src = "/Content/images/@Model.CATEGORIA/@Model.IMAGEN";
-      
+
     }
 
     function changeImg2() {
-       
+
         document.getElementById('imagenCambiando').src = "/Content/images/@Model.CATEGORIA/@Model.IMAGEN2";
-        
+
         }
 </script>
 <div class="row">
 
     <hr />
     <div class="col-sm-12 col-md-12">
-        <div class="col-xs-4 col-sm-2 col-md-2">
-            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN" class="col-xs-6 col-sm-12 col-md-12" onclick="changeImg1()" />
-            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN2" class="col-xs-6 col-sm-12 col-md-12" onclick="changeImg2()" />
+        <div style="display:flex; flex-direction:column;" class="col-xs-2 col-sm-2 col-md-2">
+            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN" Style="width:70px;" class="col-xs-6 col-sm-12 col-md-12" onclick="changeImg1()" />
+            <img src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN2" Style="width:70px;" class="col-xs-6 col-sm-12 col-md-12" onclick="changeImg2()" />
 
         </div>
-        <div class="col-sm-8 col-md-8">
-            <img id="imagenCambiando" src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN" Style="width:70%" class="col-xs-12 col-sm-12 col-md-12" />
+        <div class="col-sm-6 col-md-6">
+            <img id="imagenCambiando" src="~/Content/images/@Model.CATEGORIA/@Model.IMAGEN" Style="width:50%" class="col-xs-12 col-sm-12 col-md-12" />
         </div>
-        <div class="col-xs-2 col-sm-2 col-md-2">
+        <div class="col-xs-4 col-sm-4 col-md-4">
             @AppFunkoPop.Resources.Productos.descripcion:
             <p>
                 @if (x == "" || x == "es")
@@ -77,11 +77,8 @@
 
 
     </div>
-    <a href="javascript:history.go(-1)" class="btn btn-primary col-xs-2 col-sm-2 col-md-2" role="button">@AppFunkoPop.Resources.Admin.volver</a>
+
 </div>
+<a href="javascript:history.go(-1)" class="btn btn-primary col-xs-2 col-sm-2 col-md-2" role="button">@AppFunkoPop.Resources.Admin.volver</a>
 
-
-@*<div class="row">
-        <a href="~/Producto/NuevoProducto">Nuevo</a>
-    </div>*@
 

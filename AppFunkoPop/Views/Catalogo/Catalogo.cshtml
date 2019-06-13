@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<AppFunkoPop.Models.PRODUCTO>
-@{ 
+@{
     var texto = "";
     HttpCookie cookie = HttpContext.Current.Request.Cookies["Language"];
     string x = "";
@@ -8,6 +8,7 @@
     {
         x = cookie.Value;
     }
+    ViewBag.Title = "Catálogo";
 }
 <h2>@AppFunkoPop.Resources.Catalogo.catalogo</h2>
 
@@ -16,12 +17,12 @@
     <form action="Catalogo" method="post" name="frm">
 
 
-        <div class=" col-sm-12 ">
-            @*@Html.LabelFor(model => model.CATEGORIA)*@
+        <div class=" col-sm-8 ">
+
             <div class="col-sm-6">
-                <label >@AppFunkoPop.Resources.Productos.categoria</label>
+                <label>@AppFunkoPop.Resources.Productos.categoria</label>
                 <br />
-                <select name="categoria" onclick="cambiar()" class = "form-control">
+                <select name="categoria" onclick="cambiar()" class="form-control">
                     <option value="todos">Todos</option>
                     <option value="marvel">Marvel</option>
                     <option value="got">Juego de tronos</option>
@@ -31,37 +32,38 @@
                 <div style="padding-left:350px">
                     <button type="submit" class="btn btn-default">@AppFunkoPop.Resources.Catalogo.filtrar</button>
                 </div>
-                @*@Html.LabelFor(model => model.SUBCATEGORIA)*@
-               
-                    <label > @AppFunkoPop.Resources.Productos.subcategoria </label>
-                   <br />
-                    <select name="subcategoria" class = "form-control">
-                        <option value="todos">Todos</option>
-                    </select>
-                </div>
-                @*@Html.EditorFor(model => model.CATEGORIA, "", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })*@
+      
+
+                <label> @AppFunkoPop.Resources.Productos.subcategoria </label>
+                <br />
+                <select name="subcategoria" class="form-control">
+                    <option value="todos">Todos</option>
+                </select>
             </div>
-        @*<row>
-            Aqui iba el boton de filtar
-        </row>*@
-</form>
+   
+        </div>
+
+    </form>
+    <div class=" col-sm-4 ">
+        <label>Buscar:</label>
+        <input id="myInput" type="text" class="form-control" placeholder="Buscar..">
+    </div>
 </div>
 
 
 <hr />
-<div class="row">
+<div id="prods" class="row">
 
     @foreach (var prod in Model)
     {
 
 
 
-        <div class="col-sm-6 col-md-3" >
-            <div class="thumbnail"  style="max-height:542px; min-height:500px;" >
-                <img src="~/Content/images/@prod.CATEGORIA/@prod.IMAGEN" style= "height: 250px; "/>
+        <div class="col-sm-6 col-md-3 nombre">
+            <div class="thumbnail" style="max-height:542px; min-height:500px;">
+                <img src="~/Content/images/@prod.CATEGORIA/@prod.IMAGEN" style="height: 250px; " />
                 <div class="caption">
-                    <h3 style="text-align:center; font-variant:small-caps; font-weight:bold" ;>@prod.NOMBREP</h3>
+                    <h3 style="text-align:center; font-variant:small-caps; font-weight:bold;">@prod.NOMBREP</h3>
 
                     @if (x == "" || x == "es")
                     {
@@ -121,14 +123,3 @@
 
     }
 </div>
-
-@*<div class="row">
-    <ul class="pagination justify-content-end">
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">@AppFunkoPop.Resources.Catalogo.anterior</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">@AppFunkoPop.Resources.Catalogo.siguiente</a></li>
-    </ul>
-</div>*@
-
-

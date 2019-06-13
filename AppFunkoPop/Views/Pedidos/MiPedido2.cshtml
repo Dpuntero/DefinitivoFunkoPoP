@@ -1,7 +1,14 @@
 ﻿@model IEnumerable<AppFunkoPop.Models.PEDIDOPRODUCTO>
 
-@{
-    ViewBag.Title = "MiPedido2";
+@{if (Session["ID_ROL"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+
+
+    
+
+    ViewBag.Title = "Mi Pedido";
 }
 
 <h2>Mi Pedido</h2>

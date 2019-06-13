@@ -11,6 +11,8 @@
             Response.Redirect("~/Home/Index");
         }
     }
+    ViewBag.Title = "Editar producto";
+
 }
 
 @using (Html.BeginForm("EditandoProducto", "Admin", FormMethod.Post, new { name = "frm", id = "frm" }))
@@ -103,11 +105,9 @@
 
 
 <div class="form-group">
-        @*@Html.LabelFor(model => model.CATEGORIA, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
         <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.subcategoria</label>
         <div class="col-md-10">
-            @*@Html.EditorFor(model => model.SUBCATEGORIA, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.SUBCATEGORIA, "", new { @class = "text-danger" })*@
 
             <select class="form-control" name="subcategoria">
                 <option value="todos">Todos</option>
@@ -116,7 +116,7 @@
     </div>
 
     <div class="form-group">
-        @*@Html.LabelFor(model => model.UD_DISPO, htmlAttributes: new { @class = "control-label col-md-2" })*@
+       
         <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.unidadesDisp</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.UD_DISPO, new { htmlAttributes = new { @class = "form-control" } })
@@ -125,7 +125,7 @@
     </div>
 
     <div class="form-group">
-        @*@Html.LabelFor(model => model.V_ID, htmlAttributes: new { @class = "control-label col-md-2" })*@
+      
         <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.idVendedor</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.PROVEEDOR_ID, new { htmlAttributes = new { @class = "form-control" } })
@@ -135,7 +135,7 @@
     </div>
 
     <div class="form-group">
-        @*@Html.LabelFor(model => model.IMAGEN, htmlAttributes: new { @class = "control-label col-md-2" })*@
+  
         <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.imagen</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.IMAGEN, new { htmlAttributes = new { @class = "form-control" } })
@@ -144,7 +144,7 @@
     </div>
 
     <div class="form-group">
-        @*@Html.LabelFor(model => model.LINK, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
         <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.otraImagen</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.IMAGEN2, new { htmlAttributes = new { @class = "form-control" } })

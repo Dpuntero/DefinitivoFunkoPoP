@@ -93,10 +93,10 @@
 <body>
     <div style="background-color:slategrey;">
         <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="en" }, null)" style=" padding-left:10px;">
-            <img src="~/Content/images/banderausa.jpg"  style="height:15px;"/> <span style=" color: white"><strong>@AppFunkoPop.Resources.Shared.ingles</strong></span>
+            <img src="~/Content/images/banderausa.jpg" style="height:15px;" /> <span style=" color: white"><strong>@AppFunkoPop.Resources.Shared.ingles</strong></span>
         </a>
-        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="es" }, null)"style=" padding-left:10px;">
-            <img src="~/Content/images/banderaesp.jpg"  style="height:15px;"/> <span style=" color: white"><strong>@AppFunkoPop.Resources.Shared.español</strong></span>
+        <a class="navbar-brand-flags" href="@Url.Action("Change", "Language" , new { LanguageAbbreviation="es" }, null)" style=" padding-left:10px;">
+            <img src="~/Content/images/banderaesp.jpg" style="height:15px;" /> <span style=" color: white"><strong>@AppFunkoPop.Resources.Shared.español</strong></span>
         </a>
     </div>
     <div style="background-color: #00A2E8">
@@ -132,7 +132,7 @@
                 </div>
             </div>
         </div>
-       
+
         <hr style="margin-bottom:8%" />
 
 
@@ -146,7 +146,7 @@
                     <h5 class="text-uppercase" id="tituloFooter">@Html.ActionLink(AppFunkoPop.Resources.Shared.avisoLegal, "AvisoLegal", "Otros")</h5>
                     <p id="tituloFooter">@Html.ActionLink(AppFunkoPop.Resources.Shared.politicaPrivacidad, "PoliticaPrivacidad", "Otros")</p>
 
-                    <img src="~/Content/images/candado.png" style="height: 5em"/>
+                    <img src="~/Content/images/candado.png" style="height: 5em" />
                 </div>
                 <div class="col-md-3 mb-md-0 mb-3" style="padding-top:4%">
                     <form name="formularioContacto" action="mailto:mariameraf@gmail.com">
@@ -161,7 +161,7 @@
                         <img src="~/Content/images/facebook.png" style="height:20px;" /><a href="https://es-es.facebook.com/FunkoPopESP/" id="tituloFooter"> Facebook </a><br />
                         <br />
                         <img src="~/Content/images/twitter.png" style="height:20px;" /><a href="https://twitter.com/funkopopesp?lang=es" id="tituloFooter">Twiter </a><br />
-                         <br />
+                        <br />
                         <br />
                         <a href="http://ies.claradelrey.madrid.educa.madrid.org/portal/index.php?lang=es"><img src="~/Content/images/logoClara.png" style="height:5em;" /></a>
                     </div>
@@ -189,5 +189,17 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+   
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#prods div.nombre").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

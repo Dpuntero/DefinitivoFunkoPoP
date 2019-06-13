@@ -366,8 +366,6 @@
     <Content Include="Views\Admin\GestionUsuarios.cshtml" />
     <Content Include="Views\Carrito\InicioCarrito.cshtml" />
     <Content Include="Views\Catalogo\Catalogo.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Pedidos\MisPedidos.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
@@ -389,7 +387,6 @@
     <Content Include="Views\Otros\PoliticaPrivacidad.cshtml" />
     <Content Include="Views\Otros\Contacto.cshtml" />
     <Content Include="Views\Otros\AvisoLegal.cshtml" />
-    <Content Include="Views\Otros\SobreNosotros.cshtml" />
     <Content Include="Views\Admin\EditandoProveedor.cshtml" />
     <Content Include="Views\Admin\GestionProveedores.cshtml" />
     <Content Include="Views\Admin\NuevoProveedor.cshtml" />
