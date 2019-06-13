@@ -51,7 +51,9 @@ namespace AppFunkoPop.Controllers
         {
             nuevoProd.IMAGEN = nuevoProd.IMAGEN + ".jpg";
             nuevoProd.IMAGEN2 = nuevoProd.IMAGEN2 + ".jpg";
-            
+            nuevoProd.CATEGORIA_INGLES = nuevoProd.CATEGORIA;
+            nuevoProd.SUBCATEGORIA_INGLES = nuevoProd.SUBCATEGORIA;
+            nuevoProd.FECHA_CREACION= DateTime.UtcNow;
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
 

@@ -14,9 +14,11 @@ namespace AppFunkoPop.Models
         [DataType(DataType.Password)]
         public string contrasenaAntigua { get; set; }
         [Required(ErrorMessage = "Es necesario introducir una nueva contraseña")]
+        [StringLength(20, MinimumLength = 8)]
         [DataType(DataType.Password)]
         public string contrasenaNueva { get; set; }
         [Required(ErrorMessage = "Es necesario introducir la repetición de contraseña")]
+        [StringLength(20, MinimumLength = 8)]
         [DataType(DataType.Password)]
         public string contrasenaRepetida { get; set; }
 
