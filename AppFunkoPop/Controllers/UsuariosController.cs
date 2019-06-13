@@ -9,12 +9,14 @@ namespace AppFunkoPop.Controllers
 {
     public class UsuariosController : Controller
     {
+        //Método para mandar a la vista del panel de control
         // GET: Usuarios
         public ActionResult PanelDeControlUsuarios()
         {
             return View();
         }
 
+        //Método para mandar al formulario de cambio de datos de tu propia cuenta con los datos rellenos
         public ActionResult GestionDatos()
         {
             USUARIO usuario = new USUARIO();
@@ -27,6 +29,8 @@ namespace AppFunkoPop.Controllers
             return View(usuario);
         }
        
+
+        //Método que manda a la vista con el formulario de cambio de contraseña
             public ActionResult CambiarContraseña(AppFunkoPop.Models.PasswordChangeModel passModel= null )
         {
             if (passModel == null)
@@ -41,6 +45,7 @@ namespace AppFunkoPop.Controllers
             
         }
 
+        //Método que manda a la vista con los detalles del pedido
         public ActionResult VerPedido()
         {
             USUARIO usuario = new USUARIO();

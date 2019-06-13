@@ -10,19 +10,15 @@ namespace AppFunkoPop.Controllers
 {
     public class ProductoController : Controller
     {
+        //Método para ver la pa´gina de detalles del producto
         // GET: Productos
         public ActionResult Productos(int id)
         {
-
-               
-            
                 PRODUCTO prod = new PRODUCTO();
                 using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
 
                     prod = db.PRODUCTOes.Find(id);
-
-
 
                 }
             if (prod!= null)
@@ -34,18 +30,15 @@ namespace AppFunkoPop.Controllers
             {
                 return RedirectToAction("Catalogo", "Catalogo");
             }
-            
-
-
-
-
-
         }
 
+        //Método que manda a la vista con el formulario para añadir un nuevo producto
         public ActionResult NuevoProducto()
         {
             return View();
         }
+
+        //Método que recoge los datos introducidos en al formulario y añade un nuevo producto a la tabla
         [HttpPost]
         public ActionResult NuevoProducto(AppFunkoPop.Models.PRODUCTO nuevoProd)
         {
