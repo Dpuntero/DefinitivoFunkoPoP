@@ -5,7 +5,7 @@
         Response.Redirect("~/Home/Index");
     }
 
-    ViewBag.Title = "GestionDatos";
+    ViewBag.Title = "Gestion Datos";
 }
 
 
@@ -26,7 +26,7 @@
             @using (Html.BeginForm("ActualizarUsuario", "Account", FormMethod.Post))
             {
                 <p>
-                    @*@Html.LabelFor(model => model.NOMBRE)*@
+          
 
                     <label class="control-label col-md-2"> @AppFunkoPop.Resources.Usuarios.nombre</label>
                 </p>
@@ -36,7 +36,7 @@
 
                 </p>
                 <p>
-                    @*@Html.LabelFor(model => model.APELLIDOS)*@
+                 
                     <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.apellidos</label>
 
                 </p>
@@ -47,7 +47,7 @@
                 </p>
 
                 <p>
-                    @*@Html.LabelFor(model => model.DIRECCION)*@
+                
 
                     <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.direccion</label>
                 </p>
@@ -57,7 +57,7 @@
 
                 </p>
                 <p>
-                    @*@Html.LabelFor(model => model.TLFN)*@
+               
 
                     <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.telefono </label>
                 </p>
@@ -69,7 +69,7 @@
 
                 </p>
                 <p>
-                    @*@Html.LabelFor(model => model.CIUDAD)*@
+                 
 
                     <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.ciudad</label>
                 </p>
@@ -79,8 +79,7 @@
 
                 </p>
                 <p>
-                    @*@Html.LabelFor(model => model.PAIS)*@
-
+             
                     <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.pais</label>
                 </p>
                 <p>
@@ -88,7 +87,7 @@
                     @Html.ValidationMessageFor(model => model.PAIS, "", new { @class = "text-danger" })
                 </p>
                 <p>
-                    @*@Html.LabelFor(model => model.CP)*@
+                  
 
                     <label class="control-label col-md-2"> @AppFunkoPop.Resources.Usuarios.codigoPostal</label>
                 </p>
@@ -102,21 +101,7 @@
                 <input type="reset" name="borrar" value="@AppFunkoPop.Resources.Usuarios.borrar" class="btn btn-default" />
             }
             <a href="javascript:history.go(-1)" class="btn btn-primary col-xs-2 col-sm-2 col-md-2" role="button">@AppFunkoPop.Resources.Admin.volver</a>
-            <!--
-    <form action="CrearUsuario" method="post">
-        <label>Nombre: <input type="text" name="nombre" value="" /></label></br>
-        <label>Apellidos: <input type="text" name="apellidos" value="" /></label></br>
-        <label>Email: <input type="text" name="email" value="" /></label></br>
-        <label>Password: <input type="text" name="passwd" value="" /></label></br>
-        <label>Teléfono: <input type="text" name="telefono" value="" /></label></br>
-        <label>Dirección: <input type="text" name="direccion" value="" /></label></br>
-        <label>Ciudad: <input type="text" name="ciudad" value="" /></label></br>
-        <label>País: <input type="text" name="pais" value="" /></label></br>
-        <label>Codigo Postal: <input type="text" name="cp" value="" /></label></br>
-
-        <input type="submit" name="enviar" value="enviar" />
-
-    </form>-->
+            
             @Html.ValidationSummary()
 
         </div>

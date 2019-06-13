@@ -6,7 +6,7 @@
     }
 
 
-    ViewBag.Title = "CambiarContraseña";
+    ViewBag.Title = "Cambiar Contraseña";
 }
 
 <h2>CambiarContraseña</h2>
@@ -14,7 +14,7 @@
 @using (Html.BeginForm("CambiarContraseña", "Account", FormMethod.Post))
 {
     <p>
-        @*@Html.LabelFor(model => model.contrasenaAntigua)*@
+       
         <label class="control-label col-md-2"> @AppFunkoPop.Resources.Usuarios.contAntigua </label>
     </p>
     <p>
@@ -22,7 +22,7 @@
         @Html.ValidationMessageFor(model => model.contrasenaAntigua, "", new { @class = "text-danger" })
     </p>
     <p>
-        @*@Html.LabelFor(model => model.contrasenaNueva)*@
+      
         <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.contNueva </label>
     </p>
     <p>
@@ -30,7 +30,7 @@
         @Html.ValidationMessageFor(model => model.contrasenaNueva, "", new { @class = "text-danger" })
     </p>
     <p>
-        @*@Html.LabelFor(model => model.contrasenaRepetida)*@
+        
         <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.confContNueva</label>
     </p>
     <p>

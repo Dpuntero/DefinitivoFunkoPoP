@@ -12,7 +12,7 @@
         }
     }
 
-    ViewBag.Title = "GestionPedidos";
+    ViewBag.Title = "Gestion Pedidos";
     List<AppFunkoPop.Models.ESTADO_ENVIO>
         estados = ViewBag.listaEstados;
 }
@@ -47,10 +47,6 @@
                         <td>@unPedido.PRECIO_TOTAL</td>
                         <td>@unPedido.INFO_PAGO</td>
                         <td>
-
-
-                            @*@Html.DropDownList("estadoId", (SelectList)ViewBag.listaEstados, new { onchange = "this.form.submit();" })*@
-
 
                             <select id="estadoId" name="estadoId" onchange="this.form.submit()" class="form-control">
 

@@ -6,11 +6,6 @@
 <h2 style="padding-left:100px;"> @AppFunkoPop.Resources.Account.registrarse</h2>
 
 
-
-
-
-
-
     <div class="row" style="padding-bottom: 15px; padding-left:100px;">
         <div class="col-sm-9">
 
@@ -29,7 +24,6 @@
                     @Html.ValidationMessageFor(model => model.NOMBRE, "", new { @class = "text-danger" })
                 </p>
                 <p>
-                    @*@Html.LabelFor(model => model.APELLIDOS)*@
                     <label class="control-label col-md-2"> @AppFunkoPop.Resources.Account.apellidos </label>
 </p>
                 <p>
@@ -38,7 +32,6 @@
                 </p>
 
                 <p>
-                    @*@Html.LabelFor(model => model.EMAIL)*@
                    <label class="control-label col-md-2"> @AppFunkoPop.Resources.Account.email </label>
                 </p>
                 
@@ -48,7 +41,6 @@
                 </p>
                 <br />
                 <p>
-                    @*@Html.LabelFor(model => model.PASSWD)*@
                     <label class="control-label col-md-2"> @AppFunkoPop.Resources.Account.passwd </label>
 </p>
                 <p>
@@ -57,7 +49,6 @@
                 </p>
                 <br />
                 <p>
-                    @*@Html.LabelFor(model => model.DIRECCION)*@
                     <label class="control-label col-md-2"> @AppFunkoPop.Resources.Account.direccion</label>
 </p>
                 <p>
@@ -66,7 +57,7 @@
                   
                 </p>
                 <p>
-                    @*@Html.LabelFor(model => model.TLFN)*@
+
                     <label class="control-label col-md-2">@AppFunkoPop.Resources.Account.tlfn </label>
 </p>
                 <p>
@@ -75,7 +66,6 @@
 
                 </p>
                 <p>
-                    @*@Html.LabelFor(model => model.CIUDAD)*@
                     <label class="control-label col-md-2">@AppFunkoPop.Resources.Account.ciudad </label>
 </p>
                 <p>
@@ -83,7 +73,7 @@
                     @Html.ValidationMessageFor(model => model.CIUDAD, "", new { @class = "text-danger" })
                 </p>
                 <p>
-                    @*@Html.LabelFor(model => model.PAIS)*@
+   
                     <label class="control-label col-md-2">@AppFunkoPop.Resources.Account.pais </label>
 </p>
                 <p>
@@ -91,7 +81,7 @@
                     @Html.ValidationMessageFor(model => model.PAIS, "", new { @class = "text-danger" })
                 </p>
                 <p>
-                    @*@Html.LabelFor(model => model.CP)*@
+           
                     <label class="control-label col-md-2"> @AppFunkoPop.Resources.Account.codigoPostal </label>
 </p>
                 <p>
