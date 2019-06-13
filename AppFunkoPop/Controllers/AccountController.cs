@@ -11,17 +11,19 @@ namespace AppFunkoPop.Controllers
 {
     public class AccountController : Controller
     {
+        //Método para mandar al formulario de Login
         // GET: Account
         public ActionResult Login()
         {
             return View();
         }
-
+        //Método para mandar al formulario de registro
         public ActionResult Register()
         {
             return View();
         }
 
+        //Método para crear un nuevo usuario con los datos del formulario del registro
         [HttpPost]
             public ActionResult Register(AppFunkoPop.Models.USUARIO userModel)
         {
@@ -73,6 +75,7 @@ namespace AppFunkoPop.Controllers
             
         }
   
+        //Método para autorizar el acceso a un usuario cuando su email y contraseña sean correctos
         [HttpPost]
         public ActionResult Autorizar(AppFunkoPop.Models.autorizar userModel)
         {
@@ -107,8 +110,7 @@ namespace AppFunkoPop.Controllers
 
         }
 
-        
-
+        //Método para cerrar la sesión y devolver al index
         public ActionResult CerrarSesion()
         {
             Session.Abandon();
@@ -116,6 +118,7 @@ namespace AppFunkoPop.Controllers
 
         }
 
+        //Método que recoge los nuevos datos del formulario de modificación de usuarios y actualiza el registro en la BBDD
         [HttpPost]
         public ActionResult ActualizarUsuario(AppFunkoPop.Models.USUARIO userModel)
         {
@@ -133,10 +136,7 @@ namespace AppFunkoPop.Controllers
                 usuario.DIRECCION = userModel.DIRECCION;
                 usuario.CIUDAD = userModel.CIUDAD;
                 usuario.PAIS = userModel.PAIS;
-                usuario.CP = userModel.CP;
-
-             
-                
+                usuario.CP = userModel.CP;  
 
                 db.SaveChanges();
 
@@ -159,12 +159,13 @@ namespace AppFunkoPop.Controllers
 
         }
 
+        //Método que manda a la vista de cambiar de contraseña
         public ActionResult CambiarContraseña()
         {
             return View();
         }
 
-
+        //Método que valida la nueva contraseña y la actualiza
         [HttpPost]
         public ActionResult CambiarContraseña(AppFunkoPop.Models.PasswordChangeModel passModel)
         {

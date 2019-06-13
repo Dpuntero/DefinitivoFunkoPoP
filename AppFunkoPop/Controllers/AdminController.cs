@@ -8,40 +8,41 @@ using System.Web.Mvc;
 
 namespace ProyectoDawFunko.Controllers
 {
+
     public class AdminController : Controller
     {
+        //Método para mandar al panel de control de administrador
         public ActionResult PanelDeControlAdmin()
         {
             return View();
         }
-
+        //Método para redirigir al formulario para añadir un nuevo producto
         public ActionResult NuevoProducto()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
-
+        //Método para mandar al formulario de añadir un nuevo proveedor
         public ActionResult NuevoProveedor()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
+
+        //Método que recoge los datos introducidos en el formulario de creación de proveedores y los añade a la base de datos
         [HttpPost]
         public ActionResult CrearProveedor (AppFunkoPop.Models.PROVEEDOR nuevoProv)
-        {
-                       
+        {                 
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
-
                 db.PROVEEDORs.Add(nuevoProv);
                 db.SaveChanges();
             }
-
             return RedirectToAction("GestionProveedores");
-
         }
+        //Método que manda a la vista con el listado de proveedores
         public ActionResult GestionProveedores()
         {
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
@@ -50,7 +51,7 @@ namespace ProyectoDawFunko.Controllers
                 return View();
             }
         }
-
+        //Método que recoge el id del proveedor a editar y manda a la vista de edicion con el objeto para rellenar los campos con los datos
         public ActionResult EditarProveedor(int id)
         {
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
@@ -61,6 +62,7 @@ namespace ProyectoDawFunko.Controllers
             }
         }
 
+        //Método que recoge los datos del formulario de la página de edición de proveedores y actualiza el registro en la BBDD
         [HttpPost]
         public ActionResult EditandoProveedor(PROVEEDOR proveedorEditar)
         {
@@ -72,31 +74,29 @@ namespace ProyectoDawFunko.Controllers
             buscarProveedor.DESCRIPCION_PROV = proveedorEditar.DESCRIPCION_PROV;
             db.SaveChanges();
             return RedirectToAction("GestionProveedores");
-        }
+            }
         }
 
+        //Método que recoge una array con los id de proveedores y elimina los registros en la BBDD
         // GET: PROVEEDORs/Delete/5
         public ActionResult BorrarProveedor(int[] borrados)
-        {
-            
+        {        
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 foreach (var id in borrados)
                 {
                     if (id != 0)
-                    {
-                        
+                    {                       
                         PROVEEDOR aEliminar = db.PROVEEDORs.Find(id);
                         db.PROVEEDORs.Remove(aEliminar);
-
                     }
                 }
                 db.SaveChanges();
                 return RedirectToAction("GestionProveedores");
-            }
-            
+            }           
         }
-        //METODOS PARA GESTION DE PRODUCTOS
+
+        //Método que manda a la vista con el listado de los productos
         // GET: PRODUCTOes
         public ActionResult GestionProductos()
         {
@@ -107,8 +107,8 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
 
+        //Método que recoge el id del producto que se va a editar y manda los datos a la vista con el formulario de edición para rellenar con los datos
         // GET: PRODUCTOes/EditarProducto/5
-
         public ActionResult EditarProducto(int id)
         {
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
@@ -119,6 +119,7 @@ namespace ProyectoDawFunko.Controllers
             }
         }
 
+        //Método que recoge los nuevos datos del producto y actualiza el registro en la BBDD
         [HttpPost]
         public ActionResult EditandoProducto(PRODUCTO productoModificado)
         {           
@@ -130,8 +131,7 @@ namespace ProyectoDawFunko.Controllers
                 productoOriginal.SUBCATEGORIA = productoModificado.SUBCATEGORIA;
                 productoOriginal.DESCRIP = productoModificado.DESCRIP;
                 productoOriginal.UD_DISPO = productoModificado.UD_DISPO;
-                productoOriginal.DESTACADO = productoModificado.DESTACADO;
-                
+                productoOriginal.DESTACADO = productoModificado.DESTACADO;           
                 productoOriginal.PRECIO = productoModificado.PRECIO;
                 productoOriginal.PROVEEDOR_ID = productoModificado.PROVEEDOR_ID;
                 productoOriginal.IMAGEN = productoModificado.IMAGEN;
@@ -141,11 +141,10 @@ namespace ProyectoDawFunko.Controllers
             }
         }
 
+        //Metodo que recoge de laa vista un array de id de productos y los elimina de la BBDD
         [HttpPost]
-        //Metodo para eliminar productos por su id
         public ActionResult EliminarProductos(int[] borrados)
         {
-
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 foreach (var id in borrados)
@@ -155,7 +154,6 @@ namespace ProyectoDawFunko.Controllers
                         System.Diagnostics.Debug.WriteLine(id);
                         PRODUCTO aEliminar = db.PRODUCTOes.Find(id);
                         db.PRODUCTOes.Remove(aEliminar);
-
                     }
                 }
                 db.SaveChanges();
@@ -163,9 +161,7 @@ namespace ProyectoDawFunko.Controllers
             }
         }
 
-        //FIN METODOS PRODUCTOS
-
-        //METODOS PARA GESTION DE PEDIDOS
+        //Método que manda a la lista de gestión de pedidos con la lista de estados para mostrar en el desplegable
         public ActionResult GestionPedidos()
         {
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
@@ -175,12 +171,11 @@ namespace ProyectoDawFunko.Controllers
 
                 ViewBag.listaEstados = new List<ESTADO_ENVIO>(db.ESTADO_ENVIO.ToList());
                 return View(pedidos);
-
             }
         }
 
+        //Método que actualiza el estado de un pedido al correspondiente al id recogido
         [HttpPost]
-        //public ActionResult CambiarEstado(PEDIDO pedidoModificado)
         public ActionResult CambiarEstado(int pedidoId, int estadoId)
         {
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
@@ -194,8 +189,7 @@ namespace ProyectoDawFunko.Controllers
             }
         }
 
-        //METODOS GESTION DE USUARIOS
-
+        //Método que lleva a la vista con el listado de usuarios
         public ActionResult GestionUsuarios()
         {
             FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
@@ -203,8 +197,7 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
 
-        // GET: USUARIOs/EditarUsuario/
-
+        //Método que recoge el id del usuario a editr y manda a la vista del formulario de edición junto con el listado de roles
         public ActionResult EditarUsuario(int? id)
         {
             FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
@@ -214,7 +207,7 @@ namespace ProyectoDawFunko.Controllers
             return View("EditandoUsuario", usuarioAEditar);
         }
 
-
+        //Método que recoge los nuevos datos de los usuarios y actualiza los registros de la BBDD
         [HttpPost]
         public ActionResult EditandoUsuario(USUARIO usuarioModificado)
         {
@@ -238,7 +231,7 @@ namespace ProyectoDawFunko.Controllers
         }
 
         [HttpPost]
-        //Metodo para eliminar productos por su id
+        //Metodo para eliminar productos recogidos de un array de ids
         public ActionResult EliminarUsuarios(int[] borrados)
         {
 
@@ -271,6 +264,7 @@ namespace ProyectoDawFunko.Controllers
             }
         }
 
+        //Método para cambiar de rol a un usuario
         public ActionResult CambiarRoles(int usuarioId, int rolId)
         {
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
