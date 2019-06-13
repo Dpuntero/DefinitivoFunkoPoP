@@ -1,6 +1,18 @@
 ﻿@model AppFunkoPop.Models.PROVEEDOR
 @{
     List<AppFunkoPop.Models.PROVEEDOR> listadoProveedores = ViewBag.Proveedores;
+    if (Session["ID_ROL"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    else
+    {
+        if (Session["ID_ROL"].ToString() != "2")
+        {
+            Response.Redirect("~/Home/Index");
+        }
+    }
+    ViewBag.Title = "Gestion Proveedores";
 }
 <p>
     @Html.ActionLink("Nuevo Proveedor", "NuevoProveedor")

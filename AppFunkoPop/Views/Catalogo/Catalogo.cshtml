@@ -8,6 +8,7 @@
     {
         x = cookie.Value;
     }
+    ViewBag.Title = "Catálogo";
 }
 <h2>@AppFunkoPop.Resources.Catalogo.catalogo</h2>
 
@@ -17,7 +18,7 @@
 
 
         <div class=" col-sm-8 ">
-            @*@Html.LabelFor(model => model.CATEGORIA)*@
+
             <div class="col-sm-6">
                 <label>@AppFunkoPop.Resources.Productos.categoria</label>
                 <br />
@@ -31,7 +32,7 @@
                 <div style="padding-left:350px">
                     <button type="submit" class="btn btn-default">@AppFunkoPop.Resources.Catalogo.filtrar</button>
                 </div>
-                @*@Html.LabelFor(model => model.SUBCATEGORIA)*@
+      
 
                 <label> @AppFunkoPop.Resources.Productos.subcategoria </label>
                 <br />
@@ -39,12 +40,9 @@
                     <option value="todos">Todos</option>
                 </select>
             </div>
-            @*@Html.EditorFor(model => model.CATEGORIA, "", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CATEGORIA, null, new { @class = "red" })*@
+   
         </div>
-        @*<row>
-                Aqui iba el boton de filtar
-            </row>*@
+
     </form>
     <div class=" col-sm-4 ">
         <label>Buscar:</label>

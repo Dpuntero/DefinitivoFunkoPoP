@@ -3,21 +3,7 @@
     ViewBag.Title = "Login";
 }
 
-@*<h2>Iniciar sesión</h2>
-    @Html.ValidationSummary(true,"",new { @class = "text-danger" })
-    @using (Html.BeginForm("IniciarSesion", "Account", FormMethod.Post))
-    {
-        <div>
-            @Html.TextBoxFor(dl => dl.EMAIL, new { @class = "form-control", @placeholder = "Email" })
-            @Html.ValidationMessageFor(dl => dl.EMAIL, "", new { @class = "text-danger" })
-        </div>
 
-        <div>
-            @Html.TextBoxFor(dl => dl.PASSWD, new { @class = "form-control", @placeholder = "Password" })
-            @Html.ValidationMessageFor(dl => dl.PASSWD, "", new { @class = "text-danger" })
-        </div><br />
-        <input type="submit" value="Entrar" class="btn btn-signin" />
-    }*@
 <br />
 <br />
 <div id="login-div" >

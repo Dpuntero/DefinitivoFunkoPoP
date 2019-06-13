@@ -1,6 +1,13 @@
 ﻿
-@{
-    ViewBag.Title = "MisPedidos";
+@{if (Session["ID_ROL"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+
+
+    
+
+    ViewBag.Title = "Mis Pedidos";
 }
 
 

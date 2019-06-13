@@ -1,7 +1,19 @@
 ﻿@model AppFunkoPop.Models.PROVEEDOR
 
 @{
-    ViewBag.Title = "Edit";
+    if (Session["ID_ROL"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    else
+    {
+        if (Session["ID_ROL"].ToString() != "2")
+        {
+            Response.Redirect("~/Home/Index");
+        }
+    }
+
+    ViewBag.Title = "Editar proveedor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
