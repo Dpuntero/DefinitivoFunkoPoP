@@ -28,7 +28,7 @@ namespace AppFunkoPop.Controllers
             
             if (ModelState.IsValid)
             {
-                using (Database1Entities1 db = new Database1Entities1())
+                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     
                     USUARIO usuario = db.USUARIOs.Where(x => x.EMAIL == userModel.EMAIL).FirstOrDefault();
@@ -76,7 +76,7 @@ namespace AppFunkoPop.Controllers
         [HttpPost]
         public ActionResult Autorizar(AppFunkoPop.Models.autorizar userModel)
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 var userDetails = db.USUARIOs.Where(x => x.EMAIL == userModel.EMAIL && x.PASSWD == userModel.PASSWD).FirstOrDefault();
                 if (userDetails == null)
@@ -119,7 +119,7 @@ namespace AppFunkoPop.Controllers
         [HttpPost]
         public ActionResult ActualizarUsuario(AppFunkoPop.Models.USUARIO userModel)
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 int idUsu = Convert.ToInt32(Session["USUARIO_ID"]);
 
@@ -184,7 +184,7 @@ namespace AppFunkoPop.Controllers
                         }
                         else
                         {
-                            using (Database1Entities1 db = new Database1Entities1())
+                            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                             {
                                 int idUsu = Convert.ToInt32(Session["USUARIO_ID"]);
 

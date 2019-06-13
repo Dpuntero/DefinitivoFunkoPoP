@@ -11,8 +11,7 @@ namespace AppFunkoPop.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class PRODUCTO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,10 +24,7 @@ namespace AppFunkoPop.Models
     
         public int PRODUCTO_ID { get; set; }
         public string NOMBREP { get; set; }
-
-        
         public decimal PRECIO { get; set; }
-        
         public string DESCRIP { get; set; }
         public string DESCRIP_INGLES { get; set; }
         public string CATEGORIA { get; set; }

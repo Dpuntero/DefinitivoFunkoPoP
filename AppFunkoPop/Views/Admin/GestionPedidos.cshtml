@@ -1,82 +1,83 @@
 ﻿@model IEnumerable<AppFunkoPop.Models.PEDIDO>
-    @{
+@{
     if (Session["ID_ROL"] == null)
     {
-    Response.Redirect("~/Home/Index");
+        Response.Redirect("~/Home/Index");
     }
     else
     {
-    if (Session["ID_ROL"].ToString() != "2")
-    {
-    Response.Redirect("~/Home/Index");
-    }
+        if (Session["ID_ROL"].ToString() != "2")
+        {
+            Response.Redirect("~/Home/Index");
+        }
     }
 
     ViewBag.Title = "GestionPedidos";
     List<AppFunkoPop.Models.ESTADO_ENVIO>
         estados = ViewBag.listaEstados;
-        }
+}
 
-    <h2>@AppFunkoPop.Resources.Admin.gestionPedidos</h2>
-    <p>@AppFunkoPop.Resources.Admin.listadoPedidos</p>
-            @using (Html.BeginForm("CambiarEstado", "Admin", FormMethod.Post))
-        {
+<h2>@AppFunkoPop.Resources.Admin.gestionPedidos</h2>
+<p>@AppFunkoPop.Resources.Admin.listadoPedidos</p>
+@using (Html.BeginForm("CambiarEstado", "Admin", FormMethod.Post))
+{
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>@AppFunkoPop.Resources.Admin.idPedido</th>
-                    <th>@AppFunkoPop.Resources.Admin.idUsuario</th>
-                    <th>@AppFunkoPop.Resources.Admin.precio</th>
-                    <th>@AppFunkoPop.Resources.Admin.infoPago</th>
-                    <th>@AppFunkoPop.Resources.Admin.estado</th>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@AppFunkoPop.Resources.Admin.idPedido</th>
+                <th>@AppFunkoPop.Resources.Admin.idUsuario</th>
+                <th>@AppFunkoPop.Resources.Admin.precio</th>
+                <th>@AppFunkoPop.Resources.Admin.infoPago</th>
+                <th>@AppFunkoPop.Resources.Admin.estado</th>
 
-                </tr>
-            </thead>
-            <tbody>
+            </tr>
+        </thead>
+        <tbody>
 
-                @foreach (var unPedido in Model)
-                {
+            @foreach (var unPedido in Model)
+            {
                 using (Html.BeginForm("CambiarEstado", "Admin", FormMethod.Post))
                 {
 
-                @Html.Hidden("pedidoID", unPedido.PEDIDO_ID)
-                <tr>
-                    <td>@unPedido.PEDIDO_ID</td>
-                    <td>@unPedido.USUARIO_ID</td>
-                    <td>@unPedido.PRECIO_TOTAL</td>
-                    <td>@unPedido.INFO_PAGO</td>
-                    <td>
+                    @Html.Hidden("pedidoID", unPedido.PEDIDO_ID)
+                    <tr>
+                        <td>@unPedido.PEDIDO_ID</td>
+                        <td>@unPedido.USUARIO_ID</td>
+                        <td>@unPedido.PRECIO_TOTAL</td>
+                        <td>@unPedido.INFO_PAGO</td>
+                        <td>
 
 
-                        @*@Html.DropDownList("estadoId", (SelectList)ViewBag.listaEstados, new { onchange = "this.form.submit();" })*@
+                            @*@Html.DropDownList("estadoId", (SelectList)ViewBag.listaEstados, new { onchange = "this.form.submit();" })*@
 
 
-                        <select id="estadoId" name="estadoId" onchange="this.form.submit()" class = "form-control">
+                            <select id="estadoId" name="estadoId" onchange="this.form.submit()" class="form-control">
 
-                            @foreach (var estado in estados)
-                            {
-                            if (estado.ID_ESTADO == unPedido.ESTADO_ENVIO)
-                            {
-                            <option value=@estado.ID_ESTADO selected>@estado.TEXTO_ESTADO</option>
-                            }
-                            else
-                            {
-                            <option value=@estado.ID_ESTADO>@estado.TEXTO_ESTADO</option>
-                            }
-                            }
+                                @foreach (var estado in estados)
+                                {
+                                    if (estado.ID_ESTADO == unPedido.ESTADO_ENVIO)
+                                    {
+                                        <option value=@estado.ID_ESTADO selected>@estado.TEXTO_ESTADO</option>
+                                    }
+                                    else
+                                    {
+                                        <option value=@estado.ID_ESTADO>@estado.TEXTO_ESTADO</option>
+                                    }
+                                }
 
-                        </select>
-                    </td>
+                            </select>
+                        </td>
 
-                </tr>
+                    </tr>
                 }
-                }
+            }
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
+    <br />
+    <a href="javascript:history.go(-1)" class="btn btn-primary col-xs-2 col-sm-2 col-md-2" role="button">@AppFunkoPop.Resources.Admin.volver</a>
 
 
-
-        }
+}

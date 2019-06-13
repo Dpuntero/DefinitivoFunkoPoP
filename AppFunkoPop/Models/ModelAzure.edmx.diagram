@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df6cfebb4dc24611a2924d39a36719a6" Name="Diagram1" ZoomLevel="66">
+        <EntityTypeShape EntityType="FunkoPopDDBBModel.CARRITO" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunkoPopDDBBModel.CARRITOPRODUCTO" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunkoPopDDBBModel.ESTADO_ENVIO" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunkoPopDDBBModel.PEDIDO" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunkoPopDDBBModel.PEDIDOPRODUCTO" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunkoPopDDBBModel.PRODUCTO" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunkoPopDDBBModel.PROVEEDOR" Width="1.5" PointX="7.5" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunkoPopDDBBModel.ROL" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunkoPopDDBBModel.USUARIO" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="FunkoPopDDBBModel.FK_CARRITO_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="FunkoPopDDBBModel.FK_CARRITOPRODUCTO_CARRITO" ManuallyRouted="false" />
+        <AssociationConnector Association="FunkoPopDDBBModel.FK_CARRITOPRODUCTO_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="FunkoPopDDBBModel.FK_PEDIDO_ESTADO_ENVIO" ManuallyRouted="false" />
+        <AssociationConnector Association="FunkoPopDDBBModel.FK_PEDIDO_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="FunkoPopDDBBModel.FK_PEDIDOPRODUCTO_PEDIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="FunkoPopDDBBModel.FK_PEDIDOPRODUCTO_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="FunkoPopDDBBModel.FK_USUARIO_ROL" ManuallyRouted="false" />
+        <AssociationConnector Association="FunkoPopDDBBModel.PROVEEDORPRODUCTO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

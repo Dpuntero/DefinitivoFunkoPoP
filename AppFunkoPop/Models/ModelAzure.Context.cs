@@ -13,10 +13,10 @@ namespace AppFunkoPop.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Database1Entities1 : DbContext
+    public partial class FunkoPopDDBBEntities : DbContext
     {
-        public Database1Entities1()
-            : base("name=Database1Entities1")
+        public FunkoPopDDBBEntities()
+            : base("name=FunkoPopDDBBEntities")
         {
         }
     

@@ -32,7 +32,7 @@ namespace ProyectoDawFunko.Controllers
         public ActionResult CrearProveedor (AppFunkoPop.Models.PROVEEDOR nuevoProv)
         {
                        
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
 
                 db.PROVEEDORs.Add(nuevoProv);
@@ -44,7 +44,7 @@ namespace ProyectoDawFunko.Controllers
         }
         public ActionResult GestionProveedores()
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 ViewBag.Proveedores = db.PROVEEDORs.ToList();
                 return View();
@@ -53,7 +53,7 @@ namespace ProyectoDawFunko.Controllers
 
         public ActionResult EditarProveedor(int id)
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 PROVEEDOR buscarProveedor = db.PROVEEDORs.Find(id);
            
@@ -64,7 +64,7 @@ namespace ProyectoDawFunko.Controllers
         [HttpPost]
         public ActionResult EditandoProveedor(PROVEEDOR proveedorEditar)
         {
-            using(Database1Entities1 db = new Database1Entities1()){
+            using(FunkoPopDDBBEntities db = new FunkoPopDDBBEntities()){
             PROVEEDOR buscarProveedor = db.PROVEEDORs.Find(proveedorEditar.PROVEEDOR_ID);
             buscarProveedor.NOMBRE_PROV = proveedorEditar.NOMBRE_PROV;
             buscarProveedor.EMAIL_PROV = proveedorEditar.EMAIL_PROV;
@@ -79,7 +79,7 @@ namespace ProyectoDawFunko.Controllers
         public ActionResult BorrarProveedor(int[] borrados)
         {
             
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 foreach (var id in borrados)
                 {
@@ -100,7 +100,7 @@ namespace ProyectoDawFunko.Controllers
         // GET: PRODUCTOes
         public ActionResult GestionProductos()
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 ViewBag.Productos = db.PRODUCTOes.ToList();
             }
@@ -111,7 +111,7 @@ namespace ProyectoDawFunko.Controllers
 
         public ActionResult EditarProducto(int id)
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 PRODUCTO productoAEditar = db.PRODUCTOes.Where(x => x.PRODUCTO_ID == id).FirstOrDefault();
 
@@ -122,7 +122,7 @@ namespace ProyectoDawFunko.Controllers
         [HttpPost]
         public ActionResult EditandoProducto(PRODUCTO productoModificado)
         {           
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 PRODUCTO productoOriginal = db.PRODUCTOes.Where(c => c.PRODUCTO_ID == productoModificado.PRODUCTO_ID).First();
                 productoOriginal.NOMBREP = productoModificado.NOMBREP;
@@ -146,7 +146,7 @@ namespace ProyectoDawFunko.Controllers
         public ActionResult EliminarProductos(int[] borrados)
         {
 
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 foreach (var id in borrados)
                 {
@@ -168,7 +168,7 @@ namespace ProyectoDawFunko.Controllers
         //METODOS PARA GESTION DE PEDIDOS
         public ActionResult GestionPedidos()
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 List<PEDIDO> pedidos = new List<PEDIDO>();
                 pedidos = db.PEDIDOes.ToList();
@@ -183,7 +183,7 @@ namespace ProyectoDawFunko.Controllers
         //public ActionResult CambiarEstado(PEDIDO pedidoModificado)
         public ActionResult CambiarEstado(int pedidoId, int estadoId)
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 PEDIDO pedidoOriginal = db.PEDIDOes.Where(c => c.PEDIDO_ID == pedidoId).First();
 
@@ -198,7 +198,7 @@ namespace ProyectoDawFunko.Controllers
 
         public ActionResult GestionUsuarios()
         {
-            Database1Entities1 db = new Database1Entities1();
+            FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
             ViewBag.Usuarios = db.USUARIOs.ToList();
             return View();
         }
@@ -207,7 +207,7 @@ namespace ProyectoDawFunko.Controllers
 
         public ActionResult EditarUsuario(int? id)
         {
-            Database1Entities1 db = new Database1Entities1();
+            FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
             USUARIO usuarioAEditar = db.USUARIOs.Find(id);
             ViewBag.Roles = db.ROLs.ToList();
 
@@ -218,7 +218,7 @@ namespace ProyectoDawFunko.Controllers
         [HttpPost]
         public ActionResult EditandoUsuario(USUARIO usuarioModificado)
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 
                 USUARIO usuarioOriginal = db.USUARIOs.Where(c => c.USUARIO_ID == usuarioModificado.USUARIO_ID).First();
@@ -242,7 +242,7 @@ namespace ProyectoDawFunko.Controllers
         public ActionResult EliminarUsuarios(int[] borrados)
         {
 
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 foreach (var id in borrados)
                 {
@@ -250,6 +250,18 @@ namespace ProyectoDawFunko.Controllers
                     {
                         System.Diagnostics.Debug.WriteLine(id);
                         USUARIO aEliminar = db.USUARIOs.Find(id);
+                        List<PEDIDO> pEliminar = db.PEDIDOes.Where(c => c.USUARIO_ID == id).ToList();
+                        List<PEDIDOPRODUCTO> ppEliminar = new List<PEDIDOPRODUCTO>();
+                        foreach (var x in pEliminar)
+                        {
+                            ppEliminar = db.PEDIDOPRODUCTOes.Where(b => b.PEDIDO_ID == x.PEDIDO_ID).ToList();
+                            foreach(var y in ppEliminar)
+                            {
+                                db.PEDIDOPRODUCTOes.Remove(y);
+                            }
+                            db.PEDIDOes.Remove(x);
+
+                        }
                         db.USUARIOs.Remove(aEliminar);
 
                     }
@@ -261,7 +273,7 @@ namespace ProyectoDawFunko.Controllers
 
         public ActionResult CambiarRoles(int usuarioId, int rolId)
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 USUARIO usuarioOriginal = db.USUARIOs.Where(c => c.USUARIO_ID == usuarioId).First();
 

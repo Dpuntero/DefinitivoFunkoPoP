@@ -14,7 +14,7 @@ namespace ProyectoDawFunko.Controllers
         // GET: Pedidos
         public ActionResult MisPedidos()
         {
-            Database1Entities1 db = new Database1Entities1();
+            FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
 
             int idUsu = Convert.ToInt32(Session["USUARIO_ID"]);
             List<PEDIDO> aux = db.PEDIDOes.ToList();
@@ -62,7 +62,7 @@ namespace ProyectoDawFunko.Controllers
 
 
                     Debug.WriteLine("My debug string here");
-                    Database1Entities1 db = new Database1Entities1();
+                    FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
 
                     PEDIDO nuevoPedido = new PEDIDO();
 
@@ -105,7 +105,7 @@ namespace ProyectoDawFunko.Controllers
         }
         public ActionResult VerPedidoUnico(int id)
         {
-            Database1Entities1 db = new Database1Entities1();
+            FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
             List<PEDIDOPRODUCTO> productos = db.PEDIDOPRODUCTOes.Where(c => c.PEDIDO_ID == id).ToList();
 
 
