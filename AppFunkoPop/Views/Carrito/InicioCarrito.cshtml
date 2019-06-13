@@ -1,7 +1,7 @@
 ﻿@model IList<AppFunkoPop.Models.ProductoUnidades>
 @{
     ViewBag.Title = @AppFunkoPop.Resources.Carrito.miCarrito;
-    decimal suma=0;
+    decimal suma = 0;
 }
 
 
@@ -32,27 +32,35 @@
         @foreach (var prod in Model)
         {
 
-        <tr>
+            <tr>
 
 
-            <td><a href="~/Producto/Productos/@prod.PRODUCTO_ID"><img src="~/Content/images/@prod.CATEGORIA/@prod.IMAGEN" style="height: 50px; "></a></td>
-            <td>@prod.NOMBRE</td>
-            <td>@prod.Unidades</td>
-            <td>@prod.UD_DISPO</td>
-            <td>@Html.ActionLink("Borrar una unidad", "Eliminar1ProductoCarrito", new { id = prod.PRODUCTO_ID })</td>
-            <td>@Html.ActionLink("Añadir una unidad", "Añadir1ProductoCarrito", new { id = prod.PRODUCTO_ID })</td>
-            <td>@Html.ActionLink("Borrar producto", "EliminarProductoCarrito", new { id = prod.PRODUCTO_ID })</td>
-            <td>@prod.PRECIOUnidad €</td>
-            <td>@prod.PRECIO €</td>
-            @{
-                suma = suma + @prod.PRECIO;
-                    }
+                <td><a href="~/Producto/Productos/@prod.PRODUCTO_ID"><img src="~/Content/images/@prod.CATEGORIA/@prod.IMAGEN" style="height: 50px; "></a></td>
+                <td>@prod.NOMBRE</td>
+                <td>@prod.Unidades</td>
+                <td>@prod.UD_DISPO</td>
+                <td>@Html.ActionLink("Borrar una unidad", "Eliminar1ProductoCarrito", new { id = prod.PRODUCTO_ID })</td>
+                <td>@Html.ActionLink("Añadir una unidad", "Añadir1ProductoCarrito", new { id = prod.PRODUCTO_ID })</td>
+                <td>@Html.ActionLink("Borrar producto", "EliminarProductoCarrito", new { id = prod.PRODUCTO_ID })</td>
+                <td>@prod.PRECIOUnidad €</td>
+                <td>@prod.PRECIO €</td>
+                @{
+                    suma = suma + @prod.PRECIO;
+                }
 
-        </tr>
+            </tr>
         }
         <tr>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        <td>@suma €</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>@suma €</td>
         </tr>
     </tbody>
 
@@ -64,7 +72,7 @@
 
 
 
-    int i= 0;
+    int i = 0;
     foreach (var item in Model)
     {
         @Html.Hidden("[" + i + "].CATEGORIA", item.CATEGORIA, new { @id = "[" + i + "].CATEGORIA" })
@@ -78,5 +86,6 @@
     }
 
     <input type="submit" name="entrar" value="Realizar pedido" />
-    @Html.ActionLink(@AppFunkoPop.Resources.Carrito.vaciarCarrito, "VaciarCarrito","Carrito")
+    @Html.ActionLink(@AppFunkoPop.Resources.Carrito.vaciarCarrito, "VaciarCarrito", "Carrito")
+    <a href="javascript:history.go(-1)" class="btn btn-primary col-xs-2 col-sm-2 col-md-2" role="button">Back</a>
 }

@@ -65,7 +65,7 @@
                     @Html.EditorFor(model => model.TLFN, new { htmlAttributes = new { @class = "form-control" } })
 
                     @Html.ValidationMessageFor(model => model.TLFN, "", new { @class = "text-danger" })
-                    
+
 
                 </p>
                 <p>
@@ -99,9 +99,9 @@
 
                 <label> @Html.DisplayFor(model => model.LoginErrorMessage)</label>
                 <input type="submit" name="entrar" value="@AppFunkoPop.Resources.Usuarios.entrar" class="btn btn-primary" />
-                <input type="reset" name="borrar" value="@AppFunkoPop.Resources.Usuarios.borrar" class="btn btn-default"/>
+                <input type="reset" name="borrar" value="@AppFunkoPop.Resources.Usuarios.borrar" class="btn btn-default" />
             }
-
+            <a href="javascript:history.go(-1)" class="btn btn-primary col-xs-2 col-sm-2 col-md-2" role="button">Back</a>
             <!--
     <form action="CrearUsuario" method="post">
         <label>Nombre: <input type="text" name="nombre" value="" /></label></br>

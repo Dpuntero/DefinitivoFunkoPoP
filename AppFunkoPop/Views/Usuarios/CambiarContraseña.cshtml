@@ -4,7 +4,7 @@
     {
         Response.Redirect("~/Home/Index");
     }
-    
+
 
     ViewBag.Title = "CambiarContraseña";
 }
@@ -13,18 +13,18 @@
 
 @using (Html.BeginForm("CambiarContraseña", "Account", FormMethod.Post))
 {
-<p>
-    @*@Html.LabelFor(model => model.contrasenaAntigua)*@
-    <label class="control-label col-md-2"> @AppFunkoPop.Resources.Usuarios.contAntigua </label>
-</p>
-<p>
-    @Html.EditorFor(model => model.contrasenaAntigua, new { htmlAttributes = new { @class = "form-control" } })
-    @Html.ValidationMessageFor(model => model.contrasenaAntigua, "", new { @class = "text-danger" })
-</p>
+    <p>
+        @*@Html.LabelFor(model => model.contrasenaAntigua)*@
+        <label class="control-label col-md-2"> @AppFunkoPop.Resources.Usuarios.contAntigua </label>
+    </p>
+    <p>
+        @Html.EditorFor(model => model.contrasenaAntigua, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.contrasenaAntigua, "", new { @class = "text-danger" })
+    </p>
     <p>
         @*@Html.LabelFor(model => model.contrasenaNueva)*@
         <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.contNueva </label>
-</p>
+    </p>
     <p>
         @Html.EditorFor(model => model.contrasenaNueva, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.contrasenaNueva, "", new { @class = "text-danger" })
@@ -32,17 +32,20 @@
     <p>
         @*@Html.LabelFor(model => model.contrasenaRepetida)*@
         <label class="control-label col-md-2">@AppFunkoPop.Resources.Usuarios.confContNueva</label>
-</p>
+    </p>
     <p>
         @Html.EditorFor(model => model.contrasenaRepetida, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.contrasenaRepetida, "", new { @class = "text-danger" })
     </p>
 
-   
+
     <label> @Html.DisplayFor(model => model.contrasenaErrorMessage)</label>
     <br />
     <br />
-    <input type="submit" name="entrar" value="@AppFunkoPop.Resources.Usuarios.entrar"  class="btn btn-primary" />
+    <input type="submit" name="entrar" value="@AppFunkoPop.Resources.Usuarios.entrar" class="btn btn-primary" />
     <input type="reset" name="borrar" value="@AppFunkoPop.Resources.Usuarios.borrar" class="btn btn-default" />
+    
 }
+<br />
+<a href="javascript:history.go(-1)" class="btn btn-primary col-xs-2 col-sm-2 col-md-2" role="button">Back</a>
 
