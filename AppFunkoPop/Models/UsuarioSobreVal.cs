@@ -33,7 +33,7 @@ namespace AppFunkoPop.Models
 
         public class EmailValidation : ValidationAttribute
         {
-            private Database1Entities1 db = new Database1Entities1();
+            private FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
 
             protected override ValidationResult IsValid(object value, ValidationContext validationContext)
             {

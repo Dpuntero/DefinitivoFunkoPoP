@@ -73,7 +73,7 @@ namespace ProyectoDawFunko.Controllers
 
                         foreach (var item in listProductos)
                         {
-                            using (Database1Entities1 db = new Database1Entities1())
+                            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                             {
                                 int w = Convert.ToInt32(item.producto_Id);
                                 PRODUCTO añadir = db.PRODUCTOes.Where(x => x.PRODUCTO_ID ==w).FirstOrDefault();
@@ -137,7 +137,7 @@ namespace ProyectoDawFunko.Controllers
 
             public ActionResult CreacionCarrito(AppFunkoPop.Models.PRODUCTO productoModel)
         {
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
                 CARRITO nuevoCarrito = new CARRITO();
                 nuevoCarrito.FECHA_CR = DateTime.Today;
@@ -160,7 +160,7 @@ namespace ProyectoDawFunko.Controllers
 
         public ActionResult RecogerIdEnviarProducto(string id, string unidades)
         {
-            Database1Entities1 db = new Database1Entities1();
+            FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
             int idfin = Convert.ToInt32(id);
 
             PRODUCTO añadir = db.PRODUCTOes.Where(x => x.PRODUCTO_ID == idfin).FirstOrDefault();
@@ -255,7 +255,7 @@ namespace ProyectoDawFunko.Controllers
                 }
             }
 
-            Database1Entities1 db = new Database1Entities1();
+            FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
             
 
             ProductoCookie borrar = listProductos.Where(x => x.producto_Id == idborrar).FirstOrDefault();
@@ -292,7 +292,7 @@ namespace ProyectoDawFunko.Controllers
             {
                 if (Convert.ToInt32(item.producto_Id) == id)
                 {
-                    Database1Entities1 db = new Database1Entities1();
+                    FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
                     int c = Convert.ToInt32(item.producto_Id);
                    var producto = db.PRODUCTOes.Where(x => x.PRODUCTO_ID == c).FirstOrDefault();
                     if (producto.UD_DISPO < Convert.ToInt32(item.unidades) + 1)

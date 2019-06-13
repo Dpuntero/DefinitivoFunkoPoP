@@ -22,9 +22,8 @@ namespace AppFunkoPop.Models
             this.CARRITOes = new HashSet<CARRITO>();
             this.PEDIDOes = new HashSet<PEDIDO>();
         }
-
         public int USUARIO_ID { get; set; }
-        [Display(Name="Nombre")]
+        [Display(Name = "Nombre")]
         [Required(ErrorMessage = "Es necesario introducir un nombre")]
         [StringLength(20, MinimumLength = 2)]
         public string NOMBRE { get; set; }
@@ -61,12 +60,12 @@ namespace AppFunkoPop.Models
         [Display(Name = "País")]
         public string PAIS { get; set; }
         [Required(ErrorMessage = "Es necesario introducir un codigo postal")]
-        [Range(10000,99999, ErrorMessage= "Debe introducir un codigo postal valido")]
+        [Range(10000, 99999, ErrorMessage = "Debe introducir un codigo postal valido")]
         [Display(Name = "Codigo Postal")]
         public int CP { get; set; }
         public int ID_ROL { get; set; }
         public Nullable<System.DateTime> FECHA_CREACION { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CARRITO> CARRITOes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -74,29 +73,5 @@ namespace AppFunkoPop.Models
         public virtual ROL ROL { get; set; }
 
         public string LoginErrorMessage { get; set; }
-
-        //public class EmailValidation : ValidationAttribute
-        //{
-        //    private Database1Entities1 db = new Database1Entities1();
-
-        //    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-        //    {
-        //        var email = (string)value;
-
-        //        USUARIO usuario = db.USUARIOs.Where(x => x.EMAIL == email).FirstOrDefault();
-
-        //        if (usuario != null)
-        //        {
-        //            return new ValidationResult(ErrorMessage);
-        //        }
-        //        else
-        //        {
-        //            return ValidationResult.Success;
-        //        }
-
-        //    }
-
-
-        //}
     }
 }

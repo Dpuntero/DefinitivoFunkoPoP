@@ -153,51 +153,51 @@
     </Compile>
     <Compile Include="Models\autorizar.cs" />
     <Compile Include="Models\CARRITO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CARRITOPRODUCTO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CatalogoModel.cs" />
     <Compile Include="Models\ESTADO_ENVIO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ListarPedidosModel.cs" />
-    <Compile Include="Models\Model1.Context.cs">
+    <Compile Include="Models\ModelAzure.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>ModelAzure.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.cs">
+    <Compile Include="Models\ModelAzure.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelAzure.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
+    <Compile Include="Models\ModelAzure.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>ModelAzure.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\PasswordChangeModel.cs" />
     <Compile Include="Models\PEDIDO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PEDIDOPRODUCTO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PRODUCTO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductoCookie.cs" />
     <Compile Include="Models\ProductoUnidades.cs" />
     <Compile Include="Models\PROVEEDOR.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ROL.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\USUARIO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelAzure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UsuarioSobreVal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -283,10 +283,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -310,15 +306,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\ModelAzure.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>ModelAzure.edmx</DependentUpon>
+      <LastGenOutput>ModelAzure.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\ModelAzure.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>ModelAzure.edmx</DependentUpon>
+      <LastGenOutput>ModelAzure.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -333,13 +329,14 @@
     <Content Include="Database1DataSet.xss">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\Model1.edmx">
+    <EntityDeploy Include="Models\ModelAzure.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelAzure.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="Models\ModelAzure.edmx.diagram">
+      <DependentUpon>ModelAzure.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\AppFunkoPop - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\AppFunkoPop20190612123249 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -394,6 +391,7 @@
     <Content Include="Views\Otros\SobreNosotros.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Views\Languaje\" />
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,7 @@ namespace AppFunkoPop.Controllers
                
             
                 PRODUCTO prod = new PRODUCTO();
-                using (Database1Entities1 db = new Database1Entities1())
+                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
 
                     prod = db.PRODUCTOes.Find(id);
@@ -52,7 +52,7 @@ namespace AppFunkoPop.Controllers
             nuevoProd.IMAGEN = nuevoProd.IMAGEN + ".jpg";
             nuevoProd.IMAGEN2 = nuevoProd.IMAGEN2 + ".jpg";
             
-            using (Database1Entities1 db = new Database1Entities1())
+            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
             {
 
                 db.PRODUCTOes.Add(nuevoProd);
