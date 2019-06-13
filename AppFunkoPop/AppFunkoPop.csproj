@@ -389,6 +389,9 @@
     <Content Include="Views\Otros\Contacto.cshtml" />
     <Content Include="Views\Otros\AvisoLegal.cshtml" />
     <Content Include="Views\Otros\SobreNosotros.cshtml" />
+    <Content Include="Views\Admin\EditandoProveedor.cshtml" />
+    <Content Include="Views\Admin\GestionProveedores.cshtml" />
+    <Content Include="Views\Admin\NuevoProveedor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
