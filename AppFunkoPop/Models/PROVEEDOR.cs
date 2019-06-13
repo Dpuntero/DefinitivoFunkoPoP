@@ -11,7 +11,8 @@ namespace AppFunkoPop.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PROVEEDOR
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +22,16 @@ namespace AppFunkoPop.Models
         }
     
         public int PROVEEDOR_ID { get; set; }
+        [Display(Name = "Nombre Proveedor")]
+        [Required(ErrorMessage = "Es necesario introducir el nombre ")]
         public string NOMBRE_PROV { get; set; }
+        [Display(Name = "Telefono")]
+        [Required(ErrorMessage = "Es necesario introducir el teléfono ")]
         public int TLFN_PROV { get; set; }
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Es necesario introducir el email ")]
         public string EMAIL_PROV { get; set; }
+        [Display(Name = "Descripción Proveedor")]
         public string DESCRIPCION_PROV { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

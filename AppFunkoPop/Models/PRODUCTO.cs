@@ -11,7 +11,8 @@ namespace AppFunkoPop.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PRODUCTO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,16 +24,41 @@ namespace AppFunkoPop.Models
         }
     
         public int PRODUCTO_ID { get; set; }
+        [Display(Name = "Nombre")]
+        [Required(ErrorMessage = "Es necesario introducir un nombre")]
+        [StringLength(20, MinimumLength = 2)]
         public string NOMBREP { get; set; }
+        [Display(Name = "Nombre")]
+        [Required(ErrorMessage = "Es necesario introducir un precio")]
         public decimal PRECIO { get; set; }
+        [Display(Name = "Descripción")]
+        [Required(ErrorMessage = "Es necesario introducir una descripción")]
+        [StringLength(100, MinimumLength = 2)]
         public string DESCRIP { get; set; }
+        [Display(Name = "Descripción en ingles")]
+        [Required(ErrorMessage = "Es necesario introducir una descripción en inglés")]
+        [StringLength(100, MinimumLength = 2)]
         public string DESCRIP_INGLES { get; set; }
+        [Display(Name = "Categoria")]
+        [Required(ErrorMessage = "Es necesario introducir una categoria")]
         public string CATEGORIA { get; set; }
+        [Display(Name = "Subcategoria")]
+        [Required(ErrorMessage = "Es necesario introducir una subcategoria")]
         public string SUBCATEGORIA { get; set; }
+        [Display(Name = "Categoria en ingles")]
+        [Required(ErrorMessage = "Es necesario introducir una categoria en inglés" )]
         public string CATEGORIA_INGLES { get; set; }
+        [Display(Name = "Subcategoria en inglés")]
+        [Required(ErrorMessage = "Es necesario introducir una subcategoria en inglés")]
         public string SUBCATEGORIA_INGLES { get; set; }
+        [Display(Name = "Proveedor id")]
+        [Required(ErrorMessage = "Es necesario introducir un proveedor")]
         public int PROVEEDOR_ID { get; set; }
+        [Display(Name = "Imagen")]
+        [Required(ErrorMessage = "Es necesario introducir el nombre de la imagen")]
         public string IMAGEN { get; set; }
+        [Display(Name = "Imagen2")]
+        [Required(ErrorMessage = "Es necesario introducir el nombre de la imagen")]
         public string IMAGEN2 { get; set; }
         public Nullable<bool> DESTACADO { get; set; }
         public Nullable<System.DateTime> FECHA_CREACION { get; set; }
