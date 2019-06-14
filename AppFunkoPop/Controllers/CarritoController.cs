@@ -12,42 +12,7 @@ namespace ProyectoDawFunko.Controllers
 {
     public class CarritoController : Controller
     {
-        /*public ActionResult CreacionCarrito()
-        {
-            using (Database1Entities db = new Database1Entities())
-            {
-                CARRITO nuevoCarrito = new CARRITO();
-                nuevoCarrito.FECHA_CR = DateTime.Today;
-                nuevoCarrito.USUARIO_ID = Convert.ToInt32(Session["USUARIO_ID"]);
-                nuevoCarrito.PRECIO_T = "1";
-                db.CARRITOes.Add(nuevoCarrito);
-                db.SaveChanges();
-            }
-
-
-                return View();
-        }
-  
-        public ActionResult AñadirProductoACarrito()
-        {
-            using (Database1Entities db = new Database1Entities())
-            {
-                int c = Convert.ToInt32(Session["USUARIO_ID"]);
-                var carritoDetails = db.CARRITOes.Where(x => x.USUARIO_ID ==c).FirstOrDefault();
-                if (carritoDetails != null)
-                {
-
-                }
-                else
-                {
-                    CreacionCarrito();
-                }
-            }
-
-                return RedirectToAction("Index","Home");
-        }*/
-
-        //Método para iniciar un carrito asociado a una cookie
+   
         public ActionResult InicioCarrito()
         {
             if (Convert.ToString(Request.Cookies["Carrito"]) != "")
@@ -75,31 +40,33 @@ namespace ProyectoDawFunko.Controllers
 
                         foreach (var item in listProductos)
                         {
-                            using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
-                            {
-                                int w = Convert.ToInt32(item.producto_Id);
-                                PRODUCTO añadir = db.PRODUCTOes.Where(x => x.PRODUCTO_ID ==w).FirstOrDefault();
-                                ProductoUnidades prodfin = new ProductoUnidades();
-
-                                if (añadir.UD_DISPO < Convert.ToInt32(item.unidades))
+                            if (Convert.ToInt32(item.unidades)  >0) {
+                                using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                                 {
+                                    int w = Convert.ToInt32(item.producto_Id);
+                                    PRODUCTO añadir = db.PRODUCTOes.Where(x => x.PRODUCTO_ID ==w).FirstOrDefault();
+                                    ProductoUnidades prodfin = new ProductoUnidades();
+
+                                    if (añadir.UD_DISPO < Convert.ToInt32(item.unidades))
+                                    {
                                    
-                                    prodfin.Unidades = Convert.ToString(añadir.UD_DISPO);
-                                    item.unidades = prodfin.Unidades;
-                                }
-                                else
-                                {
-                                    prodfin.Unidades = item.unidades;
-                                }
-                                prodfin.CATEGORIA = añadir.CATEGORIA;
-                                prodfin.IMAGEN = añadir.IMAGEN;
-                                prodfin.NOMBRE = añadir.NOMBREP;
-                                prodfin.PRECIOUnidad = añadir.PRECIO;
-                                prodfin.PRECIO =añadir.PRECIO * Convert.ToInt32(item.unidades);
-                                prodfin.PRODUCTO_ID = añadir.PRODUCTO_ID;
-                                prodfin.UD_DISPO = añadir.UD_DISPO;
-                                listfinal.Add(prodfin);
+                                        prodfin.Unidades = Convert.ToString(añadir.UD_DISPO);
+                                        item.unidades = prodfin.Unidades;
+                                    }
+                                    else
+                                    {
+                                        prodfin.Unidades = item.unidades;
+                                    }
+                                    prodfin.CATEGORIA = añadir.CATEGORIA;
+                                    prodfin.IMAGEN = añadir.IMAGEN;
+                                    prodfin.NOMBRE = añadir.NOMBREP;
+                                    prodfin.PRECIOUnidad = añadir.PRECIO;
+                                    prodfin.PRECIO =añadir.PRECIO * Convert.ToInt32(item.unidades);
+                                    prodfin.PRODUCTO_ID = añadir.PRODUCTO_ID;
+                                    prodfin.UD_DISPO = añadir.UD_DISPO;
+                                    listfinal.Add(prodfin);
 
+                                }
                             }
                         }
                         return View(listfinal);
@@ -137,7 +104,7 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
         
-     
+     //Creacon de carrito prueba1
             public ActionResult CreacionCarrito(AppFunkoPop.Models.PRODUCTO productoModel)
         {
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
@@ -153,6 +120,7 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
 
+        //Creacion de cookies prueba1
         public ActionResult CrearCookies(AppFunkoPop.Models.PRODUCTO productoModel, string unidades)
         {
             string carrito = Convert.ToString(productoModel.PRODUCTO_ID) + unidades;
@@ -161,6 +129,7 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
 
+        //Recoge Id del producto
         public ActionResult RecogerIdEnviarProducto(string id, string unidades)
         {
             FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
@@ -170,88 +139,89 @@ namespace ProyectoDawFunko.Controllers
             return  AñadirProductoACarrito(añadir, unidades);
         }
 
-
-            public ActionResult AñadirProductoACarrito(AppFunkoPop.Models.PRODUCTO productoModel, string unidades)
+        //Añade productos
+        public ActionResult AñadirProductoACarrito(AppFunkoPop.Models.PRODUCTO productoModel, string unidades)
         {
+            if (Convert.ToInt32(unidades) > 0) { 
+                if (Convert.ToString(Request.Cookies["Carrito"]) != "")
+                {
+                    int loop1, loop2;
+                    HttpCookie MyCookie;
+                    MyCookie = Request.Cookies["Carrito"];
 
-            if (Convert.ToString(Request.Cookies["Carrito"])!= "")
-            {
-                int loop1, loop2;
-                HttpCookie MyCookie;
-                MyCookie = Request.Cookies["Carrito"];
-
-                var listProductos = new List<ProductoCookie>();
+                    var listProductos = new List<ProductoCookie>();
 
                     if (MyCookie.Name == "Carrito")
                     {
                         Boolean comp = false;
-                         listProductos = JsonConvert.DeserializeObject<List<ProductoCookie>>(MyCookie.Value);
+                        listProductos = JsonConvert.DeserializeObject<List<ProductoCookie>>(MyCookie.Value);
 
                         foreach (var item in listProductos)
                         {
-                            if (Convert.ToString(productoModel.PRODUCTO_ID) ==(item.producto_Id))
+                            if (Convert.ToString(productoModel.PRODUCTO_ID) == (item.producto_Id))
                             {
-                                    if(productoModel.UD_DISPO< (Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades)))
-                                    {
-                                item.unidades = Convert.ToString(productoModel.UD_DISPO);
-                                    }
-                                    else
-                                    {
+                                if (productoModel.UD_DISPO < (Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades)))
+                                {
+                                    item.unidades = Convert.ToString(productoModel.UD_DISPO);
+                                }
+                                else
+                                {
 
-                                item.unidades = Convert.ToString(Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades));
-                                      }
+                                    item.unidades = Convert.ToString(Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades));
+                                }
 
-                                
+
                                 comp = true;
                             }
                         }
                         if (comp == false)
                         {
                             ProductoCookie productoAMeter = new ProductoCookie();
-                            
-                                
+
+
 
                             productoAMeter.producto_Id = Convert.ToString(productoModel.PRODUCTO_ID);
-                        if (productoModel.UD_DISPO < Convert.ToInt32(unidades))
-                        {
-                           productoAMeter.unidades = Convert.ToString(productoModel.UD_DISPO);
-                        }
-                        else
-                        {
+                            if (productoModel.UD_DISPO < Convert.ToInt32(unidades))
+                            {
+                                productoAMeter.unidades = Convert.ToString(productoModel.UD_DISPO);
+                            }
+                            else
+                            {
 
-                            productoAMeter.unidades = Convert.ToString(unidades);
-                        }
+                                productoAMeter.unidades = Convert.ToString(unidades);
+                            }
 
 
-                        productoAMeter.unidades = unidades;
+                            productoAMeter.unidades = unidades;
                             listProductos.Add(productoAMeter);
                         }
 
-                    var json = new JavaScriptSerializer().Serialize(listProductos);
-                    MyCookie.Value = json;
+                        var json = new JavaScriptSerializer().Serialize(listProductos);
+                        MyCookie.Value = json;
+                        DateTime now = DateTime.Now;
+                        MyCookie.Expires = now.AddHours(1);
+                        Response.Cookies.Add(MyCookie);
+                    }
+                }
+                else
+                {
+                    HttpCookie MyCookie = new HttpCookie("Carrito");
                     DateTime now = DateTime.Now;
+                    ProductoCookie productoAMeter = new ProductoCookie();
+                    List<ProductoCookie> arrayDeCookies = new List<ProductoCookie>();
+                    productoAMeter.producto_Id = Convert.ToString(productoModel.PRODUCTO_ID);
+                    productoAMeter.unidades = unidades;
+                    arrayDeCookies.Add(productoAMeter);
+                    var json = new JavaScriptSerializer().Serialize(arrayDeCookies);
+                    MyCookie.Value = json;
                     MyCookie.Expires = now.AddHours(1);
                     Response.Cookies.Add(MyCookie);
                 }
             }
-            else
-            {              
-                HttpCookie MyCookie = new HttpCookie("Carrito");
-                DateTime now = DateTime.Now;
-                ProductoCookie productoAMeter = new ProductoCookie();
-                List<ProductoCookie> arrayDeCookies = new List<ProductoCookie>();
-                productoAMeter.producto_Id = Convert.ToString(productoModel.PRODUCTO_ID);
-                productoAMeter.unidades = unidades;
-                arrayDeCookies.Add(productoAMeter);
-                var json = new JavaScriptSerializer().Serialize(arrayDeCookies);
-                MyCookie.Value = json ;
-                MyCookie.Expires = now.AddHours(1);
-                Response.Cookies.Add(MyCookie);
-            }
             return RedirectToAction("InicioCarrito", "Carrito");
         }
 
-    
+    //Elimina una unidad del producto
         public ActionResult Eliminar1ProductoCarrito(int id)
         {
             var listProductos = new List<ProductoCookie>();
@@ -296,7 +266,7 @@ namespace ProyectoDawFunko.Controllers
 
             
         }
-
+        //Añade una unidad de producto
         public ActionResult Añadir1ProductoCarrito(int id)
         {
             var listProductos = new List<ProductoCookie>();
@@ -335,7 +305,7 @@ namespace ProyectoDawFunko.Controllers
                 return RedirectToAction("InicioCarrito", "Carrito");
 
         }
-
+        //Elimina el producto
         public ActionResult EliminarProductoCarrito(int id)
         {
             var listProductos = new List<ProductoCookie>();
