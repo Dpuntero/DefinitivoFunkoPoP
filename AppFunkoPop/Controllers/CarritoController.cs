@@ -12,42 +12,7 @@ namespace ProyectoDawFunko.Controllers
 {
     public class CarritoController : Controller
     {
-        /*public ActionResult CreacionCarrito()
-        {
-            using (Database1Entities db = new Database1Entities())
-            {
-                CARRITO nuevoCarrito = new CARRITO();
-                nuevoCarrito.FECHA_CR = DateTime.Today;
-                nuevoCarrito.USUARIO_ID = Convert.ToInt32(Session["USUARIO_ID"]);
-                nuevoCarrito.PRECIO_T = "1";
-                db.CARRITOes.Add(nuevoCarrito);
-                db.SaveChanges();
-            }
-
-
-                return View();
-        }
-  
-        public ActionResult AñadirProductoACarrito()
-        {
-            using (Database1Entities db = new Database1Entities())
-            {
-                int c = Convert.ToInt32(Session["USUARIO_ID"]);
-                var carritoDetails = db.CARRITOes.Where(x => x.USUARIO_ID ==c).FirstOrDefault();
-                if (carritoDetails != null)
-                {
-
-                }
-                else
-                {
-                    CreacionCarrito();
-                }
-            }
-
-                return RedirectToAction("Index","Home");
-        }*/
-
-        //Método para iniciar un carrito asociado a una cookie
+   
         public ActionResult InicioCarrito()
         {
             if (Convert.ToString(Request.Cookies["Carrito"]) != "")
@@ -139,7 +104,7 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
         
-     
+     //Creacon de carrito prueba1
             public ActionResult CreacionCarrito(AppFunkoPop.Models.PRODUCTO productoModel)
         {
             using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
@@ -155,6 +120,7 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
 
+        //Creacion de cookies prueba1
         public ActionResult CrearCookies(AppFunkoPop.Models.PRODUCTO productoModel, string unidades)
         {
             string carrito = Convert.ToString(productoModel.PRODUCTO_ID) + unidades;
@@ -163,6 +129,7 @@ namespace ProyectoDawFunko.Controllers
             return View();
         }
 
+        //Recoge Id del producto
         public ActionResult RecogerIdEnviarProducto(string id, string unidades)
         {
             FunkoPopDDBBEntities db = new FunkoPopDDBBEntities();
@@ -172,7 +139,7 @@ namespace ProyectoDawFunko.Controllers
             return  AñadirProductoACarrito(añadir, unidades);
         }
 
-
+        //Añade productos
         public ActionResult AñadirProductoACarrito(AppFunkoPop.Models.PRODUCTO productoModel, string unidades)
         {
             if (Convert.ToInt32(unidades) > 0) { 
@@ -254,7 +221,7 @@ namespace ProyectoDawFunko.Controllers
             return RedirectToAction("InicioCarrito", "Carrito");
         }
 
-    
+    //Elimina una unidad del producto
         public ActionResult Eliminar1ProductoCarrito(int id)
         {
             var listProductos = new List<ProductoCookie>();
@@ -299,7 +266,7 @@ namespace ProyectoDawFunko.Controllers
 
             
         }
-
+        //Añade una unidad de producto
         public ActionResult Añadir1ProductoCarrito(int id)
         {
             var listProductos = new List<ProductoCookie>();
@@ -338,7 +305,7 @@ namespace ProyectoDawFunko.Controllers
                 return RedirectToAction("InicioCarrito", "Carrito");
 
         }
-
+        //Elimina el producto
         public ActionResult EliminarProductoCarrito(int id)
         {
             var listProductos = new List<ProductoCookie>();
