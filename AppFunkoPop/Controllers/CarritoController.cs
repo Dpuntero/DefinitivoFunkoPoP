@@ -191,15 +191,15 @@ namespace ProyectoDawFunko.Controllers
                         {
                             if (Convert.ToString(productoModel.PRODUCTO_ID) ==(item.producto_Id))
                             {
-                                    if(productoModel.UD_DISPO< Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades))
+                                    if(productoModel.UD_DISPO< (Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades)))
                                     {
                                 item.unidades = Convert.ToString(productoModel.UD_DISPO);
-                            }
-                            else
-                            {
+                                    }
+                                    else
+                                    {
 
                                 item.unidades = Convert.ToString(Convert.ToInt32(item.unidades) + Convert.ToInt32(unidades));
-                            }
+                                      }
 
                                 
                                 comp = true;
@@ -209,8 +209,21 @@ namespace ProyectoDawFunko.Controllers
                         {
                             ProductoCookie productoAMeter = new ProductoCookie();
                             
+                                
+
                             productoAMeter.producto_Id = Convert.ToString(productoModel.PRODUCTO_ID);
-                            productoAMeter.unidades = unidades;
+                        if (productoModel.UD_DISPO < Convert.ToInt32(unidades))
+                        {
+                           productoAMeter.unidades = Convert.ToString(productoModel.UD_DISPO);
+                        }
+                        else
+                        {
+
+                            productoAMeter.unidades = Convert.ToString(unidades);
+                        }
+
+
+                        productoAMeter.unidades = unidades;
                             listProductos.Add(productoAMeter);
                         }
 
