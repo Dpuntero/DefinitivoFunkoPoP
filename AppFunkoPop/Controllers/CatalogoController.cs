@@ -9,10 +9,9 @@ using AppFunkoPop.Models;
 namespace ProyectoDawFunko.Controllers
 {
     public class CatalogoController : Controller
-    {
+    {   
+        //Método para mandar al catálogo mostrando todos los productos
         // GET: Catalogo
-      
-
             public ActionResult Catalogo()
         {
             
@@ -42,6 +41,8 @@ namespace ProyectoDawFunko.Controllers
             return View(prod);
 
         }
+
+        //Método que devuelve el catálogo filtrado
         [HttpPost]
         public ActionResult Catalogo(FormCollection collection)
         {
@@ -60,8 +61,6 @@ namespace ProyectoDawFunko.Controllers
             }
             else if (Categoria != null && (Subcategoria == null|| Subcategoria == "Todos"))
             {
-
-
                 using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.Where(c => c.CATEGORIA == Categoria).ToList();
@@ -75,23 +74,17 @@ namespace ProyectoDawFunko.Controllers
                     prod = db.PRODUCTOes.Where(c => c.SUBCATEGORIA == Subcategoria).ToList();
 
                 }
-
-
             }
-
-            return View(prod);
-            
+            return View(prod);            
         }
 
+        //Método para redirección del menú llateral
         public ActionResult EnvioMenu(string Categoria, string Subcategoria)
-        {
-            
-            List<PRODUCTO> prod = new List<PRODUCTO>();
+        {            
+           List<PRODUCTO> prod = new List<PRODUCTO>();
 
-            
-            if (Categoria == null || Categoria == "todos")
+             if (Categoria == null || Categoria == "todos")
             {
-
                 using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.ToList();
@@ -100,12 +93,9 @@ namespace ProyectoDawFunko.Controllers
             }
             else if (Categoria != null && (Subcategoria == null || Subcategoria == "Todos"))
             {
-
-
                 using (FunkoPopDDBBEntities db = new FunkoPopDDBBEntities())
                 {
                     prod = db.PRODUCTOes.Where(c => c.CATEGORIA == Categoria).ToList();
-
                 }
             }
             else
@@ -116,32 +106,8 @@ namespace ProyectoDawFunko.Controllers
 
                 }
 
-
             }
-
             return View("Catalogo", prod);
-
         }
-
-        /*
-        public ActionResult MostrarProductos()
-        {
-
-
-            return View();
-        }
-        [HttpPost]
-        public ActionResult FiltrarCategorias()
-        {
-            string Categoria = Request.Form["categoria"];
-            List<PRODUCTO> prod = new List<PRODUCTO>();
-            using (Database1Entities db = new Database1Entities())
-            {
-                prod = db.PRODUCTOes.Where(c=> c.CATEGORIA==Categoria).ToList();
-
-            }
-
-            return View(prod);
-        }*/
     }
 }
