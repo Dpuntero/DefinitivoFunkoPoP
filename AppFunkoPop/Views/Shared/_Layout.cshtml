@@ -4,13 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title </title>
+    <link href="~/icono.ico" rel="shortcut icon" type="image/x-icon" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script type="text/javascript">
-        var optmarvel = new Array("Todos", "Vengadores", "X-men","Otros");
+        var optmarvel = new Array("Todos", "Vengadores", "X-men", "Otros");
         var optgot = new Array("Todos", "Lanister", "Targaryen", "El norte");
-        var optstarwars = new Array("Todos", "Episodio 3", "El ultimo Jedi","El retorno del Jedi");
+        var optstarwars = new Array("Todos", "Episodio 3", "El ultimo Jedi", "El retorno del Jedi");
 
         function cambiar() {
             var categoria;
@@ -25,7 +26,7 @@
                     document.frm.subcategoria.options[i].text = misOpts[i];
                 }
             }
-            
+
         }
 
 
@@ -48,8 +49,8 @@
         #tituloFooter {
             font-size: 20px;
             text-decoration: none;
-
         }
+
         #tituloFooterPequeño {
             font-size: 15px;
             text-decoration: none;
@@ -75,15 +76,14 @@
 
         body {
             padding: 0px;
-           
         }
-        
+
 
         footer a {
             color: white;
             text-decoration: none;
-         
         }
+
         #copyright {
             min-height: 30px;
         }
