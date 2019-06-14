@@ -153,15 +153,32 @@
     </div>
     <div class="form-group">
         <label class="control-label col-md-2">@AppFunkoPop.Resources.Admin.destacado </label>
-        @if (Model.DESTACADO == null || Model.DESTACADO== false)
+        <select class="form-control" name="destacado" id="destacado">
+            @if (Model.DESTACADO == null || Model.DESTACADO == false)
+            {
+                <option value="true">Si</option>
+                <option value="false" selected>No</option>
+            }
+            else
+            {
+                <option value="true" selected>Si</option>
+                <option value="false" >No</option>
+            }
+
+
+        </select>
+
+
+
+        @*@if (Model.DESTACADO == null || Model.DESTACADO== false)
         {
-            <input type="checkbox" name="destacado" checked />            
+            <input type="checkbox" name="destacado" checked />
         }
         else
         {
             <input type="checkbox" name="destacado" checked class />
-        }
-        
+        }*@
+
     </div>
 
     <div class="form-group">
